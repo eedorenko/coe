@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-template id="EproceedCeoBaseFlowTemplate">
+    <default-activity>ExceptionHandler</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <exception-handler>ExceptionHandler</exception-handler>
+    <method-call id="ExceptionHandler"></method-call>
+    <use-page-fragments/>
+  </task-flow-template>
+</adfc-config>
