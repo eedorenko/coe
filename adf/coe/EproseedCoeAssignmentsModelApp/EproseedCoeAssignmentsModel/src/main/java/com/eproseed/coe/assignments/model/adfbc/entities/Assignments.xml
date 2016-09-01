@@ -12,7 +12,8 @@
   BindingStyle="OracleName"
   RowClass="com.eproseed.coe.assignments.model.adfbc.entities.AssignmentsImpl"
   DefClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityDefImpl"
-  CollClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityCache">
+  CollClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityCache"
+  IsLibraryPrivate="true">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -27,7 +28,14 @@
     Type="java.lang.Long"
     ColumnType="NUMBER"
     TableName="ASSIGNMENTS"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.AssignmentId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="BusinessDate"
     IsNotNull="true"
@@ -40,6 +48,16 @@
       Name="ExpressionScript"
       trustMode="untrusted"
       CodeSourceName="AssignmentsRow"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.BusinessDate_LABEL"/>
+        <FMT_FORMAT
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.BusinessDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.BusinessDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="EmployeeId"
@@ -68,7 +86,20 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ASSIGNMENTS"/>
+    TableName="ASSIGNMENTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Starttime_LABEL"/>
+        <LABEL_PLURAL
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Starttime_LABEL_PLURAL"/>
+        <FMT_FORMATTER
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Starttime_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Starttime_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Finishtime"
     IsNotNull="true"
@@ -76,7 +107,18 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ASSIGNMENTS"/>
+    TableName="ASSIGNMENTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Finishtime_LABEL"/>
+        <FMT_FORMAT
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Finishtime_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Finishtime_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Projects"
     Association="com.eproseed.coe.assignments.model.adfbc.entities.associations.AssignmentToProject"
@@ -154,4 +196,8 @@
       <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.EmployeeId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.eproseed.coe.assignments.model.adfbc.EproseedCoeAssignmentsModelBundle"/>
+  </ResourceBundle>
 </Entity>

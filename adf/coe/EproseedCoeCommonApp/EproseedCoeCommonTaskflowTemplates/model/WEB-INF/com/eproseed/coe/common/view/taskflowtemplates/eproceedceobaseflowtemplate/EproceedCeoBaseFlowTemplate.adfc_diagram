@@ -15,6 +15,6 @@
       <property
          name="y">139.60156</property>
       <property
-         name="exceptionHandler">true</property>
+         name="exceptionHandler">false</property>
    </MethodCall>
 </SDM>

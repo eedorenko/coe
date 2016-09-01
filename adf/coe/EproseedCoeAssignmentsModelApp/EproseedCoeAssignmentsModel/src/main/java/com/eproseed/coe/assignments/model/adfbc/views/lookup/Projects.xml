@@ -15,7 +15,8 @@
   RowClass="com.eproseed.coe.common.model.adfbc.base.CoeViewRowImpl"
   ComponentClass="com.eproseed.coe.common.model.adfbc.base.CoeViewObjectImpl"
   DefClass="com.eproseed.coe.common.model.adfbc.base.CoeViewDefImpl"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  IsLibraryPrivate="true">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -34,7 +35,14 @@
     PrecisionRule="true"
     EntityAttrName="Name"
     EntityUsage="Projects"
-    AliasName="NAME"/>
+    AliasName="NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.assignments.model.adfbc.views.lookup.Projects.Name_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ProjectId"
     IsUpdateable="false"

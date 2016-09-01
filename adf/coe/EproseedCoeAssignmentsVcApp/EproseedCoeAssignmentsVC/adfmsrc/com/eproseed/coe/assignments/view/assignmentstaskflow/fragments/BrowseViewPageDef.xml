@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="BrowseViewPageDef"
+                Package="com.eproseed.coe.assignments.view.assignmentstaskflow.fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AssignmentsService.Assignments" DataControl="EproseedCoeServiceDataControl" RangeSize="25"
+              id="AssignmentsIterator"/>
+    <searchRegion Binds="AssignmentsIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="AssignmentsQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="AssignmentsIterator" id="Assignments">
+      <nodeDefinition DefName="com.eproseed.coe.assignments.model.adfbc.views.Assignments" Name="Assignments0">
+        <AttrNames>
+          <Item Value="AssignmentId"/>
+          <Item Value="BusinessDate"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Starttime"/>
+          <Item Value="Finishtime"/>
+          <Item Value="ProjectName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

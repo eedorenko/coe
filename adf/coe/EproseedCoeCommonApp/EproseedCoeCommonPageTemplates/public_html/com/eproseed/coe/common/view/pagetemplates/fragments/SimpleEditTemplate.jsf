@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>SimpleEditTemplate</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>centerContent</afc:facet-name>
+            </afc:facet>
+            <afc:attribute>
+                <afc:attribute-name>title</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelGridLayout id="pgl6">
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+            <af:gridCell id="gc11" valign="middle">
+                <af:outputFormatted value="#{attrs.title}" id="ol7" styleClass="WBPageTitleText"/>
+            </af:gridCell>
+            <af:gridCell marginStart="5px" width="30%" id="gc6" halign="stretch" valign="middle">
+            </af:gridCell>
+
+            <af:gridCell marginStart="5px" width="auto" id="gc10" valign="middle" halign="end">
+                <af:toolbar id="pt_t1">
+                    <af:button text="Submit" id="pt_b2" action="submit" actionListener="#{bindings.Commit.execute}" />
+                    <af:button text="Cancel" id="pt_b3" action="cancel" immediate="true"/>
+                </af:toolbar>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow id="gr3">
+            <af:gridCell id="gc12" columnSpan="3" halign="stretch">
+                <af:facetRef facetName="centerContent"/>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</af:pageTemplateDef>

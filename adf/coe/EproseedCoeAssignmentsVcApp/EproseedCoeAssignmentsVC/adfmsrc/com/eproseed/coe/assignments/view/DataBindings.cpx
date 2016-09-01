@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.eproseed.coe.assignments.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/com/eproseed/coe/assignments/view/assignmentstaskflow/fragments/BrowseView.jsff"
+          usageId="com_eproseed_coe_assignments_view_BrowseViewPageDef"/>
+    <page path="/TestPage.jsf" usageId="com_eproseed_coe_assignments_view_TestPagePageDef"/>
+    <page path="/WEB-INF/com/eproseed/coe/assignments/view/assignmentstaskflow/fragments/EditView.jsff"
+          usageId="com_eproseed_coe_assignments_view_EditViewPageDef"/>
+    <page path="/WEB-INF/com/eproseed/coe/assignments/view/assignmentstaskflow/AssignmentsTaskFlow.xml#AssignmentsTaskFlow@CreateInsert"
+          usageId="com_eproseed_coe_assignments_view_AssignmentsTaskFlow_AssignmentsTaskFlow_CreateInsertPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_eproseed_coe_assignments_view_BrowseViewPageDef"
+          path="com.eproseed.coe.assignments.view.assignmentstaskflow.fragments.BrowseViewPageDef"/>
+    <page id="com_eproseed_coe_assignments_view_TestPagePageDef"
+          path="com.eproseed.coe.assignments.view.pageDefs.TestPagePageDef"/>
+    <page id="com_eproseed_coe_assignments_view_EditViewPageDef"
+          path="com.eproseed.coe.assignments.view.assignmentstaskflow.fragments.EditViewPageDef"/>
+    <page id="com_eproseed_coe_assignments_view_AssignmentsTaskFlow_AssignmentsTaskFlow_CreateInsertPageDef"
+          path="com.eproseed.coe.assignments.view.assignmentstaskflow.AssignmentsTaskFlow_AssignmentsTaskFlow_CreateInsertPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="EproseedCoeServiceDataControl" Package="com.eproseed.coe.main.model.adfbc.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="EproseedCoeServiceLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

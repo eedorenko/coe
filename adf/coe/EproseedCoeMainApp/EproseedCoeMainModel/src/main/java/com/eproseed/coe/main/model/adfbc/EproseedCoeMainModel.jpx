@@ -12,13 +12,38 @@
     <Attr Name="_jprName" Value="../../../../../../../../../EproseedCoeMainModel.jpr"/>
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_NamedConnection" Value="HRConn"/>
+    <Attr Name="_appModuleNames0" Value="com.eproseed.coe.main.model.adfbc.services.EproseedCoeService"/>
   </DesignTime>
+  <Containee
+    Name="services"
+    PackageName="com.eproseed.coe.main.model.adfbc.services"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <AppContainee
+    Name="EproseedCoeAssignmentsModel"
+    FullName="com.eproseed.coe.assignments.model.adfbc.EproseedCoeAssignmentsModel"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="eproseedcoeassignmentsmodelapp_eproseedcoeassignmentsmodel_adflib.jar"/>
+    </DesignTime>
+  </AppContainee>
   <AppContainee
     Name="EproseedCoeCommonModel"
     FullName="com.eproseed.coe.common.model.adfbc.EproseedCoeCommonModel"
     ObjectType="JboProject">
     <DesignTime>
       <Attr Name="_SourceName" Value="eproseedcoecommonapp_eproseedcoecommonmodel_adflib.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
+    Name="EproseedCoeCommonHRModel"
+    FullName="com.eproseed.coe.common.hrmodel.adfbc.EproseedCoeCommonHRModel"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="eproseedcoecommonapp_eproseedcoecommonhrmodel_adflib.jar"/>
     </DesignTime>
   </AppContainee>
 </JboProject>

@@ -13,9 +13,13 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   RowClass="com.eproseed.coe.common.model.adfbc.base.CoeViewRowImpl"
-  ComponentClass="com.eproseed.coe.common.model.adfbc.base.CoeViewObjectImpl"
+  ComponentClass="com.eproseed.coe.assignments.model.adfbc.views.AssignmentsImpl"
   DefClass="com.eproseed.coe.common.model.adfbc.base.CoeViewDefImpl"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  ComponentInterface="com.eproseed.coe.assignments.model.adfbc.views.common.Assignments">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+  </DesignTime>
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -129,6 +133,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="combo_lov"/>
+        <LABEL
+          ResId="com.eproseed.coe.assignments.model.adfbc.views.Assignments.EmployeeId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -151,6 +157,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <LABEL
+          ResId="com.eproseed.coe.assignments.model.adfbc.views.Assignments.ProjectId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -168,7 +176,14 @@
     PrecisionRule="true"
     EntityAttrName="Name"
     EntityUsage="Projects"
-    AliasName="NAME"/>
+    AliasName="NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.assignments.model.adfbc.views.Assignments.ProjectName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ProjectId1"
     IsNotNull="true"
@@ -196,8 +211,30 @@
     EntityAttrName="LastName"
     EntityUsage="Employees"
     AliasName="LAST_NAME"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="appendNewRow"
+      MethodName="appendNewRow">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+  </ClientInterface>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.eproseed.coe.assignments.model.adfbc.EproseedCoeAssignmentsModelBundle"/>
   </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="AssignmentId"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="AssignmentId"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="AssignmentId"/>
+  </SortCriteria>
 </ViewObject>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47"
+                id="AssignmentsTaskFlow_AssignmentsTaskFlow_CreateInsertPageDef"
+                Package="com.eproseed.coe.assignments.view.assignmentstaskflow" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="appendNewRow" RequiresUpdateModel="true" Action="invokeMethod" MethodName="appendNewRow"
+                  IsViewObjectMethod="true" DataControl="EproseedCoeServiceDataControl"
+                  InstanceName="data.EproseedCoeServiceDataControl.dataProvider.Root.AssignmentsService.Assignments"/>
+  </bindings>
+</pageDefinition>

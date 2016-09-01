@@ -35,6 +35,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees.FirstName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="LastName"
@@ -48,6 +54,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees.LastName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Email"
@@ -237,4 +249,8 @@
       <Item Value="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees.ManagerId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.eproseed.coe.common.hrmodel.adfbc.EproseedCoeCommonHRModelBundle"/>
+  </ResourceBundle>
 </Entity>

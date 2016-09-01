@@ -5,7 +5,8 @@
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="AssignmentToProject"
   Version="12.2.1.20.47"
-  InheritPersonalization="merge">
+  InheritPersonalization="merge"
+  IsLibraryPrivate="true">
   <DesignTime>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>

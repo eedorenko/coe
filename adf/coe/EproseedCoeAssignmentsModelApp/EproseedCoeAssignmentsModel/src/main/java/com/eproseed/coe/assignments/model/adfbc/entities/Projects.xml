@@ -12,7 +12,8 @@
   BindingStyle="OracleName"
   RowClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityImpl"
   DefClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityDefImpl"
-  CollClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityCache">
+  CollClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityCache"
+  IsLibraryPrivate="true">
   <Attribute
     Name="ProjectId"
     IsNotNull="true"

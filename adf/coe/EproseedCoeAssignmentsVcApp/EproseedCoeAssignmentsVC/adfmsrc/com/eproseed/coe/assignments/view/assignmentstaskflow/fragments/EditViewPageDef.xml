@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="EditViewPageDef"
+                Package="com.eproseed.coe.assignments.view.assignmentstaskflow.fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="com.eproseed.coe.common.view.pagetemplates.fragments.SimpleEditTemplatePageDef" id="ptb1"
+          Refresh="ifNeeded"/>
+    <iterator Binds="AssignmentsService.Assignments" DataControl="EproseedCoeServiceDataControl" RangeSize="25"
+              id="AssignmentsIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="AssignmentsIterator" id="BusinessDate">
+      <AttrNames>
+        <Item Value="BusinessDate"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="AssignmentsIterator" StaticList="false" Uses="LOV_EmployeeId" id="EmployeeId"/>
+    <list IterBinding="AssignmentsIterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="AssignmentsIterator" id="Starttime">
+      <AttrNames>
+        <Item Value="Starttime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AssignmentsIterator" id="Finishtime">
+      <AttrNames>
+        <Item Value="Finishtime"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

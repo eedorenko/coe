@@ -5,6 +5,7 @@
       <document>/WEB-INF/com/eproseed/coe/common/view/taskflowtemplates/eproceedceobaseflowtemplate/EproceedCeoBaseFlowTemplate.xml</document>
       <id>EproceedCeoBaseFlowTemplate</id>
     </template-reference>
+    <default-activity>BrowseView</default-activity>
     <managed-bean id="__1">
       <managed-bean-name>simpleCRUDFlowTemplate</managed-bean-name>
       <managed-bean-class>com.eproseed.coe.common.view.taskflowtemplates.simplecrudflowtemplate.SimpleCRUDFlowTemplate</managed-bean-class>
@@ -15,7 +16,7 @@
     <method-call id="CreateSavePoint">
       <method>#{pageFlowScope.simpleCRUDFlowTemplate.createSavePoint}</method>
       <outcome>
-        <fixed-outcome>goEditCreate</fixed-outcome>
+        <fixed-outcome>goRouter</fixed-outcome>
       </outcome>
     </method-call>
     <router id="EditCreate">
@@ -39,14 +40,14 @@
     <control-flow-rule id="__2">
       <from-activity-id>BrowseView</from-activity-id>
       <control-flow-case id="__3">
-        <from-outcome>goCreateSavePoint</from-outcome>
+        <from-outcome>goEditCreate</from-outcome>
         <to-activity-id>CreateSavePoint</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__4">
       <from-activity-id>CreateSavePoint</from-activity-id>
       <control-flow-case id="__5">
-        <from-outcome>goEditCreate</from-outcome>
+        <from-outcome>goRouter</from-outcome>
         <to-activity-id>EditCreate</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="AssignmentsTaskFlow">
+    <template-reference>
+      <document>/WEB-INF/com/eproseed/coe/common/view/taskflowtemplates/simplecrudflowtemplate/SimpleCRUDFlowTemplate.xml</document>
+      <id>SimpleCRUDFlowTemplate</id>
+    </template-reference>
+    <view id="BrowseView">
+      <page>/WEB-INF/com/eproseed/coe/assignments/view/assignmentstaskflow/fragments/BrowseView.jsff</page>
+    </view>
+    <view id="EditView">
+      <page>/WEB-INF/com/eproseed/coe/assignments/view/assignmentstaskflow/fragments/EditView.jsff</page>
+    </view>
+    <method-call id="CreateInsert">
+      <method>#{bindings.appendNewRow.execute}</method>
+      <outcome>
+        <fixed-outcome>goEditView</fixed-outcome>
+      </outcome>
+    </method-call>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
