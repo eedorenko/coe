@@ -12,8 +12,22 @@
     <Attr Name="_jprName" Value="../../../../../../../EproseedCoeCommonHRModel.jpr"/>
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_NamedConnection" Value="HRConn"/>
+<<<<<<< HEAD
   </DesignTime>
   <Containee
+=======
+    <Attr Name="_appModuleNames0" Value="com.eproseed.coe.common.hrmodel.adfbc.AppModule"/>
+  </DesignTime>
+  <Containee
+    Name="adfbc"
+    PackageName="com.eproseed.coe.common.hrmodel.adfbc"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+>>>>>>> caf3c473fa493f5c68a14e6e4b1c678a1b5bf8b6
     Name="associations"
     PackageName="com.eproseed.coe.common.hrmodel.adfbc.entities.associations"
     ObjectType="JboPackage">

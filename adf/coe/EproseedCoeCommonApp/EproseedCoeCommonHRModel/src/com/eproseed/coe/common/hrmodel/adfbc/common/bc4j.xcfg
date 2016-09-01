@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="com.eproseed.coe.common.hrmodel.adfbc.AppModule">
+    <AppModuleConfig name="AppModuleLocal" jbo.project="com.eproseed.coe.common.hrmodel.adfbc.EproseedCoeCommonHRModel"
+                     ApplicationName="com.eproseed.coe.common.hrmodel.adfbc.AppModule" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/HRConnDS"/>
+      <Security AppModuleJndiName="com.eproseed.coe.common.hrmodel.adfbc.AppModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="AppModuleShared" jbo.project="com.eproseed.coe.common.hrmodel.adfbc.EproseedCoeCommonHRModel"
+                     ApplicationName="com.eproseed.coe.common.hrmodel.adfbc.AppModule" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/HRConnDS"/>
+      <Security AppModuleJndiName="com.eproseed.coe.common.hrmodel.adfbc.AppModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>
