@@ -26,6 +26,7 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="EproseedCoeCommonDeclComp/EproseedCoeCommonDeclComp.jpr"/></hash>
+      <hash><url n="URL" path="EproseedCoeCommonHRModel/EproseedCoeCommonHRModel.jpr"/></hash>
       <hash><url n="URL" path="EproseedCoeCommonModel/EproseedCoeCommonModel.jpr"/></hash>
       <hash><url n="URL" path="EproseedCoeCommonPageTemplates/EproseedCoeCommonPageTemplates.jpr"/></hash>
       <hash><url n="URL" path="EproseedCoeCommonSharedModel/EproseedCoeCommonSharedModel.jpr"/></hash>
