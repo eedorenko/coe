@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AssignmentToProject"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Projects"
+    Cardinality="1"
+    Source="true"
+    Owner="com.eproseed.coe.assignments.model.adfbc.entities.Projects"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Projects"/>
+      <Attr Name="_foreignKey" Value="com.eproseed.coe.assignments.model.adfbc.entities.Projects.PkProjects"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Projects.ProjectId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Assignments"
+    Cardinality="-1"
+    Owner="com.eproseed.coe.assignments.model.adfbc.entities.Assignments">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Assignments"/>
+      <Attr Name="_foreignKey" Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.fk_Assignments"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.ProjectId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

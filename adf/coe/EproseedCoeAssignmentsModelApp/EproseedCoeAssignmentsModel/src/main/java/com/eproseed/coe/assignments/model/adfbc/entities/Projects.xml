@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Projects"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="PROJECTS"
+  AliasName="Projects"
+  BindingStyle="OracleName"
+  RowClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityImpl"
+  DefClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityDefImpl"
+  CollClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityCache">
+  <Attribute
+    Name="ProjectId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="PROJECT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Assignments"
+    Association="com.eproseed.coe.assignments.model.adfbc.entities.associations.AssignmentToProject"
+    AssociationEnd="com.eproseed.coe.assignments.model.adfbc.entities.associations.AssignmentToProject.Assignments"
+    AssociationOtherEnd="com.eproseed.coe.assignments.model.adfbc.entities.associations.AssignmentToProject.Projects"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkProjects"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_PROJECTS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Projects.ProjectId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UkProjectsName">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="UK_PROJECTS_NAME"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Projects.Name"/>
+    </AttrArray>
+  </Key>
+</Entity>

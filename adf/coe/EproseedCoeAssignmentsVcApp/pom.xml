@@ -72,7 +72,6 @@
     <relativePath></relativePath>
   </parent>
   <modules>
-    <module>Model</module>
     <module>EproseedCoeAssignmentsVC</module>
   </modules>
   <dependencies>

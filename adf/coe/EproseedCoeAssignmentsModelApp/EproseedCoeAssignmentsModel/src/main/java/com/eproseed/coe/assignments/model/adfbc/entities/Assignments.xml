@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Assignments"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ASSIGNMENTS"
+  AliasName="Assignments"
+  BindingStyle="OracleName"
+  RowClass="com.eproseed.coe.assignments.model.adfbc.entities.AssignmentsImpl"
+  DefClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityDefImpl"
+  CollClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityCache">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="AssignmentId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="ASSIGNMENT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="ASSIGNMENTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="BusinessDate"
+    IsNotNull="true"
+    ColumnName="BUSINESS_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="ASSIGNMENTS">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="AssignmentsRow"/>
+  </Attribute>
+  <Attribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="EMPLOYEE_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="ASSIGNMENTS"/>
+  <Attribute
+    Name="ProjectId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="PROJECT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="ASSIGNMENTS"/>
+  <Attribute
+    Name="Starttime"
+    IsNotNull="true"
+    ColumnName="STARTTIME"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="ASSIGNMENTS"/>
+  <Attribute
+    Name="Finishtime"
+    IsNotNull="true"
+    ColumnName="FINISHTIME"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="ASSIGNMENTS"/>
+  <AccessorAttribute
+    Name="Projects"
+    Association="com.eproseed.coe.assignments.model.adfbc.entities.associations.AssignmentToProject"
+    AssociationEnd="com.eproseed.coe.assignments.model.adfbc.entities.associations.AssignmentToProject.Projects"
+    AssociationOtherEnd="com.eproseed.coe.assignments.model.adfbc.entities.associations.AssignmentToProject.Assignments"
+    Type="com.eproseed.coe.common.model.adfbc.base.CoeEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="com.eproseed.coe.assignments.model.adfbc.entities.associations.EmployeeHasAssignments"
+    AssociationEnd="com.eproseed.coe.assignments.model.adfbc.entities.associations.EmployeeHasAssignments.Employees"
+    AssociationOtherEnd="com.eproseed.coe.assignments.model.adfbc.entities.associations.EmployeeHasAssignments.Assignments"
+    Type="com.eproseed.coe.common.model.adfbc.base.CoeEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="CkAssignmentsTimes">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="FinishTime > StartTime"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CK_ASSIGNMENTS_TIMES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="PkAssignments"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_ASSIGNMENTS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.AssignmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAssignmentsEmployee">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMP_EMP_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ASSIGNMENTS_EMPLOYEE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.EmployeeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAssignmentsProject">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_PROJECTS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ASSIGNMENTS_PROJECT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.ProjectId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Assignments">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_PROJECTS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ASSIGNMENTS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.ProjectId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Assignments1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMP_EMP_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ASSIGNMENTS1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.EmployeeId"/>
+    </AttrArray>
+  </Key>
+</Entity>

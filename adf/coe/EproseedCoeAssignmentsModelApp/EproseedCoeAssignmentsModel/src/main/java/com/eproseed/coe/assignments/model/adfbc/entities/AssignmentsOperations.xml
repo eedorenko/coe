@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE OperationDefinitions SYSTEM "jbo_03_01.dtd">
+<OperationDefinitions xmlns="http://xmlns.oracle.com/bc4j" Name="AssignmentsOperations">
+  <ExpressionCodeSource
+    Name="AssignmentsRow"
+    Type="Static"
+    URI="com/eproseed/coe/assignments/model/adfbc/entities/Assignments.bcs"/>
+</OperationDefinitions>

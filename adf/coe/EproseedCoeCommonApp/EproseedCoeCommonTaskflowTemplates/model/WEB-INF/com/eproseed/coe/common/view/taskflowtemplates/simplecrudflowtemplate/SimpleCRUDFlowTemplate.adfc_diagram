@@ -77,7 +77,7 @@
       <property
          name="fromOutcome">goCreateSavePoint</property>
       <property
-         name="sdm:polyPoints">B58,191.7621,501.8711,L50</property>
+         name="sdm:polyPoints">B58,191.76212,501.8711,L50</property>
    </ControlFlowCase>
    <Router
       id="Router7">
@@ -100,7 +100,7 @@
       <property
          name="fromOutcome">goEditCreate</property>
       <property
-         name="sdm:polyPoints">T50,394.0,380.63672,394.2379,380.63672,B42</property>
+         name="sdm:polyPoints">T50,393.99997,380.5703,394.23788,380.5703,B42</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -156,7 +156,7 @@
       <property
          name="fromOutcome">submit</property>
       <property
-         name="sdm:polyPoints">T50,659.0,203.94102,187.0,203.94102,T50</property>
+         name="sdm:polyPoints">T50,659.0,203.94102,187.00002,203.94102,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -176,7 +176,7 @@
       <property
          name="fromOutcome">goBrowseView</property>
       <property
-         name="sdm:polyPoints">L50,182.2379,623.46875,B42</property>
+         name="sdm:polyPoints">L50,182.23792,623.46875,B42</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -186,6 +186,6 @@
       <property
          name="fromOutcome">goCreate</property>
       <property
-         name="sdm:polyPoints">B58,403.7621,400.0039,L50</property>
+         name="sdm:polyPoints">B58,403.76205,400.0039,L50</property>
    </ControlFlowCase>
 </SDM>

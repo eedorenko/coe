@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Assignments"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  RowClass="com.eproseed.coe.common.model.adfbc.base.CoeViewRowImpl"
+  ComponentClass="com.eproseed.coe.common.model.adfbc.base.CoeViewObjectImpl"
+  DefClass="com.eproseed.coe.common.model.adfbc.base.CoeViewDefImpl"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.eproseed.coe.assignments.model.adfbc.views.Assignments_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="ProjectsLookup"
+    ViewObjectName="com.eproseed.coe.assignments.model.adfbc.views.lookup.Projects"
+    RowLevelBinds="false"/>
+  <ViewAccessor
+    Name="EmployeesLookup"
+    ViewObjectName="com.eproseed.coe.assignments.model.adfbc.views.lookup.Employees"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ProjectId"
+    ListVOName="ProjectsLookup"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EmployeeId"
+    ListVOName="EmployeesLookup"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Assignments"
+    Entity="com.eproseed.coe.assignments.model.adfbc.entities.Assignments"/>
+  <EntityUsage
+    Name="Projects"
+    Entity="com.eproseed.coe.assignments.model.adfbc.entities.Projects"
+    ReadOnly="true"
+    DeleteParticipant="false"
+    Reference="true"
+    Association="com.eproseed.coe.assignments.model.adfbc.entities.associations.AssignmentToProject"
+    AssociationEnd="com.eproseed.coe.assignments.model.adfbc.entities.associations.AssignmentToProject.Projects"
+    SourceUsage="com.eproseed.coe.assignments.model.adfbc.views.Assignments.Assignments"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Projects.ProjectId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.ProjectId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="Employees"
+    Entity="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees"
+    ReadOnly="true"
+    DeleteParticipant="false"
+    Association="com.eproseed.coe.assignments.model.adfbc.entities.associations.EmployeeHasAssignments"
+    AssociationEnd="com.eproseed.coe.assignments.model.adfbc.entities.associations.EmployeeHasAssignments.Employees"
+    SourceUsage="com.eproseed.coe.assignments.model.adfbc.views.Assignments.Assignments"
+    JoinType="INNER JOIN"
+    Reference="true">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees.EmployeeId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.EmployeeId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="AssignmentId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AssignmentId"
+    EntityUsage="Assignments"
+    AliasName="ASSIGNMENT_ID"/>
+  <ViewAttribute
+    Name="BusinessDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="BusinessDate"
+    EntityUsage="Assignments"
+    AliasName="BUSINESS_DATE"/>
+  <ViewAttribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="Assignments"
+    AliasName="EMPLOYEE_ID"
+    LOVName="LOV_EmployeeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Finishtime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Finishtime"
+    EntityUsage="Assignments"
+    AliasName="FINISHTIME"/>
+  <ViewAttribute
+    Name="ProjectId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProjectId"
+    EntityUsage="Assignments"
+    AliasName="PROJECT_ID"
+    LOVName="LOV_ProjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Starttime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Starttime"
+    EntityUsage="Assignments"
+    AliasName="STARTTIME"/>
+  <ViewAttribute
+    Name="ProjectName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="Projects"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="ProjectId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProjectId"
+    EntityUsage="Projects"
+    AliasName="PROJECT_ID1"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="Employees"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="EmployeeId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="Employees"
+    AliasName="EMPLOYEE_ID1"/>
+  <ViewAttribute
+    Name="LastName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="Employees"
+    AliasName="LAST_NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.eproseed.coe.assignments.model.adfbc.EproseedCoeAssignmentsModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

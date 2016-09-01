@@ -12,13 +12,62 @@
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_jprName" Value="../../../../../../../../../EproseedCoeAssignmentsModel.jpr"/>
     <Attr Name="_NamedConnection" Value="HRConn"/>
+    <Attr Name="_appModuleNames0" Value="com.eproseed.coe.assignments.model.adfbc.services.AssignmentsService"/>
   </DesignTime>
+  <Containee
+    Name="associations"
+    PackageName="com.eproseed.coe.assignments.model.adfbc.entities.associations"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="entities"
+    PackageName="com.eproseed.coe.assignments.model.adfbc.entities"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="services"
+    PackageName="com.eproseed.coe.assignments.model.adfbc.services"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="lookup"
+    PackageName="com.eproseed.coe.assignments.model.adfbc.views.lookup"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="views"
+    PackageName="com.eproseed.coe.assignments.model.adfbc.views"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
   <AppContainee
     Name="EproseedCoeCommonModel"
     FullName="com.eproseed.coe.common.model.adfbc.EproseedCoeCommonModel"
     ObjectType="JboProject">
     <DesignTime>
       <Attr Name="_SourceName" Value="eproseedcoecommonapp_eproseedcoecommonmodel_adflib.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
+    Name="EproseedCoeCommonHRModel"
+    FullName="com.eproseed.coe.common.hrmodel.adfbc.EproseedCoeCommonHRModel"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="eproseedcoecommonapp_eproseedcoecommonhrmodel_adflib.jar"/>
     </DesignTime>
   </AppContainee>
 </JboProject>
