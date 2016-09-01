@@ -18,6 +18,8 @@ create table assignments
  constraint ck_assignments_times check (FinishTime > StartTime)
  );
  
+ create sequence assignments_seq;
+ 
  
 insert into projects
  (project_id, name)
