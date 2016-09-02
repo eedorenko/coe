@@ -5,7 +5,18 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
-    <method-call id="ExceptionHandler"></method-call>
+    <managed-bean id="__1">
+      <managed-bean-name>exceptionHandler</managed-bean-name>
+      <managed-bean-class>com.eproseed.coe.common.view.taskflowtemplates.eproceedceobaseflowtemplate.ExceptionHandler</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <exception-handler>ExceptionHandler</exception-handler>
+    <method-call id="ExceptionHandler">
+      <method>#{exceptionHandler.handleException}</method>
+      <outcome>
+        <fixed-outcome>ExceptionHandled</fixed-outcome>
+      </outcome>
+    </method-call>
     <use-page-fragments/>
   </task-flow-template>
 </adfc-config>
