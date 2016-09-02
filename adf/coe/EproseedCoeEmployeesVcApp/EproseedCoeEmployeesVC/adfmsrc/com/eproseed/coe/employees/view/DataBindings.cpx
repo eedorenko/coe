@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.eproseed.coe.employees.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/com/eproseed/coe/employees/view/employeestaskflow/fragments/BrowseView.jsff"
+          usageId="com_eproseed_coe_employees_view_BrowseViewPageDef"/>
+    <page path="/TestPage.jsf" usageId="com_eproseed_coe_employees_view_TestPagePageDef"/>
+    <page path="/WEB-INF/com/eproseed/coe/employees/view/employeesedittaskflow/EmployeesEditTaskFlow.xml#EmployeesEditTaskFlow@PrepareEdit"
+          usageId="com_eproseed_coe_employees_view_EmployeesEditTaskFlow_EmployeesEditTaskFlow_PrepareEditPageDef"/>
+    <page path="/WEB-INF/com/eproseed/coe/employees/view/employeesedittaskflow/fragments/EditView.jsff"
+          usageId="com_eproseed_coe_employees_view_EditViewPageDef"/>
+    <page path="/WEB-INF/com/eproseed/coe/employees/view/employeescreatetaskflow/EmployeesCreateTaskFlow.xml#EmployeesCreateTaskFlow@PrepareInsert"
+          usageId="com_eproseed_coe_employees_view_EmployeesCreateTaskFlow_EmployeesCreateTaskFlow_PrepareInsertPageDef"/>
+    <page path="/WEB-INF/com/eproseed/coe/employees/view/employeescreatetaskflow/fragments/InsertMainView.jsff"
+          usageId="com_eproseed_coe_employees_view_InsertViewPageDef"/>
+    <page path="/WEB-INF/com/eproseed/coe/employees/view/employeestaskflow/EmployeesTaskFlow.xml#EmployeesTaskFlow@ExecuteBrowseVO"
+          usageId="com_eproseed_coe_employees_view_EmployeesTaskFlow_EmployeesTaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/com/eproseed/coe/employees/view/employeescreatetaskflow/fragments/InsertJobView.jsff"
+          usageId="com_eproseed_coe_employees_view_InsertJobViewPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_eproseed_coe_employees_view_BrowseViewPageDef"
+          path="com.eproseed.coe.employees.view.employeestaskflow.fragments.BrowseViewPageDef"/>
+    <page id="com_eproseed_coe_employees_view_TestPagePageDef"
+          path="com.eproseed.coe.employees.view.pageDefs.TestPagePageDef"/>
+    <page id="com_eproseed_coe_employees_view_EmployeesEditTaskFlow_EmployeesEditTaskFlow_PrepareEditPageDef"
+          path="com.eproseed.coe.employees.view.employeesedittaskflow.EmployeesEditTaskFlow_EmployeesEditTaskFlow_PrepareEditPageDef"/>
+    <page id="com_eproseed_coe_employees_view_EditViewPageDef"
+          path="com.eproseed.coe.employees.view.employeesedittaskflow.fragments.EditViewPageDef"/>
+    <page id="com_eproseed_coe_employees_view_EmployeesCreateTaskFlow_EmployeesCreateTaskFlow_PrepareInsertPageDef"
+          path="com.eproseed.coe.employees.view.employeescreatetaskflow.EmployeesCreateTaskFlow_EmployeesCreateTaskFlow_PrepareInsertPageDef"/>
+    <page id="com_eproseed_coe_employees_view_InsertViewPageDef"
+          path="com.eproseed.coe.employees.view.employeescreatetaskflow.fragments.InsertMianViewPageDef"/>
+    <page id="com_eproseed_coe_employees_view_EmployeesTaskFlow_EmployeesTaskFlow_ExecutePageDef"
+          path="com.eproseed.coe.employees.view.employeestaskflow.EmployeesTaskFlow_EmployeesTaskFlow_ExecutePageDef"/>
+    <page id="com_eproseed_coe_employees_view_InsertJobViewPageDef"
+          path="com.eproseed.coe.employees.view.employeescreatetaskflow.fragments.InsertJobViewPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="EproseedCoeServiceDataControl" Package="com.eproseed.coe.main.model.adfbc.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="EproseedCoeServiceLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

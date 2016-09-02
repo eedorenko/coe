@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartmentsService"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  ComponentClass="com.eproseed.coe.common.model.adfbc.base.CoeApplicationModuleImpl"
+  DefClass="com.eproseed.coe.common.model.adfbc.base.CoeApplicationModuleDefImpl"
+  ClearCacheOnRollback="true">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.eproseed.coe.departments.model.adfbc.services.DepartmentsService_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewUsage
+    Name="DepartmentsRO"
+    ViewObjectName="com.eproseed.coe.departments.model.adfbc.views.DepartmentsRO"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.eproseed.coe.departments.model.adfbc.EproseedCoeDepartmentsModelBundle"/>
+  </ResourceBundle>
+</AppModule>

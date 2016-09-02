@@ -20,6 +20,14 @@
     Name="AssignmentsService"
     FullName="com.eproseed.coe.assignments.model.adfbc.services.AssignmentsService"
     SharedScope="0"/>
+  <AppModuleUsage
+    Name="EmployeesService"
+    FullName="com.eproseed.coe.employees.model.adfbc.services.EmployeesService"
+    SharedScope="0"/>
+  <AppModuleUsage
+    Name="DepartmentsService"
+    FullName="com.eproseed.coe.departments.model.adfbc.services.DepartmentsService"
+    SharedScope="0"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.eproseed.coe.main.model.adfbc.EproseedCoeMainModelBundle"/>

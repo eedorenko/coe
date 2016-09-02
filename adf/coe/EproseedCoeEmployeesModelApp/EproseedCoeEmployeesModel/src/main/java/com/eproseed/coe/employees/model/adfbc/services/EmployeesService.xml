@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeesService"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  ComponentClass="com.eproseed.coe.common.model.adfbc.base.CoeApplicationModuleImpl"
+  DefClass="com.eproseed.coe.common.model.adfbc.base.CoeApplicationModuleDefImpl"
+  ClearCacheOnRollback="true">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.eproseed.coe.employees.model.adfbc.services.EmployeesService_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewUsage
+    Name="EmployeesList"
+    ViewObjectName="com.eproseed.coe.employees.model.adfbc.views.EmployeesList"/>
+  <ViewUsage
+    Name="EmployeesEdit"
+    ViewObjectName="com.eproseed.coe.employees.model.adfbc.views.EmployeesRecord"
+    MaxFetchSize="1">
+    <ViewCriteriaUsage
+      Name="CurrentRecordViewCriteria"
+      FullName="com.eproseed.coe.employees.model.adfbc.views.EmployeesRecord.CurrentRecordViewCriteria"/>
+  </ViewUsage>
+  <ViewUsage
+    Name="EmployeesCreate"
+    ViewObjectName="com.eproseed.coe.employees.model.adfbc.views.EmployeesRecord"
+    MaxFetchSize="0"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.eproseed.coe.employees.model.adfbc.EproseedCoeEmployeesModelBundle"/>
+  </ResourceBundle>
+</AppModule>

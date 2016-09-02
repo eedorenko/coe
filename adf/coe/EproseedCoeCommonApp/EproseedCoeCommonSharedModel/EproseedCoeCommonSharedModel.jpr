@@ -130,7 +130,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="EproseedCoeAppCommon_EproseedCoeAppCommonSharedModel_adflib">
+         <hash n="eproseedcoecommonapp_eproseedcoecommonsharedmodel_adflib">
             <value n="adflib-connectionDetails" v="true"/>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
@@ -164,54 +164,24 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/EproseedCoeAppCommon_EproseedCoeAppCommonSharedModel_adflib.jar"/>
-            <hash n="LibraryDependencies"/>
-            <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
-            <value n="profileName" v="EproseedCoeAppCommon_EproseedCoeAppCommonSharedModel_adflib"/>
-         </hash>
-         <hash n="EproseedCoeCommonApp_EproseedCoeCommonSharedModel">
-            <value n="adflib-connectionDetails" v="true"/>
-            <hash n="archiveOptions">
-               <value n="hasManifest" v="true"/>
-            </hash>
-            <hash n="fileGroups">
-               <list n="groups">
+            <url n="jarURL" path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonsharedmodel_adflib.jar"/>
+            <hash n="LibraryDependencies">
+               <list n="dependencyList">
                   <hash>
-                     <list n="contributors">
-                        <hash>
-                           <value n="type" v="2"/>
-                        </hash>
-                        <hash>
-                           <value n="type" v="5"/>
-                        </hash>
-                     </list>
-                     <value n="displayName" v="Project Output"/>
-                     <hash n="filters">
-                        <list n="rules">
-                           <hash>
-                              <value n="pattern" v="WEB-INF/classes/**"/>
-                              <value n="type" v="1"/>
-                           </hash>
-                           <hash>
-                              <value n="pattern" v="**"/>
-                              <value n="type" v="0"/>
-                           </hash>
-                        </list>
+                     <hash n="dependable">
+                        <url n="sourceOwnerURL" path="../EproseedCoeCommonApp.jws"/>
+                        <url n="sourceURL" path="../EproseedCoeCommonModel/EproseedCoeCommonModel.jpr"/>
                      </hash>
-                     <value n="internalName" v="project-output"/>
-                     <value n="type" v="1"/>
+                     <value n="recognizerId" v="oracle.jdeveloper.library"/>
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/EproseedCoeCommonApp_EproseedCoeCommonSharedModel.jar"/>
-            <hash n="LibraryDependencies"/>
             <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
-            <value n="profileName" v="EproseedCoeCommonApp_EproseedCoeCommonSharedModel"/>
+            <value n="profileName" v="eproseedcoecommonapp_eproseedcoecommonsharedmodel_adflib"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="EproseedCoeAppCommon_EproseedCoeAppCommonSharedModel_adflib"/>
-         <string v="EproseedCoeCommonApp_EproseedCoeCommonSharedModel"/>
+         <string v="eproseedcoecommonapp_eproseedcoecommonsharedmodel_adflib"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
@@ -258,7 +228,31 @@
             <value n="id" v="BC4J Oracle Domains"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="ADF Library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Resource Bundle Support"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Common Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonhrmodel_adflib.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ADF Library"/>
+               <value n="id" v="ADF Library"/>
+            </hash>
+         </list>
+      </hash>
       <list n="libraryReferences">
          <hash>
             <value n="id" v="BC4J Runtime"/>
@@ -314,6 +308,22 @@
          </hash>
          <hash>
             <value n="id" v="BC4J Oracle Domains"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <url n="id" path="ADF_Library_Dependencies.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Resource Bundle Support"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Common Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

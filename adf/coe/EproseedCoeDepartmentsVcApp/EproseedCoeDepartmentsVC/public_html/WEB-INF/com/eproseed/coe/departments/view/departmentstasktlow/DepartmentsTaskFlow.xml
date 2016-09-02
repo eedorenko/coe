@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="DepartmentsTaskFlow">
+    <template-reference>
+      <document>/WEB-INF/com/eproseed/coe/common/view/taskflowtemplates/eproceedceobaseflowtemplate/EproceedCeoBaseFlowTemplate.xml</document>
+      <id>EproceedCeoBaseFlowTemplate</id>
+    </template-reference>
+    <default-activity>DepartmentsView</default-activity>
+    <view id="DepartmentsView">
+      <page>/WEB-INF/com/eproseed/coe/departments/view/departmentstasktlow/fragments/DepartmentsView.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

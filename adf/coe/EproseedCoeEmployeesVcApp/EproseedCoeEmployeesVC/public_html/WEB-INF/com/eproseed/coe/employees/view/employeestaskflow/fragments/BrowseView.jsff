@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:pageTemplate viewId="/com/eproseed/coe/common/view/pagetemplates/fragments/BrowseListTemplate.jsf" id="pt1">
+        <f:facet name="centerContent">
+            <af:listView value="#{bindings.EmployeesList.collectionModel}" var="item"
+                         emptyText="#{bindings.EmployeesList.viewable ? 'No data to display.' : 'Access Denied.'}"
+                         fetchSize="#{bindings.EmployeesList.rangeSize}" id="lv1">
+                <af:listItem id="li1">
+                    <af:panelGroupLayout layout="horizontal" id="pgl1">
+                        <f:facet name="separator">
+                            <af:spacer width="10" id="s1"/>
+                        </f:facet>
+                        <af:outputFormatted value="#{item.bindings.EmployeeId.inputValue}" id="of1">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.EmployeesList.hints.EmployeeId.format}"/>
+                        </af:outputFormatted>
+                        <af:outputFormatted value="#{item.bindings.FirstName.inputValue}" id="of2"/>
+                        <af:link text="#{item.bindings.LastName.inputValue}" id="of3" action="goEditCreate">
+                            <af:setPropertyListener from="#{item.bindings.EmployeeId.inputValue}"
+                                                    to="#{requestScope.employeeId}" type="action"/>
+                            <af:setPropertyListener from="edit" to="#{requestScope.action}" type="action"/>
+                        </af:link>
+                        <af:outputFormatted value="#{item.bindings.Email.inputValue}" id="of4"/>
+                        <af:outputFormatted value="#{item.bindings.Salary.inputValue}" id="of5">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.EmployeesList.hints.Salary.format}"/>
+                        </af:outputFormatted>
+                        <af:outputFormatted value="#{item.bindings.PhoneNumber.inputValue}" id="of6"/>
+                        <af:outputFormatted value="#{item.bindings.JobTitle.inputValue}" id="of7"/>
+                        <af:outputFormatted value="#{item.bindings.DepartmentName.inputValue}" id="of8"/>
+                    </af:panelGroupLayout>
+                </af:listItem>
+            </af:listView>
+        </f:facet>
+        <f:attribute name="title" value="Employees"/>
+    </af:pageTemplate>
+</ui:composition>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="EmployeesEditTaskFlow">
+    <template-reference>
+      <document>/WEB-INF/com/eproseed/coe/common/view/taskflowtemplates/editflowtemplate/EditFlowTemplate.xml</document>
+      <id>EditFlowTemplate</id>
+    </template-reference>
+    <method-call id="PrepareEdit">
+      <method>#{bindings.findEmployee.execute}</method>
+      <outcome>
+        <fixed-outcome>goEditView</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="EditView">
+      <page>/WEB-INF/com/eproseed/coe/employees/view/employeesedittaskflow/fragments/EditView.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

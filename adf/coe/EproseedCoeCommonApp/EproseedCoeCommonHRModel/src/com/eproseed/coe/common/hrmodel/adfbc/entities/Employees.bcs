@@ -1,0 +1,12 @@
+//Groovy Scripts for com.eproseed.coe.common.hrmodel.adfbc.entities.Employees
+
+package com.eproseed.coe.common.hrmodel.adfbc.entities
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="HireDate")
+def HireDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

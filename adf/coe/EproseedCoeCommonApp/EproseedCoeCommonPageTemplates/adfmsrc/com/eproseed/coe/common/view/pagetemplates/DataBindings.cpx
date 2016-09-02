@@ -4,10 +4,14 @@
   <pageMap>
     <page path="/com/eproseed/coe/common/view/pagetemplates/fragments/SimpleEditTemplate.jsf"
           usageId="com_eproseed_coe_common_view_pagetemplates_SimpleEditTemplatePageDef"/>
+    <page path="/com/eproseed/coe/common/view/pagetemplates/fragments/InsertWizardTemplate.jsf"
+          usageId="com_eproseed_coe_common_view_pagetemplates_InsertWizardTemplatePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_eproseed_coe_common_view_pagetemplates_SimpleEditTemplatePageDef"
           path="com.eproseed.coe.common.view.pagetemplates.fragments.SimpleEditTemplatePageDef"/>
+    <page id="com_eproseed_coe_common_view_pagetemplates_InsertWizardTemplatePageDef"
+          path="com.eproseed.coe.common.view.pagetemplates.fragments.InsertWizardTemplatePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="EproseedCoeServiceDataControl" Package="com.eproseed.coe.main.model.adfbc.services"

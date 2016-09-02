@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="DepartmentsViewPageDef"
+                Package="com.eproseed.coe.departments.view.departmentstasktlow.fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DepartmentsService.DepartmentsRO" DataControl="EproseedCoeServiceDataControl" RangeSize="25"
+              id="DepartmentsROIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DepartmentsROIterator" id="DepartmentsRO">
+      <nodeDefinition DefName="com.eproseed.coe.departments.model.adfbc.views.DepartmentsRO" Name="DepartmentsRO0">
+        <AttrNames>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="ManagerId"/>
+          <Item Value="LocationId"/>
+          <Item Value="ManagerJobTitle"/>
+          <Item Value="ManagerFirstName"/>
+          <Item Value="ManagerLastName"/>
+          <Item Value="PostalCode"/>
+          <Item Value="City"/>
+          <Item Value="EmployeesCnt"/>
+          <Item Value="SalaryAvg"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

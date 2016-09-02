@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:pageTemplate viewId="/com/eproseed/coe/common/view/pagetemplates/fragments/BrowseListTemplate.jsf" id="pt1">
+        <f:facet name="centerContent">
+            <af:listView value="#{bindings.DepartmentsRO.collectionModel}" var="item"
+                         emptyText="#{bindings.DepartmentsRO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                         fetchSize="#{bindings.DepartmentsRO.rangeSize}" id="lv1">
+                <af:listItem id="li1">
+                    <af:panelGroupLayout layout="horizontal" id="pgl1">
+                        <f:facet name="separator">
+                            <af:spacer width="10" id="s1"/>
+                        </f:facet>
+                        <af:outputFormatted value="#{item.bindings.DepartmentId.inputValue}" id="of1">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentsRO.hints.DepartmentId.format}"/>
+                        </af:outputFormatted>
+                        <af:outputFormatted value="#{item.bindings.DepartmentName.inputValue}" id="of2"/>
+                        <af:outputFormatted value="#{item.bindings.ManagerId.inputValue}" id="of3">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentsRO.hints.ManagerId.format}"/>
+                        </af:outputFormatted>
+                        <af:outputFormatted value="#{item.bindings.LocationId.inputValue}" id="of4">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentsRO.hints.LocationId.format}"/>
+                        </af:outputFormatted>
+                        <af:outputFormatted value="#{item.bindings.ManagerJobTitle.inputValue}" id="of5"/>
+                        <af:outputFormatted value="#{item.bindings.ManagerFirstName.inputValue}" id="of6"/>
+                        <af:outputFormatted value="#{item.bindings.ManagerLastName.inputValue}" id="of7"/>
+                        <af:outputFormatted value="#{item.bindings.PostalCode.inputValue}" id="of8"/>
+                        <af:outputFormatted value="#{item.bindings.City.inputValue}" id="of9"/>
+                        <af:outputFormatted value="#{item.bindings.EmployeesCnt.inputValue}" id="of10">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentsRO.hints.EmployeesCnt.format}"/>
+                        </af:outputFormatted>
+                        <af:outputFormatted value="#{item.bindings.SalaryAvg.inputValue}" id="of11">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentsRO.hints.SalaryAvg.format}"/>
+                        </af:outputFormatted>
+                    </af:panelGroupLayout>
+                </af:listItem>
+            </af:listView>
+        </f:facet>
+    </af:pageTemplate>
+</ui:composition>

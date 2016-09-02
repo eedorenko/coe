@@ -11,8 +11,41 @@
     <Attr Name="_DTExpressionTypeChecking" Value="true"/>
     <Attr Name="_jprName" Value="../../../../../../../../../EproseedCoeEmployeesModel.jpr"/>
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
-    <Attr Name="_NamedConnection" Value="HRConn"/>
+    <Attr Name="_NamedConnection" Value="HR"/>
+    <Attr Name="_appModuleNames0" Value="com.eproseed.coe.employees.model.adfbc.services.EmployeesService"/>
   </DesignTime>
+  <Containee
+    Name="services"
+    PackageName="com.eproseed.coe.employees.model.adfbc.services"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="lookup"
+    PackageName="com.eproseed.coe.employees.model.adfbc.views.lookup"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="views"
+    PackageName="com.eproseed.coe.employees.model.adfbc.views"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <AppContainee
+    Name="EproseedCoeCommonSharedModel"
+    FullName="com.eproseed.coe.common.sharedmodel.adfbc.EproseedCoeCommonSharedModel"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="eproseedcoecommonapp_eproseedcoecommonsharedmodel_adflib.jar"/>
+    </DesignTime>
+  </AppContainee>
   <AppContainee
     Name="EproseedCoeCommonModel"
     FullName="com.eproseed.coe.common.model.adfbc.EproseedCoeCommonModel"
@@ -21,4 +54,17 @@
       <Attr Name="_SourceName" Value="eproseedcoecommonapp_eproseedcoecommonmodel_adflib.jar"/>
     </DesignTime>
   </AppContainee>
+  <AppContainee
+    Name="EproseedCoeCommonHRModel"
+    FullName="com.eproseed.coe.common.hrmodel.adfbc.EproseedCoeCommonHRModel"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="eproseedcoecommonapp_eproseedcoecommonhrmodel_adflib.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppModuleUsage
+    Name="CommonSharedService"
+    FullName="com.eproseed.coe.common.sharedmodel.adfbc.services.CommonSharedService"
+    ConfigurationName="com.eproseed.coe.common.sharedmodel.adfbc.services.CommonSharedServiceShared"
+    SharedScope="2"/>
 </JboProject>

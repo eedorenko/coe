@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="com.eproseed.coe.departments.model.adfbc.services.DepartmentsService">
+    <AppModuleConfig name="DepartmentsServiceLocal"
+                     jbo.project="com.eproseed.coe.departments.model.adfbc.EproseedCoeDepartmentsModel"
+                     ApplicationName="com.eproseed.coe.departments.model.adfbc.services.DepartmentsService"
+                     DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/HRDS"/>
+      <Security AppModuleJndiName="com.eproseed.coe.departments.model.adfbc.services.DepartmentsService"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="DepartmentsServiceShared"
+                     jbo.project="com.eproseed.coe.departments.model.adfbc.EproseedCoeDepartmentsModel"
+                     ApplicationName="com.eproseed.coe.departments.model.adfbc.services.DepartmentsService"
+                     DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/HRDS"/>
+      <Security AppModuleJndiName="com.eproseed.coe.departments.model.adfbc.services.DepartmentsService"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

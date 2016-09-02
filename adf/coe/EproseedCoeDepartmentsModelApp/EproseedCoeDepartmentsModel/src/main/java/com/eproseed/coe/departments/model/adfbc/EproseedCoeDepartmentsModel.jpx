@@ -11,10 +11,39 @@
     <Attr Name="_DTExpressionTypeChecking" Value="true"/>
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_jprName" Value="../../../../../../../../../EproseedCoeDepartmentsModel.jpr"/>
-    <Attr Name="_NamedConnection" Value="HRConn"/>
+    <Attr Name="_NamedConnection" Value="HR"/>
+    <Attr Name="_appModuleNames0" Value="com.eproseed.coe.departments.model.adfbc.services.DepartmentsService"/>
   </DesignTime>
+  <Containee
+    Name="services"
+    PackageName="com.eproseed.coe.departments.model.adfbc.services"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="views"
+    PackageName="com.eproseed.coe.departments.model.adfbc.views"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
   <AppContainee
     Name="EproseedCoeCommonModel"
     FullName="com.eproseed.coe.common.model.adfbc.EproseedCoeCommonModel"
-    ObjectType="JboProject"/>
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="eproseedcoecommonapp_eproseedcoecommonmodel_adflib.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
+    Name="EproseedCoeCommonHRModel"
+    FullName="com.eproseed.coe.common.hrmodel.adfbc.EproseedCoeCommonHRModel"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="eproseedcoecommonapp_eproseedcoecommonhrmodel_adflib.jar"/>
+    </DesignTime>
+  </AppContainee>
 </JboProject>

@@ -12,5 +12,30 @@
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_jprName" Value="../../../../../../../EproseedCoeCommonSharedModel.jpr"/>
     <Attr Name="_NamedConnection" Value="HRConn"/>
+    <Attr Name="_appModuleNames0" Value="com.eproseed.coe.common.sharedmodel.adfbc.services.CommonSharedService"/>
   </DesignTime>
+  <Containee
+    Name="services"
+    PackageName="com.eproseed.coe.common.sharedmodel.adfbc.services"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="lookup"
+    PackageName="com.eproseed.coe.common.sharedmodel.adfbc.views.lookup"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <AppContainee
+    Name="EproseedCoeCommonHRModel"
+    FullName="com.eproseed.coe.common.hrmodel.adfbc.EproseedCoeCommonHRModel"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="eproseedcoecommonapp_eproseedcoecommonhrmodel_adflib.jar"/>
+    </DesignTime>
+  </AppContainee>
 </JboProject>

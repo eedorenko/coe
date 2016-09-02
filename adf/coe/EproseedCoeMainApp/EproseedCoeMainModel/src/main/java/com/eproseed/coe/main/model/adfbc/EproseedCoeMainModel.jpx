@@ -23,6 +23,14 @@
     </DesignTime>
   </Containee>
   <AppContainee
+    Name="EproseedCoeEmployeesModel"
+    FullName="com.eproseed.coe.employees.model.adfbc.EproseedCoeEmployeesModel"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="eproseedcoeemployeesmodelapp_eproseedcoeemployeesmodel_adflib.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
     Name="EproseedCoeAssignmentsModel"
     FullName="com.eproseed.coe.assignments.model.adfbc.EproseedCoeAssignmentsModel"
     ObjectType="JboProject">
@@ -44,6 +52,14 @@
     ObjectType="JboProject">
     <DesignTime>
       <Attr Name="_SourceName" Value="eproseedcoecommonapp_eproseedcoecommonhrmodel_adflib.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
+    Name="EproseedCoeDepartmentsModel"
+    FullName="com.eproseed.coe.departments.model.adfbc.EproseedCoeDepartmentsModel"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="eproseedcoedepartmentsmodelapp_eproseedcoedepartmentsmodel_adflib.jar"/>
     </DesignTime>
   </AppContainee>
 </JboProject>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="EmployeesTaskFlow">
+    <template-reference>
+      <document>/WEB-INF/com/eproseed/coe/common/view/taskflowtemplates/advancedcrudflowtemplate/AdvancedCRUDFlowTemplate.xml</document>
+      <id>AdvancedCRUDFlowTemplate</id>
+    </template-reference>
+    <view id="BrowseView">
+      <page>/WEB-INF/com/eproseed/coe/employees/view/employeestaskflow/fragments/BrowseView.jsff</page>
+    </view>
+    <task-flow-call id="CreateFlowCall">
+      <task-flow-reference>
+        <document>/WEB-INF/com/eproseed/coe/employees/view/employeescreatetaskflow/EmployeesCreateTaskFlow.xml</document>
+        <id>EmployeesCreateTaskFlow</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="EditFlowCall">
+      <task-flow-reference>
+        <document>/WEB-INF/com/eproseed/coe/employees/view/employeesedittaskflow/EmployeesEditTaskFlow.xml</document>
+        <id>EmployeesEditTaskFlow</id>
+      </task-flow-reference>
+      <input-parameter id="__1">
+        <name>pKeyValue</name>
+        <value>#{requestScope.employeeId}</value>
+      </input-parameter>
+    </task-flow-call>
+    <method-call id="ExecuteBrowseVO">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>goBrowseView</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__2">
+      <from-activity-id>CreateFlowCall</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>Commit</from-outcome>
+        <to-activity-id>ExecuteBrowseVO</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>ExecuteBrowseVO</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>goBrowseView</from-outcome>
+        <to-activity-id>BrowseView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

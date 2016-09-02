@@ -262,6 +262,9 @@
                   <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonmodel_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoeassignmentsmodelapp_eproseedcoeassignmentsmodel_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonhrmodel_adflib.jar" jar-entry=""/>
+                  <url path="../../EproseedCoeLibs/eproseedcoeemployeesmodelapp_eproseedcoeemployeesmodel_adflib.jar" jar-entry=""/>
+                  <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonsharedmodel_adflib.jar" jar-entry=""/>
+                  <url path="../../EproseedCoeLibs/eproseedcoedepartmentsmodelapp_eproseedcoedepartmentsmodel_adflib.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF Library"/>

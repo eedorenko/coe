@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-template id="EditFlowTemplate">
+    <template-reference>
+      <document>/WEB-INF/com/eproseed/coe/common/view/taskflowtemplates/eproceedceobaseflowtemplate/EproceedCeoBaseFlowTemplate.xml</document>
+      <id>EproceedCeoBaseFlowTemplate</id>
+    </template-reference>
+    <default-activity>PrepareEdit</default-activity>
+    <input-parameter-definition id="__7">
+      <name>pKeyValue</name>
+      <value>#{pageFlowScope.editFlowTemplate.keyValue}</value>
+      <class>java.io.Serializable</class>
+      <required/>
+    </input-parameter-definition>
+    <managed-bean id="__6">
+      <managed-bean-name>editFlowTemplate</managed-bean-name>
+      <managed-bean-class>com.eproseed.coe.common.view.taskflowtemplates.editflowtemplate.EditFlowTemplate</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <method-call id="PrepareEdit"></method-call>
+    <view id="EditView"></view>
+    <task-flow-return id="Commit">
+      <outcome>
+        <name>Commit</name>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Rollback">
+      <outcome>
+        <name>Rollback</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__1">
+      <from-activity-id>PrepareEdit</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>goEditView</from-outcome>
+        <to-activity-id>EditView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>EditView</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>submit</from-outcome>
+        <to-activity-id>Commit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>Rollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-template>
+</adfc-config>

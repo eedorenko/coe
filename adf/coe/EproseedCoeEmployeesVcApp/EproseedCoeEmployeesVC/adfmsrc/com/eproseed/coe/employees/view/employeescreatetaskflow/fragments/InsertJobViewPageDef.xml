@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="InsertJobViewPageDef"
+                Package="com.eproseed.coe.employees.view.employeescreatetaskflow.fragments" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="com.eproseed.coe.common.view.pagetemplates.fragments.InsertWizardTemplatePageDef" id="ptb1"
+          Refresh="ifNeeded"/>
+    <iterator Binds="EmployeesService.EmployeesCreate" DataControl="EproseedCoeServiceDataControl" RangeSize="25"
+              id="EmployeesCreateIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmployeesCreateIterator" id="HireDate">
+      <AttrNames>
+        <Item Value="HireDate"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="EmployeesCreateIterator" StaticList="false" Uses="LOV_JobId" id="JobId"/>
+    <listOfValues IterBinding="EmployeesCreateIterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"/>
+    <attributeValues IterBinding="EmployeesCreateIterator" id="ManagerId">
+      <AttrNames>
+        <Item Value="ManagerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesCreateIterator" id="Salary">
+      <AttrNames>
+        <Item Value="Salary"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-template id="AdvancedCRUDFlowTemplate">
+    <template-reference>
+      <document>/WEB-INF/com/eproseed/coe/common/view/taskflowtemplates/eproceedceobaseflowtemplate/EproceedCeoBaseFlowTemplate.xml</document>
+      <id>EproceedCeoBaseFlowTemplate</id>
+    </template-reference>
+    <default-activity>BrowseView</default-activity>
+    <managed-bean id="__1">
+      <managed-bean-name>advancedCRUDFlowTemplate</managed-bean-name>
+      <managed-bean-class>com.eproseed.coe.common.view.taskflowtemplates.advancedcrudflowtemplate.AdvancedCRUDFlowTemplate</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="BrowseView"></view>
+    <method-call id="CreateSavePoint">
+      <method>#{pageFlowScope.advancedCRUDFlowTemplate.createSavePoint}</method>
+      <outcome>
+        <fixed-outcome>goRouter</fixed-outcome>
+      </outcome>
+    </method-call>
+    <router id="EditCreate">
+      <case id="__6">
+        <expression>#{requestScope.action=='create'}</expression>
+        <outcome>goCreate</outcome>
+      </case>
+      <case id="__7">
+        <expression>#{requestScope.action=='edit'}</expression>
+        <outcome>goEdit</outcome>
+      </case>
+      <default-outcome>goEdit</default-outcome>
+    </router>
+    <task-flow-call id="CreateFlowCall"></task-flow-call>
+    <task-flow-call id="EditFlowCall"></task-flow-call>
+    <method-call id="RestoreSavePoint">
+      <method>#{pageFlowScope.advancedCRUDFlowTemplate.restoreSavePoint}</method>
+      <outcome>
+        <fixed-outcome>goBrowseView</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__2">
+      <from-activity-id>BrowseView</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>goEditCreate</from-outcome>
+        <to-activity-id>CreateSavePoint</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>CreateSavePoint</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>goRouter</from-outcome>
+        <to-activity-id>EditCreate</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>EditCreate</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>goCreate</from-outcome>
+        <to-activity-id>CreateFlowCall</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__12">
+        <from-outcome>goEdit</from-outcome>
+        <to-activity-id>EditFlowCall</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>CreateFlowCall</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>Commit</from-outcome>
+        <to-activity-id>BrowseView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__13">
+      <from-activity-id>EditFlowCall</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome>Commit</from-outcome>
+        <to-activity-id>BrowseView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome>Rollback</from-outcome>
+        <to-activity-id>RestoreSavePoint</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__17">
+      <from-activity-id>RestoreSavePoint</from-activity-id>
+      <control-flow-case id="__18">
+        <from-outcome>goBrowseView</from-outcome>
+        <to-activity-id>BrowseView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-template>
+</adfc-config>
