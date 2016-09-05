@@ -211,56 +211,6 @@
     EntityAttrName="LastName"
     EntityUsage="Employees"
     AliasName="LAST_NAME"/>
-  <ViewAttribute
-    Name="StarttimeFormatted"
-    IsUpdateable="false"
-    IsSelected="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.sql.Timestamp"
-    ColumnType="DATE"
-    AliasName="VIEW_ATTR"
-    SQLType="DATE">
-    <TransientExpression
-      Name="ExpressionScript"
-      trustMode="untrusted"
-      CodeSourceName="AssignmentsRow"/>
-    <Dependencies>
-      <Item
-        Value="Starttime"/>
-    </Dependencies>
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="com.eproseed.coe.assignments.model.adfbc.views.Assignments.StarttimeFormatted_LABEL"/>
-        <FMT_FORMATTER
-          ResId="com.eproseed.coe.assignments.model.adfbc.views.Assignments.StarttimeFormatted_FMT_FORMATTER"/>
-        <FMT_FORMAT
-          ResId="com.eproseed.coe.assignments.model.adfbc.views.Assignments.StarttimeFormatted_FMT_FORMAT"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="FinishtimeFormatted"
-    IsUpdateable="false"
-    IsSelected="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.sql.Timestamp"
-    ColumnType="DATE"
-    AliasName="VIEW_ATTR"
-    SQLType="DATE">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="com.eproseed.coe.assignments.model.adfbc.views.Assignments.FinishtimeFormatted_LABEL"/>
-        <FMT_FORMAT
-          ResId="com.eproseed.coe.assignments.model.adfbc.views.Assignments.FinishtimeFormatted_FMT_FORMAT"/>
-        <FMT_FORMATTER
-          ResId="com.eproseed.coe.assignments.model.adfbc.views.Assignments.FinishtimeFormatted_FMT_FORMATTER"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
   <ClientInterface
     Name="__clientInterface">
     <Method

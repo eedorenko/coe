@@ -16,12 +16,8 @@
       </AttrNames>
     </attributeValues>
     <listOfValues IterBinding="EmployeesCreateIterator" StaticList="false" Uses="LOV_JobId" id="JobId"/>
+    <listOfValues IterBinding="EmployeesCreateIterator" StaticList="false" Uses="LOV_ManagerId" id="ManagerId"/>
     <listOfValues IterBinding="EmployeesCreateIterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"/>
-    <attributeValues IterBinding="EmployeesCreateIterator" id="ManagerId">
-      <AttrNames>
-        <Item Value="ManagerId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EmployeesCreateIterator" id="Salary">
       <AttrNames>
         <Item Value="Salary"/>
@@ -30,6 +26,21 @@
     <attributeValues IterBinding="EmployeesCreateIterator" id="JobTitle">
       <AttrNames>
         <Item Value="JobTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesCreateIterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesCreateIterator" id="ManagerFirstName">
+      <AttrNames>
+        <Item Value="ManagerFirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesCreateIterator" id="ManagerLastName">
+      <AttrNames>
+        <Item Value="ManagerLastName"/>
       </AttrNames>
     </attributeValues>
   </bindings>

@@ -40,6 +40,10 @@
     AMUsageName="CommonSharedService"
     ViewInstanceName="Jobs"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="EmployeesLookup"
+    ViewObjectName="com.eproseed.coe.employees.model.adfbc.views.EmployeesList"
+    RowLevelBinds="false"/>
   <ListBinding
     Name="LOV_DepartmentId"
     ListVOName="DepartmentsLookup"
@@ -73,6 +77,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="JobTitle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ManagerId"
+    ListVOName="EmployeesLookup"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ManagerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -114,6 +137,25 @@
       </AttrArray>
       <AttrArray Name="_srcAttributes">
         <Item Value="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees.DepartmentId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="Employees1"
+    Entity="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees"
+    Association="com.eproseed.coe.common.hrmodel.adfbc.entities.associations.EmployeeHasManagerFkAssoc"
+    AssociationEnd="com.eproseed.coe.common.hrmodel.adfbc.entities.associations.EmployeeHasManagerFkAssoc.ManagerIdEmployees"
+    SourceUsage="com.eproseed.coe.employees.model.adfbc.views.EmployeesRecord.Employees"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees.EmployeeId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees.ManagerId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>
@@ -192,7 +234,15 @@
     PrecisionRule="true"
     EntityAttrName="ManagerId"
     EntityUsage="Employees"
-    AliasName="MANAGER_ID"/>
+    AliasName="MANAGER_ID"
+    LOVName="LOV_ManagerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PhoneNumber"
     PrecisionRule="true"
@@ -233,6 +283,26 @@
     EntityAttrName="DepartmentId"
     EntityUsage="Departments"
     AliasName="DEPARTMENT_ID1"/>
+  <ViewAttribute
+    Name="ManagerFirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="Employees1"
+    AliasName="FIRST_NAME1"/>
+  <ViewAttribute
+    Name="EmployeeId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="Employees1"
+    AliasName="EMPLOYEE_ID1"/>
+  <ViewAttribute
+    Name="ManagerLastName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="Employees1"
+    AliasName="LAST_NAME1"/>
   <ViewCriteria
     Name="CurrentRecordViewCriteria"
     ViewObjectName="com.eproseed.coe.employees.model.adfbc.views.EmployeesRecord"

@@ -1,61 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:Eproseed-Coe-Components="/eproseedCoeCompLib">
     <af:pageTemplate viewId="/com/eproseed/coe/common/view/pagetemplates/fragments/SimpleEditTemplate.jsf"
                      value="#{bindings.ptb1}" id="pt1">
         <f:facet name="centerContent">
             <af:panelFormLayout id="pfl1">
-                <af:inputText value="#{bindings.CommissionPct.inputValue}" label="#{bindings.CommissionPct.hints.label}"
-                              required="#{bindings.CommissionPct.hints.mandatory}"
-                              columns="#{bindings.CommissionPct.hints.displayWidth}"
-                              maximumLength="#{bindings.CommissionPct.hints.precision}"
-                              shortDesc="#{bindings.CommissionPct.hints.tooltip}" id="it1">
-                    <f:validator binding="#{bindings.CommissionPct.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.CommissionPct.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.DepartmentId.inputValue}" label="#{bindings.DepartmentId.hints.label}"
-                              required="#{bindings.DepartmentId.hints.mandatory}"
-                              columns="#{bindings.DepartmentId.hints.displayWidth}"
-                              maximumLength="#{bindings.DepartmentId.hints.precision}"
-                              shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="it2">
-                    <f:validator binding="#{bindings.DepartmentId.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
-                              required="#{bindings.Email.hints.mandatory}"
-                              columns="#{bindings.Email.hints.displayWidth}"
-                              maximumLength="#{bindings.Email.hints.precision}"
-                              shortDesc="#{bindings.Email.hints.tooltip}" id="it3">
-                    <f:validator binding="#{bindings.Email.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.EmployeeId.inputValue}" label="#{bindings.EmployeeId.hints.label}"
-                              required="#{bindings.EmployeeId.hints.mandatory}"
-                              columns="#{bindings.EmployeeId.hints.displayWidth}"
-                              maximumLength="#{bindings.EmployeeId.hints.precision}"
-                              shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it4">
-                    <f:validator binding="#{bindings.EmployeeId.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
-                </af:inputText>
                 <af:inputText value="#{bindings.FirstName.inputValue}" label="#{bindings.FirstName.hints.label}"
                               required="#{bindings.FirstName.hints.mandatory}"
                               columns="#{bindings.FirstName.hints.displayWidth}"
                               maximumLength="#{bindings.FirstName.hints.precision}"
                               shortDesc="#{bindings.FirstName.hints.tooltip}" id="it5">
                     <f:validator binding="#{bindings.FirstName.validator}"/>
-                </af:inputText>
-                <af:inputDate value="#{bindings.HireDate.inputValue}" label="#{bindings.HireDate.hints.label}"
-                              required="#{bindings.HireDate.hints.mandatory}"
-                              columns="#{bindings.HireDate.hints.displayWidth}"
-                              shortDesc="#{bindings.HireDate.hints.tooltip}" id="id1">
-                    <f:validator binding="#{bindings.HireDate.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.HireDate.format}"/>
-                </af:inputDate>
-                <af:inputText value="#{bindings.JobId.inputValue}" label="#{bindings.JobId.hints.label}"
-                              required="#{bindings.JobId.hints.mandatory}"
-                              columns="#{bindings.JobId.hints.displayWidth}"
-                              maximumLength="#{bindings.JobId.hints.precision}"
-                              shortDesc="#{bindings.JobId.hints.tooltip}" id="it6">
-                    <f:validator binding="#{bindings.JobId.validator}"/>
                 </af:inputText>
                 <af:inputText value="#{bindings.LastName.inputValue}" label="#{bindings.LastName.hints.label}"
                               required="#{bindings.LastName.hints.mandatory}"
@@ -64,13 +19,12 @@
                               shortDesc="#{bindings.LastName.hints.tooltip}" id="it7">
                     <f:validator binding="#{bindings.LastName.validator}"/>
                 </af:inputText>
-                <af:inputText value="#{bindings.ManagerId.inputValue}" label="#{bindings.ManagerId.hints.label}"
-                              required="#{bindings.ManagerId.hints.mandatory}"
-                              columns="#{bindings.ManagerId.hints.displayWidth}"
-                              maximumLength="#{bindings.ManagerId.hints.precision}"
-                              shortDesc="#{bindings.ManagerId.hints.tooltip}" id="it8">
-                    <f:validator binding="#{bindings.ManagerId.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.ManagerId.format}"/>
+                <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                              required="#{bindings.Email.hints.mandatory}"
+                              columns="#{bindings.Email.hints.displayWidth}"
+                              maximumLength="#{bindings.Email.hints.precision}"
+                              shortDesc="#{bindings.Email.hints.tooltip}" id="it3">
+                    <f:validator binding="#{bindings.Email.validator}"/>
                 </af:inputText>
                 <af:inputText value="#{bindings.PhoneNumber.inputValue}" label="#{bindings.PhoneNumber.hints.label}"
                               required="#{bindings.PhoneNumber.hints.mandatory}"
@@ -79,48 +33,46 @@
                               shortDesc="#{bindings.PhoneNumber.hints.tooltip}" id="it9">
                     <f:validator binding="#{bindings.PhoneNumber.validator}"/>
                 </af:inputText>
+                <af:inputDate value="#{bindings.HireDate.inputValue}" label="#{bindings.HireDate.hints.label}"
+                              required="#{bindings.HireDate.hints.mandatory}"
+                              columns="#{bindings.HireDate.hints.displayWidth}"
+                              shortDesc="#{bindings.HireDate.hints.tooltip}" id="id1">
+                    <f:validator binding="#{bindings.HireDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.HireDate.format}"/>
+                </af:inputDate>
+                <Eproseed-Coe-Components:CoeLookup id="cl1" popupTitle="Select job" value="#{bindings.JobId.inputValue}"
+                                                   label="#{bindings.JobId.hints.label}"
+                                                   model="#{bindings.JobId.listOfValuesModel}"
+                                                   columns="#{bindings.JobId.hints.displayWidth}"
+                                                   descrValue="#{bindings.JobTitle.inputValue}"
+                                                   valueBinding="#{bindings.JobId}"/>
+                <Eproseed-Coe-Components:CoeLookup id="cl2" popupTitle="Select department"
+                                                   value="#{bindings.DepartmentId.inputValue}"
+                                                   label="#{bindings.DepartmentId.hints.label}"
+                                                   model="#{bindings.DepartmentId.listOfValuesModel}"
+                                                   columns="#{bindings.DepartmentId.hints.displayWidth}"
+                                                   descrValue="#{bindings.DepartmentName.inputValue}"
+                                                   valueBinding="#{bindings.DepartmentId}"/>
+                <Eproseed-Coe-Components:CoeLookup id="cl3" popupTitle="Select manager"
+                                                   value="#{bindings.ManagerId.inputValue}"
+                                                   label="#{bindings.ManagerId.hints.label}"
+                                                   model="#{bindings.ManagerId.listOfValuesModel}"
+                                                   columns="#{bindings.ManagerId.hints.displayWidth}"
+                                                   descrValue="#{bindings.ManagerFirstName.inputValue} #{bindings.ManagerLastName.inputValue}"
+                                                   valueBinding="#{bindings.ManagerId}"/>
                 <af:inputText value="#{bindings.Salary.inputValue}" label="#{bindings.Salary.hints.label}"
                               required="#{bindings.Salary.hints.mandatory}"
                               columns="#{bindings.Salary.hints.displayWidth}"
                               maximumLength="#{bindings.Salary.hints.precision}"
-                              shortDesc="#{bindings.Salary.hints.tooltip}" id="it10">
+                              shortDesc="#{bindings.Salary.hints.tooltip}" id="it2" simple="true">
                     <f:validator binding="#{bindings.Salary.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Salary.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.JobTitle.inputValue}" label="#{bindings.JobTitle.hints.label}"
-                              required="#{bindings.JobTitle.hints.mandatory}"
-                              columns="#{bindings.JobTitle.hints.displayWidth}"
-                              maximumLength="#{bindings.JobTitle.hints.precision}"
-                              shortDesc="#{bindings.JobTitle.hints.tooltip}" id="it11">
-                    <f:validator binding="#{bindings.JobTitle.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.JobId1.inputValue}" label="#{bindings.JobId1.hints.label}"
-                              required="#{bindings.JobId1.hints.mandatory}"
-                              columns="#{bindings.JobId1.hints.displayWidth}"
-                              maximumLength="#{bindings.JobId1.hints.precision}"
-                              shortDesc="#{bindings.JobId1.hints.tooltip}" id="it12">
-                    <f:validator binding="#{bindings.JobId1.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.DepartmentName.inputValue}"
-                              label="#{bindings.DepartmentName.hints.label}"
-                              required="#{bindings.DepartmentName.hints.mandatory}"
-                              columns="#{bindings.DepartmentName.hints.displayWidth}"
-                              maximumLength="#{bindings.DepartmentName.hints.precision}"
-                              shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it13">
-                    <f:validator binding="#{bindings.DepartmentName.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.DepartmentId1.inputValue}" label="#{bindings.DepartmentId1.hints.label}"
-                              required="#{bindings.DepartmentId1.hints.mandatory}"
-                              columns="#{bindings.DepartmentId1.hints.displayWidth}"
-                              maximumLength="#{bindings.DepartmentId1.hints.precision}"
-                              shortDesc="#{bindings.DepartmentId1.hints.tooltip}" id="it14">
-                    <f:validator binding="#{bindings.DepartmentId1.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId1.format}"/>
                 </af:inputText>
                 <af:listView value="#{bindings.Colleagues.collectionModel}" var="item"
                              emptyText="#{bindings.Colleagues.viewable ? 'No data to display.' : 'Access Denied.'}"
                              fetchSize="#{bindings.Colleagues.rangeSize}" id="lv1">
-                    <af:listItem id="li1" rendered="#{bindings.EmployeeId.inputValue != item.bindings.EmployeeId.inputValue}">
+                    <af:listItem id="li1"
+                                 rendered="#{bindings.EmployeeId.inputValue != item.bindings.EmployeeId.inputValue}">
                         <af:panelGroupLayout layout="horizontal" id="pgl1">
                             <f:facet name="separator">
                                 <af:spacer width="10" id="s1"/>
@@ -135,6 +87,5 @@
                 </af:listView>
             </af:panelFormLayout>
         </f:facet>
-        
     </af:pageTemplate>
 </ui:composition>

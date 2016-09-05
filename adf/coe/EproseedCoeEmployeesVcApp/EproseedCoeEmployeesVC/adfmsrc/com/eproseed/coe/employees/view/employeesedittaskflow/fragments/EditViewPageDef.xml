@@ -17,11 +17,10 @@
         <Item Value="CommissionPct"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="EmployeesEditIterator" id="DepartmentId">
-      <AttrNames>
-        <Item Value="DepartmentId"/>
-      </AttrNames>
-    </attributeValues>
+    <listOfValues IterBinding="EmployeesEditIterator" StaticList="false" Uses="LOV_JobId" id="JobId"/>
+    <listOfValues IterBinding="EmployeesEditIterator" StaticList="false" Uses="LOV_ManagerId" id="ManagerId"/>
+    <listOfValues IterBinding="EmployeesEditIterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"/>
+
     <attributeValues IterBinding="EmployeesEditIterator" id="Email">
       <AttrNames>
         <Item Value="Email"/>
@@ -42,19 +41,9 @@
         <Item Value="HireDate"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="EmployeesEditIterator" id="JobId">
-      <AttrNames>
-        <Item Value="JobId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EmployeesEditIterator" id="LastName">
       <AttrNames>
         <Item Value="LastName"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EmployeesEditIterator" id="ManagerId">
-      <AttrNames>
-        <Item Value="ManagerId"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="EmployeesEditIterator" id="PhoneNumber">
@@ -87,6 +76,17 @@
         <Item Value="DepartmentId1"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="EmployeesEditIterator" id="ManagerFirstName">
+      <AttrNames>
+        <Item Value="ManagerFirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesEditIterator" id="ManagerLastName">
+      <AttrNames>
+        <Item Value="ManagerLastName"/>
+      </AttrNames>
+    </attributeValues>
+
     <tree IterBinding="ColleaguesIterator" id="Colleagues">
       <nodeDefinition DefName="com.eproseed.coe.employees.model.adfbc.views.EmployeesList" Name="Colleagues0">
         <AttrNames>

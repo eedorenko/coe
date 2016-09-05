@@ -12,17 +12,13 @@
                     <f:validator binding="#{bindings.BusinessDate.validator}"/>
                     <af:convertDateTime pattern="#{bindings.BusinessDate.format}"/>
                 </af:inputDate>
-                <af:inputComboboxListOfValues id="employeeIdId"
-                                              popupTitle="Search and Select: #{bindings.EmployeeId.hints.label}"
-                                              value="#{bindings.EmployeeId.inputValue}"
-                                              label="#{bindings.EmployeeId.hints.label}"
-                                              model="#{bindings.EmployeeId.listOfValuesModel}"
-                                              required="#{bindings.EmployeeId.hints.mandatory}"
-                                              columns="#{bindings.EmployeeId.hints.displayWidth}"
-                                              shortDesc="#{bindings.EmployeeId.hints.tooltip}">
-                    <f:validator binding="#{bindings.EmployeeId.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
-                </af:inputComboboxListOfValues>
+                <Eproseed-Coe-Components:CoeLookup id="cl1" popupTitle="Select employee"
+                                                   value="#{bindings.EmployeeId.inputValue}"
+                                                   label="#{bindings.EmployeeId.hints.label}"
+                                                   model="#{bindings.EmployeeId.listOfValuesModel}"
+                                                   columns="#{bindings.EmployeeId.hints.displayWidth}"
+                                                   valueBinding="#{bindings.EmployeeId}"
+                                                   descrValue="#{bindings.FirstName.inputValue} #{bindings.LastName.inputValue}"/>
                 <af:selectOneChoice value="#{bindings.ProjectId.inputValue}" label="#{bindings.ProjectId.label}"
                                     required="#{bindings.ProjectId.hints.mandatory}"
                                     shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1">
@@ -33,21 +29,6 @@
                                                        valueBinding="#{bindings.Starttime}"/>
                 <Eproseed-Coe-Components:CoeTimePicker id="ctp2" label="#{bindings.Finishtime.hints.label}"
                                                        valueBinding="#{bindings.Finishtime}"/>
-
-                <af:inputDate value="#{bindings.Starttime.inputValue}" label="#{bindings.Starttime.hints.label}"
-                              required="#{bindings.Starttime.hints.mandatory}"
-                              columns="#{bindings.Starttime.hints.displayWidth}"
-                              shortDesc="#{bindings.Starttime.hints.tooltip}" id="id2">
-                    <f:validator binding="#{bindings.Starttime.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.Starttime.format}"/>
-                </af:inputDate>
-                <af:inputDate value="#{bindings.Finishtime.inputValue}" label="#{bindings.Finishtime.hints.label}"
-                              required="#{bindings.Finishtime.hints.mandatory}"
-                              columns="#{bindings.Finishtime.hints.displayWidth}"
-                              shortDesc="#{bindings.Finishtime.hints.tooltip}" id="id3">
-                    <f:validator binding="#{bindings.Finishtime.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.Finishtime.format}"/>
-                </af:inputDate>
             </af:panelFormLayout>
         </f:facet>
     </af:pageTemplate>

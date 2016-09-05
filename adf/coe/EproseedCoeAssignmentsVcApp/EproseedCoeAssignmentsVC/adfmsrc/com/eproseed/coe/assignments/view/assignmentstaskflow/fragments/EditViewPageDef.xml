@@ -28,5 +28,16 @@
         <Item Value="Finishtime"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="AssignmentsIterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AssignmentsIterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+
   </bindings>
 </pageDefinition>
