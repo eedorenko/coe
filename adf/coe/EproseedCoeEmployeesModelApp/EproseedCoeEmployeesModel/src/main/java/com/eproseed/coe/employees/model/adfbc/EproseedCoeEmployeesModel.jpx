@@ -23,6 +23,14 @@
     </DesignTime>
   </Containee>
   <Containee
+    Name="links"
+    PackageName="com.eproseed.coe.employees.model.adfbc.views.links"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="lookup"
     PackageName="com.eproseed.coe.employees.model.adfbc.views.lookup"
     ObjectType="JboPackage">

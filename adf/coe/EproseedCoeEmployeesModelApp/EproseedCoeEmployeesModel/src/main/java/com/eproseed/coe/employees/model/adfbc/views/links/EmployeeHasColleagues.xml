@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeeHasColleagues"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.eproseed.coe.employees.model.adfbc.views.links.EmployeeHasColleagues_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="EmployeesRecord"
+    Cardinality="1"
+    Source="true"
+    Owner="com.eproseed.coe.employees.model.adfbc.views.EmployeesRecord">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="EmployeesRecord"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.employees.model.adfbc.views.EmployeesRecord.DepartmentId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EmployeesList"
+    Cardinality="-1"
+    Owner="com.eproseed.coe.employees.model.adfbc.views.EmployeesList">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="EmployeesList"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.employees.model.adfbc.views.EmployeesList.DepartmentId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.eproseed.coe.employees.model.adfbc.EproseedCoeEmployeesModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

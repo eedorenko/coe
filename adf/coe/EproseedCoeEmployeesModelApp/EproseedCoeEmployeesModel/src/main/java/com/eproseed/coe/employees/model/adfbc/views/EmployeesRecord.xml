@@ -107,7 +107,7 @@
     ReadOnly="true"
     Reference="true"
     DeleteParticipant="false"
-    JoinType="INNER JOIN">
+    JoinType="LEFT OUTER JOIN">
     <DesignTime>
       <AttrArray Name="_dstAttributes">
         <Item Value="com.eproseed.coe.common.hrmodel.adfbc.entities.Departments.DepartmentId"/>
@@ -272,8 +272,23 @@
   <AttrArray Name="KeyAttributes">
     <Item Value="EmployeeId"/>
   </AttrArray>
+  <ViewLinkAccessor
+    Name="EmployeesList"
+    ViewLink="com.eproseed.coe.employees.model.adfbc.views.links.EmployeeHasColleagues"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ClientInterface
     Name="__clientInterface">
+    <Method
+      Name="findEmployee"
+      MethodName="findEmployee">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="employeeId"
+        Type="java.lang.Long"/>
+    </Method>
     <Method
       Name="findEmployee"
       MethodName="findEmployee">

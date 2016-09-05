@@ -117,6 +117,22 @@
                     <f:validator binding="#{bindings.DepartmentId1.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId1.format}"/>
                 </af:inputText>
+                <af:listView value="#{bindings.Colleagues.collectionModel}" var="item"
+                             emptyText="#{bindings.Colleagues.viewable ? 'No data to display.' : 'Access Denied.'}"
+                             fetchSize="#{bindings.Colleagues.rangeSize}" id="lv1">
+                    <af:listItem id="li1" rendered="#{bindings.EmployeeId.inputValue != item.bindings.EmployeeId.inputValue}">
+                        <af:panelGroupLayout layout="horizontal" id="pgl1">
+                            <f:facet name="separator">
+                                <af:spacer width="10" id="s1"/>
+                            </f:facet>
+                            <af:outputFormatted value="#{item.bindings.FirstName.inputValue}" id="of1"/>
+                            <af:outputFormatted value="#{item.bindings.LastName.inputValue}" id="of2"/>
+                            <af:outputFormatted value="#{item.bindings.Email.inputValue}" id="of3"/>
+                            <af:outputFormatted value="#{item.bindings.PhoneNumber.inputValue}" id="of4"/>
+                            <af:outputFormatted value="#{item.bindings.JobTitle.inputValue}" id="of5"/>
+                        </af:panelGroupLayout>
+                    </af:listItem>
+                </af:listView>
             </af:panelFormLayout>
         </f:facet>
         

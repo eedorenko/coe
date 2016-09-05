@@ -25,12 +25,12 @@
   <EntityUsage
     Name="Employees"
     Entity="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees"/>
-  <EntityUsage
+    <EntityUsage
     Name="Jobs"
     Entity="com.eproseed.coe.common.hrmodel.adfbc.entities.Jobs"
     Association="com.eproseed.coe.common.hrmodel.adfbc.entities.associations.EmployeeHasJobFkAssoc"
     AssociationEnd="com.eproseed.coe.common.hrmodel.adfbc.entities.associations.EmployeeHasJobFkAssoc.Jobs"
-    SourceUsage="com.eproseed.coe.employees.model.adfbc.views.EmployeesList.Employees"
+      SourceUsage="com.eproseed.coe.employees.model.adfbc.views.EmployeesList.Employees"
     ReadOnly="true"
     Reference="true"
     DeleteParticipant="false"
@@ -53,7 +53,7 @@
     ReadOnly="true"
     Reference="true"
     DeleteParticipant="false"
-    JoinType="INNER JOIN">
+    JoinType="LEFT OUTER JOIN">
     <DesignTime>
       <AttrArray Name="_dstAttributes">
         <Item Value="com.eproseed.coe.common.hrmodel.adfbc.entities.Departments.DepartmentId"/>

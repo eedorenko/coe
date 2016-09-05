@@ -8,6 +8,8 @@
           Refresh="ifNeeded"/>
     <iterator Binds="EmployeesService.EmployeesEdit" DataControl="EproseedCoeServiceDataControl" RangeSize="25"
               id="EmployeesEditIterator"/>
+    <iterator Binds="EmployeesService.Colleagues" DataControl="EproseedCoeServiceDataControl" RangeSize="25"
+              id="ColleaguesIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmployeesEditIterator" id="CommissionPct">
@@ -85,5 +87,17 @@
         <Item Value="DepartmentId1"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="ColleaguesIterator" id="Colleagues">
+      <nodeDefinition DefName="com.eproseed.coe.employees.model.adfbc.views.EmployeesList" Name="Colleagues0">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="JobTitle"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

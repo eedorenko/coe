@@ -30,6 +30,15 @@
     Name="EmployeesCreate"
     ViewObjectName="com.eproseed.coe.employees.model.adfbc.views.EmployeesRecord"
     MaxFetchSize="0"/>
+  <ViewUsage
+    Name="Colleagues"
+    ViewObjectName="com.eproseed.coe.employees.model.adfbc.views.EmployeesList"/>
+  <ViewLinkUsage
+    Name="EmployeeHasColleagues1"
+    ViewLinkObjectName="com.eproseed.coe.employees.model.adfbc.views.links.EmployeeHasColleagues"
+    SrcViewUsageName="com.eproseed.coe.employees.model.adfbc.services.EmployeesService.EmployeesEdit"
+    DstViewUsageName="com.eproseed.coe.employees.model.adfbc.services.EmployeesService.Colleagues"
+    Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.eproseed.coe.employees.model.adfbc.EproseedCoeEmployeesModelBundle"/>
