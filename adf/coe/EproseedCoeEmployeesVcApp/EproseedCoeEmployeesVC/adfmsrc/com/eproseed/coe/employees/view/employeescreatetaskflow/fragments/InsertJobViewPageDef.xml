@@ -26,6 +26,11 @@
       <AttrNames>
         <Item Value="Salary"/>
       </AttrNames>
+  </attributeValues>
+    <attributeValues IterBinding="EmployeesCreateIterator" id="JobTitle">
+      <AttrNames>
+        <Item Value="JobTitle"/>
+      </AttrNames>
     </attributeValues>
   </bindings>
 </pageDefinition>

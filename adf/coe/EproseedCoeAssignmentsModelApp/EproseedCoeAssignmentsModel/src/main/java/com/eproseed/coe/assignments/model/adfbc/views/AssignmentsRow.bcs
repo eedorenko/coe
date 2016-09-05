@@ -1,0 +1,12 @@
+//Groovy Scripts for com.eproseed.coe.assignments.model.adfbc.views.Assignments
+
+package com.eproseed.coe.assignments.model.adfbc.views
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="StarttimeFormatted")
+def StarttimeFormatted_ExpressionScript_Expression()
+{
+Starttime
+}
+

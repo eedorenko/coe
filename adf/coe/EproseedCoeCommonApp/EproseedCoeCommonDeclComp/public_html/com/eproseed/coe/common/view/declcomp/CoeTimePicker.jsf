@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:componentDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" componentVar="comp" definition="private"
+                 xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>CoeTimePicker</afc:display-name>
+            <afc:attribute>
+                <afc:attribute-name>valueBinding</afc:attribute-name>
+                <afc:attribute-class>oracle.jbo.uicli.binding.JUCtrlAttrsBinding</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>label</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+
+            <afc:component-extension>
+                <afc:component-tag-namespace>com.eproseed.coe.common.view.declcomp</afc:component-tag-namespace>
+                <afc:component-taglib-uri>/eproseedCoeCompLib</afc:component-taglib-uri>
+            </afc:component-extension>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelLabelAndMessage label="#{attrs.label}" id="pll1">
+        <af:panelGroupLayout id="dc_pgl1" layout="horizontal">
+            <af:inputNumberSpinbox simple="true" id="dc_ins1" value="#{backingBeanScope.coeTimePicker.hours}"
+                                   minimum="0" maximum="23"/>
+            <af:spacer width="10" height="10" id="dc_s1"/>
+            <af:inputNumberSpinbox simple="true" id="dc_ins2" value="#{backingBeanScope.coeTimePicker.minutes}"
+                                   minimum="0" maximum="59">
+             <af:convertNumber groupingUsed="false" minIntegerDigits="2" maxIntegerDigits="2"/>                      
+            </af:inputNumberSpinbox>                       
+
+        </af:panelGroupLayout>
+    </af:panelLabelAndMessage>
+    
+</af:componentDef>

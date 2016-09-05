@@ -93,10 +93,6 @@
           ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Starttime_LABEL"/>
         <LABEL_PLURAL
           ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Starttime_LABEL_PLURAL"/>
-        <FMT_FORMATTER
-          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Starttime_FMT_FORMATTER"/>
-        <FMT_FORMAT
-          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Starttime_FMT_FORMAT"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -112,10 +108,6 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Finishtime_LABEL"/>
-        <FMT_FORMAT
-          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Finishtime_FMT_FORMAT"/>
-        <FMT_FORMATTER
-          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.Finishtime_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>

@@ -46,12 +46,12 @@
                <f:facet name="filter">
                   <af:inputDate value="#{bindings.AssignmentsQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.Starttime.value}"
                                 id="id2">
-                     <af:convertDateTime pattern="#{bindings.Assignments.hints.Starttime.format}"/>
+                     <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
                </f:facet>
                <af:outputText value="#{row.Starttime}" shortDesc="#{bindings.Assignments.hints.Starttime.tooltip}"
                               id="ot5">
-                  <af:convertDateTime pattern="#{bindings.Assignments.hints.Starttime.format}"/>
+                  <af:convertDateTime pattern="HH:mm"/>
                </af:outputText>
             </af:column>
             <af:column sortProperty="#{bindings.Assignments.hints.Finishtime.name}" filterable="true" sortable="true"

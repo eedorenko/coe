@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<declarativeCompDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/declarativecomp">
+  <declarativecomp-jsp-ui-def>/com/eproseed/coe/common/view/declcomp/CoeTimePicker.jsf</declarativecomp-jsp-ui-def>
+  <declarativecomp-jsp-ui-def>/com/eproseed/coe/common/view/declcomp/CoeLookup.jsf</declarativecomp-jsp-ui-def>
+  <declarativecomp-taglib>
+    <taglib-name>Eproseed Coe Components</taglib-name>
+    <taglib-uri>/eproseedCoeCompLib</taglib-uri>
+  </declarativecomp-taglib>
+</declarativeCompDefs>

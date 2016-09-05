@@ -4,6 +4,10 @@
       <entries>
          <Item path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonhrmodel_adflib.jar" jar-entry=""/>
          <Item path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonmodel_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonsharedmodel_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonvc_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoedepartmentsmodelapp_eproseedcoedepartmentsmodel_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoeemployeesmodelapp_eproseedcoeemployeesmodel_adflib.jar" jar-entry=""/>
       </entries>
    </classPath>
    <docPath/>

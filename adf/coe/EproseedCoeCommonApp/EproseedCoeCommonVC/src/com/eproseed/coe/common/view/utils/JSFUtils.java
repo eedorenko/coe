@@ -7,6 +7,12 @@ import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
+import javax.el.ELContext;
+
+import javax.el.ExpressionFactory;
+
+import javax.el.ValueExpression;
+
 import javax.faces.application.Application;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
@@ -363,4 +369,14 @@ public class JSFUtils {
         FacesContext fc = FacesContext.getCurrentInstance();
         fc.renderResponse();
     }
+    
+    
+    public static Object getValueObject(String expr, Class returnType){
+              FacesContext fc = FacesContext.getCurrentInstance();
+              ELContext elctx  = fc.getELContext();
+              ExpressionFactory elFactory = fc.getApplication().getExpressionFactory();
+              ValueExpression valueExpr = elFactory.createValueExpression(elctx,expr,returnType);
+              return valueExpr.getValue(elctx);
+    }
+    
 }

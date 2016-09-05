@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:componentDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" componentVar="comp" definition="private"
+                 xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>CoeLookup</afc:display-name>
+            <afc:attribute>
+                <afc:attribute-name>value</afc:attribute-name>
+                <afc:attribute-class>java.lang.Object</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>model</afc:attribute-name>
+                <afc:attribute-class>java.lang.Object</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>descrValue</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>popupTitle</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>label</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>columns</afc:attribute-name>
+                <afc:attribute-class>java.lang.Object</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>autoSubmit</afc:attribute-name>
+                <afc:attribute-class>java.lang.Boolean</afc:attribute-class>
+                <afc:default-value>true</afc:default-value>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>immediate</afc:attribute-name>
+                <afc:attribute-class>java.lang.Boolean</afc:attribute-class>
+                <afc:default-value>false</afc:default-value>
+            </afc:attribute>
+            <afc:component-extension>
+                <afc:component-tag-namespace>com.eproseed.coe.common.view.declcomp</afc:component-tag-namespace>
+                <afc:component-taglib-uri>/eproseedCoeCompLib</afc:component-taglib-uri>
+            </afc:component-extension>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelLabelAndMessage label="#{attrs.label}" id="pll1">
+        <af:panelGroupLayout id="dc_pgl1" layout="horizontal">
+            <af:inputComboboxListOfValues label="#{attrs.label}" popupTitle="#{attrs.popupTitle}" id="dc_iclov1"
+                                          model="#{attrs.model}" value="#{attrs.value}" columns="#{attrs.columns}"
+                                          autoSubmit="#{attrs.autoSubmit}" immediate="#{attrs.immediate}"
+                                          simple="true"/>
+            <af:spacer width="10" height="10" id="dc_s1"/>
+            <af:outputText value="#{attrs.descrValue}" partialTriggers="dc_iclov1"
+              inlineStyle="font-weight:bold;" id="dc_ot1"/>
+            
+            <!--
+            <af:outputText value="#{attrs.descrValue}" partialTriggers="dc_iclov1"
+                           inlineStyle="font-weight:bold;" id="dc_ot1"/>-->
+        </af:panelGroupLayout>
+    </af:panelLabelAndMessage>
+</af:componentDef>
