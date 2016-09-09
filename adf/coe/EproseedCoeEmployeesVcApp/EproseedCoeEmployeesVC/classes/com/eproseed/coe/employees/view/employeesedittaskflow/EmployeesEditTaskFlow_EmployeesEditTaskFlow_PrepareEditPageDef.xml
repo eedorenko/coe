@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47"
+                id="EmployeesEditTaskFlow_EmployeesEditTaskFlow_PrepareEditPageDef"
+                Package="com.eproseed.coe.employees.view.employeesedittaskflow" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+       <methodAction id="findEmployee" RequiresUpdateModel="true" Action="invokeMethod" MethodName="findEmployee"
+                  IsViewObjectMethod="true" DataControl="EproseedCoeServiceDataControl"
+                  InstanceName="data.EproseedCoeServiceDataControl.dataProvider.Root.EmployeesService.EmployeesEdit">
+             <NamedData NDName="employeeId" NDValue="#{pageFlowScope.editFlowTemplate.keyValue}" NDType="java.lang.Long"/>
+   </methodAction>  
+   </bindings>
+</pageDefinition>

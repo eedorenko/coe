@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="BrowseViewPageDef"
+                Package="com.eproseed.coe.employees.view.employeestaskflow.fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeesService.EmployeesList" DataControl="EproseedCoeServiceDataControl" RangeSize="25"
+              id="EmployeesListIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesListIterator" id="EmployeesList">
+      <nodeDefinition DefName="com.eproseed.coe.employees.model.adfbc.views.EmployeesList" Name="EmployeesList0">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="Salary"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="JobTitle"/>
+          <Item Value="DepartmentName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>eproseed-coe-skin.desktop</id>
+    <family>eproseed-coe-skin</family>
+    <extends>alta-v1.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>skins/eproseed-coe-skin/eproseed-coe-skin.css</style-sheet-name>
+    <bundle-name>com.eproseed.coe.common.view.skin.skinBundle</bundle-name>
+    <metadata>
+      <description-bundle>com.eproseed.coe.common.view.skin.skinBundle</description-bundle>
+    </metadata>
+  </skin>
+</skins>

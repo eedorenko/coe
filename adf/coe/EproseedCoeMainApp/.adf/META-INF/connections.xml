@@ -23,6 +23,28 @@
       </StringRefAddr>
     </RefAddresses>
   </Reference>
+  <Reference name="GeoCoderUrl" className="oracle.adf.model.connection.url.HttpURLConnection" partial="false"
+             manageInOracleEnterpriseManager="true" deployable="true" xmlns="">
+    <Factory className="oracle.adf.model.connection.url.URLConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="GeoCoderUrl">
+        <Contents>
+          <urlconnection name="GeoCoderUrl" url="http://elocation.oracle.com/geocoder/gcserver"/>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="MapViewerUrl" className="oracle.adf.model.connection.url.HttpURLConnection" partial="false"
+             manageInOracleEnterpriseManager="true" deployable="true" xmlns="">
+    <Factory className="oracle.adf.model.connection.url.URLConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="MapViewerUrl">
+        <Contents>
+          <urlconnection name="MapViewerUrl" url="http://elocation.oracle.com/mapviewer"/>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
   <Reference name="HRConn" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="HRConn"
              xmlns="">
     <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
@@ -31,7 +53,7 @@
         <Contents>thin</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="hostname">
-        <Contents>192.168.44.130</Contents>
+        <Contents>localhost</Contents>
       </StringRefAddr>
       <SecureRefAddr addrType="password"/>
       <StringRefAddr addrType="subtype">
@@ -40,11 +62,11 @@
       <StringRefAddr addrType="port">
         <Contents>1521</Contents>
       </StringRefAddr>
-      <StringRefAddr addrType="user">
-        <Contents>hr</Contents>
-      </StringRefAddr>
-      <StringRefAddr addrType="sid">
+      <StringRefAddr addrType="serviceName">
         <Contents>orcl</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="user">
+        <Contents>HR</Contents>
       </StringRefAddr>
     </RefAddresses>
   </Reference>

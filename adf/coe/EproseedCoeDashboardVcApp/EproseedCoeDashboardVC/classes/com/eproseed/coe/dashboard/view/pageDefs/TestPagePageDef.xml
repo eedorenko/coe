@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="TestPagePageDef"
+                Package="com.eproseed.coe.dashboard.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="DashboardTaskFlow1"
+              taskFlowId="/WEB-INF/com/eproseed/coe/dashboard/view/dashboardtaskflow/DashboardTaskFlow.xml#DashboardTaskFlow"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

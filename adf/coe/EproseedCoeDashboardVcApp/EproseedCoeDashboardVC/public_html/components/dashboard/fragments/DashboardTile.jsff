@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets">
+<af:componentDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" componentVar="comp" definition="private"
+                 xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" id="coeDbt">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>CoeDashboardTile</afc:display-name>
+            <afc:facet>
+                <afc:description>
+                    Here you can put content of the dashboard item
+                </afc:description>
+                <afc:facet-name>tileContent</afc:facet-name>
+            </afc:facet>
+            <afc:attribute>
+                <afc:attribute-name>tileName</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>tileId</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+            <afc:component-extension>
+                <afc:component-tag-namespace>com.eproseed.coe.common.view.declcomp</afc:component-tag-namespace>
+                <afc:component-taglib-uri>/eproseedCoeCompLib</afc:component-taglib-uri>
+            </afc:component-extension>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelGroupLayout id="pglCc"
+                         styleClass="CoeDisplayBlock CoeDisplayBlockMargin CoeDashboardCardSize CoeDashboardCard">
+        <af:panelGroupLayout id="X" layout="vertical">
+            <af:outputFormatted value="#{attrs.tileName}" id="ofX" styleClass="CoeDashboardCardTitle"/>
+            <af:facetRef facetName="tileContent"/>
+        </af:panelGroupLayout>
+    </af:panelGroupLayout>
+</af:componentDef>
+
+
+
+
+</ui:composition>

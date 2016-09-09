@@ -1,0 +1,10 @@
+
+*.jdb
+
+*.lck
+
+adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/public_html/WEB-INF/temp/adf/styles/cache/alta-v1-desktop-ln7nv5--macos-webkit-537-d-ltr-d--s-n-c.css
+
+*.class
+
+adf/coe/EproseedCoeCommonApp/EproseedCoeCommonDeclComp/public_html/WEB-INF/temp/adf/styles/cache/alta-v1-desktop-ln7nv5--macos-webkit-537-d-ltr-d--s-n-c.css

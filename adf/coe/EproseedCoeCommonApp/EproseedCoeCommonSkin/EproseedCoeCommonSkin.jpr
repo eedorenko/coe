@@ -85,50 +85,29 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="EproseedCoeAppCommon_EproseedCoeAppCommonSkin_webapp">
-            <hash n="appletArchives"/>
-            <hash n="appletFiles">
-               <value n="autoInclude" v="true"/>
-               <list n="selectionFilters">
-                  <string v="oracle.jdevimpl.deploy.common.JavaSelectionFilter"/>
-               </list>
-            </hash>
+         <hash n="eproseedcoecommonapp_eproseedcoecommonskin_adflib">
+            <value n="adflib-connectionDetails" v="true"/>
             <hash n="archiveOptions">
-               <value n="hasManifest" v="false"/>
+               <value n="hasManifest" v="true"/>
             </hash>
-            <value n="enterpriseAppName" v="EproseedCoeAppCommon_EproseedCoeAppCommonSkin_webapp"/>
             <hash n="fileGroups">
                <list n="groups">
-                  <hash>
-                     <list n="contributors">
-                        <hash>
-                           <value n="type" v="5"/>
-                        </hash>
-                     </list>
-                     <value n="displayName" v="Web Files"/>
-                     <hash n="filters">
-                        <list n="rules">
-                           <hash>
-                              <value n="pattern" v="**"/>
-                              <value n="type" v="0"/>
-                           </hash>
-                        </list>
-                     </hash>
-                     <value n="internalName" v="web-files"/>
-                     <value n="type" v="1"/>
-                  </hash>
                   <hash>
                      <list n="contributors">
                         <hash>
                            <value n="type" v="2"/>
                         </hash>
                         <hash>
-                           <value n="type" v="7"/>
+                           <value n="type" v="5"/>
                         </hash>
                      </list>
-                     <value n="displayName" v="WEB-INF/classes"/>
+                     <value n="displayName" v="Project Output"/>
                      <hash n="filters">
                         <list n="rules">
+                           <hash>
+                              <value n="pattern" v="WEB-INF/classes/**"/>
+                              <value n="type" v="1"/>
+                           </hash>
                            <hash>
                               <value n="pattern" v="**"/>
                               <value n="type" v="0"/>
@@ -136,32 +115,18 @@
                         </list>
                      </hash>
                      <value n="internalName" v="project-output"/>
-                     <value n="targetWithinJar" v="WEB-INF/classes"/>
                      <value n="type" v="1"/>
-                  </hash>
-                  <hash>
-                     <value n="displayName" v="WEB-INF/lib"/>
-                     <hash n="filters">
-                        <list n="rules">
-                           <hash>
-                              <value n="pattern" v="**"/>
-                              <value n="type" v="0"/>
-                           </hash>
-                        </list>
-                     </hash>
-                     <value n="internalName" v="libraries"/>
-                     <value n="targetWithinJar" v="WEB-INF/lib"/>
-                     <value n="type" v="3"/>
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/EproseedCoeAppCommon_EproseedCoeAppCommonSkin_webapp.war"/>
-            <value n="profileClass" v="oracle.jdeveloper.deploy.war.WarProfile"/>
-            <value n="profileName" v="EproseedCoeAppCommon_EproseedCoeAppCommonSkin_webapp"/>
+            <url n="jarURL" path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonskin_adflib.jar"/>
+            <hash n="LibraryDependencies"/>
+            <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
+            <value n="profileName" v="eproseedcoecommonapp_eproseedcoecommonskin_adflib"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="EproseedCoeAppCommon_EproseedCoeAppCommonSkin_webapp"/>
+         <string v="eproseedcoecommonapp_eproseedcoecommonskin_adflib"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
@@ -252,6 +217,14 @@
             <value n="id" v="ADF DVT Faces Databinding MDS Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="Resource Bundle Support"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Resource Bundle Variable Resolver"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <list n="libraryReferences">
          <hash>
@@ -324,6 +297,14 @@
          </hash>
          <hash>
             <value n="id" v="ADF DVT Faces Databinding MDS Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Resource Bundle Support"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Resource Bundle Variable Resolver"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -471,5 +452,8 @@
             <value n="version" v="11"/>
          </hash>
       </list>
+   </hash>
+   <hash n="ResourceBundleOptions">
+      <value n="BundleCreationPolicy" v="2"/>
    </hash>
 </jpr:project>

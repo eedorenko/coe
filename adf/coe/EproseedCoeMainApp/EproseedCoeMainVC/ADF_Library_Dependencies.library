@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<JLibraryNode nselem="JLibraryNode" class="oracle.jdeveloper.library.JLibraryNode" deployedByDefault="true" xmlns="http://xmlns.oracle.com/jdeveloper/110000jlibrarynode">
+   <classPath>
+      <entries>
+         <Item path="../../EproseedCoeLibs/eproseedcoeassignmentsmodelapp_eproseedcoeassignmentsmodel_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommondeclcomp_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonhrmodel_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonmodel_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonsharedmodel_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommontaskflowtemplates_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoedashboardmodelapp_eproseedcoedashboardmodel_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoedepartmentsmodelapp_eproseedcoedepartmentsmodel_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoeemployeesmodelapp_eproseedcoeemployeesmodel_adflib.jar" jar-entry=""/>
+         <Item path="../../EproseedCoeLibs/eproseedcoemainapp_eproseedcoemainmodel_adflib.jar" jar-entry=""/>
+      </entries>
+   </classPath>
+   <docPath/>
+   <locked>true</locked>
+   <name>ADF Library Dependencies</name>
+   <sourcePath/>
+</JLibraryNode>

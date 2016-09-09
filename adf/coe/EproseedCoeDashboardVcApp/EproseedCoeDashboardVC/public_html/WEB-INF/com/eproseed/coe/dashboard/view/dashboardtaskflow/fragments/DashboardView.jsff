@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:Eproseed-Coe-Components="/eproseedCoeCompLib"
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:panelGroupLayout id="pgl1">
+        
+      
+      <af:declarativeComponent viewId="/components/dashboard/fragments/DashboardTile.jsff" id="dt1">
+      <f:attribute name="tileName" value="First Tile"/>
+      <f:facet name="tileContent">
+        <dvt:barChart id="barChart1" var="row" value="#{bindings.DepartmentsSalaryRO.collectionModel}"
+        inlineStyle="width:200px;height:150px"
+        >
+          <dvt:chartLegend rendered="false" id="cl1"/>
+          <f:facet name="dataStamp">
+            <dvt:chartDataItem id="di1" series="#{bindings.DepartmentsSalaryRO.hints.AvgSalary.label}"
+                               value="#{row.AvgSalary}" group="#{row.DepartmentName}"/>
+          </f:facet>
+        </dvt:barChart>
+      </f:facet>      
+      </af:declarativeComponent>
+
+      <af:declarativeComponent viewId="/components/dashboard/fragments/DashboardTile.jsff" id="dt2">
+      <f:attribute name="tileName" value="Second Tile"/>
+      <f:facet name="tileContent">
+        <dvt:map id="map" startingX="0.0" mapServerConfigId="coeMapConfig" baseMapName="ELOCATION.BI_WORLD_MAP"
+                 mapZoom="0" inlineStyle="width:200px;height:150px" startingY="0.0"
+                 showInfoArea="false" showScaleBar="false" zoomBarPosition="NONE" copyrightText=""
+                 >
+          <dvt:mapPointTheme id="mt1" value="#{bindings.EmployeesPerLocationRO1.geoMapModel}"/>
+        </dvt:map>
+      </f:facet>      
+      </af:declarativeComponent>
+
+      <af:declarativeComponent viewId="/components/dashboard/fragments/DashboardTile.jsff" id="dt3">
+      <f:attribute name="tileName" value="Third Tile"/>
+      <f:facet name="tileContent">
+        <dvt:statusMeterGauge orientation="circular" inlineStyle="width:200px;height:150px" id="statusMeterGauge1"
+                               value="#{bindings.Amt.inputValue}" >
+          <dvt:gaugeMetricLabel rendered="true" id="gml1"/>
+          <dvt:gaugeThreshold color="#d62800" maximum="10" id="thr1"/>
+          <dvt:gaugeThreshold color="#ffb563" maximum="25" id="thr2"/>
+          <dvt:gaugeThreshold color="#00ff00" id="thr3"/>
+        </dvt:statusMeterGauge>
+      </f:facet>      
+      </af:declarativeComponent>
+
+      <af:declarativeComponent viewId="/components/dashboard/fragments/DashboardTile.jsff" id="dt4">
+      <f:attribute name="tileName" value="Fourth Tile"/>
+      <f:facet name="tileContent">
+
+      </f:facet>      
+      </af:declarativeComponent>
+      
+      <af:declarativeComponent viewId="/components/dashboard/fragments/DashboardTile.jsff" id="dt5">
+      <f:attribute name="tileName" value="Fifth Tile"/>
+      <f:facet name="tileContent">
+
+      </f:facet>      
+      </af:declarativeComponent>
+
+
+    </af:panelGroupLayout>
+</ui:composition>

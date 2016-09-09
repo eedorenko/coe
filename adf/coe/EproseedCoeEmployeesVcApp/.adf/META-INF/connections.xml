@@ -7,7 +7,7 @@
         <Contents>thin</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="hostname">
-        <Contents>192.168.44.129</Contents>
+        <Contents>localhost</Contents>
       </StringRefAddr>
       <SecureRefAddr addrType="password"/>
       <StringRefAddr addrType="subtype">
@@ -16,11 +16,11 @@
       <StringRefAddr addrType="port">
         <Contents>1521</Contents>
       </StringRefAddr>
-      <StringRefAddr addrType="user">
-        <Contents>hr</Contents>
-      </StringRefAddr>
-      <StringRefAddr addrType="sid">
+      <StringRefAddr addrType="serviceName">
         <Contents>orcl</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="user">
+        <Contents>HR</Contents>
       </StringRefAddr>
     </RefAddresses>
   </Reference>
