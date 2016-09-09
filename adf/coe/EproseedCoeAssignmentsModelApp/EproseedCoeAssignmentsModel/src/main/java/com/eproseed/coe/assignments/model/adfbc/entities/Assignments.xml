@@ -111,6 +111,27 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="IsApproved"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="IS_APPROVED"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="ASSIGNMENTS"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.IsApproved_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Projects"
     Association="com.eproseed.coe.assignments.model.adfbc.entities.associations.AssignmentToProject"

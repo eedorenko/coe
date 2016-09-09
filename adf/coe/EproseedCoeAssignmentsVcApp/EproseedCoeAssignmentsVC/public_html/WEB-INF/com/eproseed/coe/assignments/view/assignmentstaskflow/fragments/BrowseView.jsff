@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
-    <af:pageTemplate viewId="/com/eproseed/coe/common/view/pagetemplates/fragments/BrowseTableTemplate.jsf" id="pt1">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:c="http://java.sun.com/jsp/jstl/core">
+   <c:set var="eproseedcoeassignmentsvcBundle"
+          value="#{adfBundle['com.eproseed.coe.assignments.view.EproseedCoeAssignmentsVCBundle']}"/>
+   <af:pageTemplate viewId="/com/eproseed/coe/common/view/pagetemplates/fragments/BrowseTableTemplate.jsf" id="pt1">
        <f:facet name="centerContent">
 
          <af:table value="#{bindings.Assignments.collectionModel}" var="row" rows="#{bindings.Assignments.rangeSize}"
@@ -10,7 +13,7 @@
                    fetchSize="#{bindings.Assignments.rangeSize}"
                    filterModel="#{bindings.AssignmentsQuery.queryDescriptor}" filterVisible="true"
                    queryListener="#{bindings.AssignmentsQuery.processQuery}" varStatus="vs" id="t1"
-                   columnStretching="last">
+                   columnStretching="last" partialTriggers=":::b1">
             <af:column sortProperty="#{bindings.Assignments.hints.AssignmentId.name}" filterable="true" sortable="true"
                        headerText="#{bindings.Assignments.hints.AssignmentId.label}" id="c1">
                <af:outputText value="#{row.AssignmentId}" shortDesc="#{bindings.Assignments.hints.AssignmentId.tooltip}"
@@ -72,8 +75,27 @@
                <af:outputText value="#{row.ProjectName}" shortDesc="#{bindings.Assignments.hints.ProjectName.tooltip}"
                               id="ot7"/>
             </af:column>
+            <af:column sortProperty="#{bindings.Assignments.hints.IsApproved.name}" filterable="true" sortable="true"
+                       headerText="#{bindings.Assignments.hints.IsApproved.label}" id="c8">
+               <af:outputText value="#{row.IsApproved}" shortDesc="#{bindings.Assignments.hints.IsApproved.tooltip}"
+                              id="ot8"/>
+            </af:column>
+            
          </af:table>
       </f:facet>
+      
+      <f:facet name="operationsContent">
+           <af:button text="Operations" actionDelivery="none">
+                    <f:facet name="popup">
+                      <af:menu text="Add Menu" id="m1">
+                        <af:commandMenuItem text="#{eproseedcoeassignmentsvcBundle.APPROVE}" id="cmi1" actionListener="#{assignmentsBrowseView.approveButtonActionListener}">
+                        
+                        </af:commandMenuItem>
+                      </af:menu>
+                     </f:facet>
+            </af:button>
+      </f:facet>
+      
       <f:attribute name="title" value="Assignments"/>
     </af:pageTemplate>
 </ui:composition>

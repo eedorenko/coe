@@ -21,6 +21,7 @@ import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.model.binding.DCParameter;
+import oracle.adf.model.rest.RestDCUtils;
 import oracle.adf.share.logging.ADFLogger;
 import oracle.adf.view.rich.component.rich.RichPopup;
 import oracle.adf.view.rich.component.rich.data.RichTable;
@@ -822,7 +823,7 @@ public class ADFUtils {
 
 
         }
-
+        RestDCUtils rrr;
         return false;
     }
     

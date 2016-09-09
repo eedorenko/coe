@@ -1,5 +1,6 @@
 package com.eproseed.coe.assignments.model.adfbc.entities;
 
+import com.eproseed.coe.common.hrmodel.adfbc.entities.EmployeesImpl;
 import com.eproseed.coe.common.model.adfbc.base.CoeEntityImpl;
 
 import java.sql.Timestamp;
@@ -39,6 +40,7 @@ public class AssignmentsImpl extends CoeEntityImpl {
         ProjectId,
         Starttime,
         Finishtime,
+        IsApproved,
         Projects,
         Employees;
         private static AttributesEnum[] vals = null;
@@ -71,6 +73,7 @@ public class AssignmentsImpl extends CoeEntityImpl {
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
     public static final int STARTTIME = AttributesEnum.Starttime.index();
     public static final int FINISHTIME = AttributesEnum.Finishtime.index();
+    public static final int ISAPPROVED = AttributesEnum.IsApproved.index();
     public static final int PROJECTS = AttributesEnum.Projects.index();
     public static final int EMPLOYEES = AttributesEnum.Employees.index();
 
@@ -185,6 +188,22 @@ public class AssignmentsImpl extends CoeEntityImpl {
     }
 
     /**
+     * Gets the attribute value for IsApproved, using the alias name IsApproved.
+     * @return the value of IsApproved
+     */
+    public String getIsApproved() {
+        return (String) getAttributeInternal(ISAPPROVED);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for IsApproved.
+     * @param value value to set the IsApproved
+     */
+    public void setIsApproved(String value) {
+        setAttributeInternal(ISAPPROVED, value);
+    }
+
+    /**
      * @return the associated entity com.eproseed.coe.common.model.adfbc.base.CoeEntityImpl.
      */
     public CoeEntityImpl getProjects() {
@@ -202,16 +221,17 @@ public class AssignmentsImpl extends CoeEntityImpl {
     /**
      * @return the associated entity com.eproseed.coe.common.model.adfbc.base.CoeEntityImpl.
      */
-    public CoeEntityImpl getEmployees() {
-        return (CoeEntityImpl) getAttributeInternal(EMPLOYEES);
+    public EmployeesImpl getEmployees() {
+        return (EmployeesImpl) getAttributeInternal(EMPLOYEES);
     }
 
     /**
      * Sets <code>value</code> as the associated entity com.eproseed.coe.common.model.adfbc.base.CoeEntityImpl.
      */
-    public void setEmployees(CoeEntityImpl value) {
+    public void setEmployees(EmployeesImpl value) {
         setAttributeInternal(EMPLOYEES, value);
     }
+
 
     /**
      * @param assignmentId key constituent
@@ -239,6 +259,11 @@ public class AssignmentsImpl extends CoeEntityImpl {
        setFinishtime(constructTodayDateTime(FINISH_TIME)); 
     }
 
+
+    public void approve() {
+        setIsApproved("Y");        
+    }
+    
 
 }
 

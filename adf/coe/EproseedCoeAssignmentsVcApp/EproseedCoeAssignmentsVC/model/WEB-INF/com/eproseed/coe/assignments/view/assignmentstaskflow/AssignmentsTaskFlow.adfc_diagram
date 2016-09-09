@@ -99,9 +99,9 @@
       <property
          name="activityId">EditView</property>
       <property
-         name="inherited">false</property>
-      <property
          name="pageFragment">true</property>
+      <property
+         name="inherited">false</property>
       <property
          name="x">404.6172</property>
       <property
@@ -172,7 +172,7 @@
       <property
          name="fromsrcid">__13</property>
       <property
-         name="sdm:polyPoints">B56,408.1172,538.11914,R42</property>
+         name="sdm:polyPoints">B57,408.9151,536.5233,R40</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -188,7 +188,7 @@
       <property
          name="fromsrcid">__8</property>
       <property
-         name="sdm:polyPoints">R54,233.04816,269.9336,T50</property>
+         name="sdm:polyPoints">R55,233.04816,270.7315,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -204,7 +204,7 @@
       <property
          name="fromsrcid">__11</property>
       <property
-         name="sdm:polyPoints">R50,401.1172,431.5013,B44</property>
+         name="sdm:polyPoints">R50,400.31927,431.5013,B43</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -220,7 +220,7 @@
       <property
          name="fromsrcid">__8</property>
       <property
-         name="sdm:polyPoints">R46,248.13672,262.9336,248.13672,300.7168,L50</property>
+         name="sdm:polyPoints">R45,248.13672,262.13568,248.13672,300.7168,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -236,7 +236,7 @@
       <property
          name="fromsrcid">__2</property>
       <property
-         name="sdm:polyPoints">R58,889.3828,552.11914,B50</property>
+         name="sdm:polyPoints">R60,889.3828,553.71497,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -252,6 +252,6 @@
       <property
          name="fromsrcid">__4</property>
       <property
-         name="sdm:polyPoints">T50,889.3828,195.29199,91.65625,195.29199,T50</property>
+         name="sdm:polyPoints">T50,889.3828,194.4941,91.65625,194.4941,T50</property>
    </ControlFlowCase>
 </SDM>

@@ -20,8 +20,14 @@
           <Item Value="Starttime"/>
           <Item Value="Finishtime"/>
           <Item Value="ProjectName"/>
+          <Item Value="IsApproved"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <methodAction IterBinding="AssignmentsIterator" id="approve" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="approve" IsViewObjectMethod="false" DataControl="EproseedCoeServiceDataControl"
+                  InstanceName="bindings.AssignmentsIterator.currentRow" IsLocalObjectReference="true"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="EproseedCoeServiceDataControl"/>
   </bindings>
 </pageDefinition>

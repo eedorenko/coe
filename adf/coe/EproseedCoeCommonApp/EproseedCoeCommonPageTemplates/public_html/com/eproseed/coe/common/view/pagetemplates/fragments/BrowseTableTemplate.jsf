@@ -13,6 +13,9 @@
             <afc:facet>
                 <afc:facet-name>centerContent</afc:facet-name>
             </afc:facet>
+            <afc:facet>
+                <afc:facet-name>operationsContent</afc:facet-name>
+            </afc:facet>
             <afc:attribute>
                 <afc:attribute-name>title</afc:attribute-name>
                 <afc:attribute-class>java.lang.String</afc:attribute-class>
@@ -44,6 +47,10 @@
                     </af:button>
                 </af:toolbar>
             </af:gridCell>
+             <af:gridCell marginStart="5px" width="auto" id="pt_gc1" valign="middle" halign="end">
+                <af:facetRef facetName="operationsContent"/>
+            </af:gridCell>
+
         </af:gridRow>
         <af:gridRow id="gr3">
             <af:gridCell id="gc12" columnSpan="4" halign="stretch">

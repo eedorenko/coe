@@ -169,6 +169,10 @@
             <value n="id" v="ADF Controller Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <url n="id" path="../../../../../../../.jdeveloper/system12.2.1.1.42.160607.2047/o.jdeveloper/ADF Source.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <list n="libraryReferences">
          <hash>
@@ -201,6 +205,10 @@
          </hash>
          <hash>
             <value n="id" v="ADF Controller Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <url n="id" path="../../../../../../../.jdeveloper/system12.2.1.1.42.160607.2047/o.jdeveloper/ADF Source.library"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

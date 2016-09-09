@@ -5,6 +5,11 @@
       <document>/WEB-INF/com/eproseed/coe/common/view/taskflowtemplates/simplecrudflowtemplate/SimpleCRUDFlowTemplate.xml</document>
       <id>SimpleCRUDFlowTemplate</id>
     </template-reference>
+    <managed-bean id="__1">
+      <managed-bean-name>assignmentsBrowseView</managed-bean-name>
+      <managed-bean-class>com.eproseed.coe.assignments.view.assignmentstaskflow.AssignmentsBrowseView</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
     <view id="BrowseView">
       <page>/WEB-INF/com/eproseed/coe/assignments/view/assignmentstaskflow/fragments/BrowseView.jsff</page>
     </view>

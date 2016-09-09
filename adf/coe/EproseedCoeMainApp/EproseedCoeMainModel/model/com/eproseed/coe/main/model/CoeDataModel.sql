@@ -12,6 +12,7 @@ create table assignments
  project_id Number(10) not null,
  StartTime Date not null,
  FinishTime Date not null,
+ is_approved char default 'N' not null,
  constraint pk_assignments primary key (assignment_id),
  constraint fk_assignments_employee foreign key (employee_id) references employees(employee_id),
  constraint fk_assignments_project foreign key (project_id) references projects(project_id),

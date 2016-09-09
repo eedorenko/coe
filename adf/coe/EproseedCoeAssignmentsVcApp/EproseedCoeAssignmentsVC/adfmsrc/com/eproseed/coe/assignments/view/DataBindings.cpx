@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
-             SeparateXMLFiles="false" Package="com.eproseed.coe.assignments.view" ClientType="Generic">
+             SeparateXMLFiles="false" Package="com.eproseed.coe.assignments.view" ClientType="Generic"
+             ErrorHandlerClass="com.eproseed.coe.common.view.errorhandler.EproseedCoeErrorHandler">
   <definitionFactories>
     <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
              className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>

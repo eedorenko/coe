@@ -62,4 +62,7 @@
       <Attr Name="_SourceName" Value="eproseedcoedepartmentsmodelapp_eproseedcoedepartmentsmodel_adflib.jar"/>
     </DesignTime>
   </AppContainee>
+  <AttrArray Name="MessageBundles">
+    <Item Value="com.eproseed.coe.main.model.adfbc.EproseedCoeMessageBundle"/>
+  </AttrArray>
 </JboProject>
