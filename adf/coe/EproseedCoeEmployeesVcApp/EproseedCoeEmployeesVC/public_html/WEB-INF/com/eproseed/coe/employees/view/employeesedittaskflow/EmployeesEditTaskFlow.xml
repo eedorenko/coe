@@ -5,6 +5,22 @@
       <document>/WEB-INF/com/eproseed/coe/common/view/taskflowtemplates/editflowtemplate/EditFlowTemplate.xml</document>
       <id>EditFlowTemplate</id>
     </template-reference>
+      <managed-bean id="__5">
+      <managed-bean-name>editView</managed-bean-name>
+      <managed-bean-class>com.eproseed.coe.employees.view.beans.backing.EditView</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+      <managed-property id="__16">
+        <property-name>pfState</property-name>
+        <property-class>com.eproseed.coe.employees.view.beans.FlowState</property-class>
+        <value>#{pageFlowScope.flowState}</value>
+      </managed-property>
+    </managed-bean>
+   
+    <managed-bean id="__15">
+      <managed-bean-name>flowState</managed-bean-name>
+      <managed-bean-class>com.eproseed.coe.employees.view.beans.FlowState</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <method-call id="PrepareEdit">
       <method>#{bindings.findEmployee.execute}</method>
       <outcome>
@@ -15,5 +31,6 @@
       <page>/WEB-INF/com/eproseed/coe/employees/view/employeesedittaskflow/fragments/EditView.jsff</page>
     </view>
     <use-page-fragments/>
+    
   </task-flow-definition>
 </adfc-config>

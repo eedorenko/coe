@@ -15,7 +15,7 @@ adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/public_html/WEB-INF/
 adf/coe/EproseedCoeMainApp/EproseedCoeMainVC/classes/*
 adf/coe/EproseedCoeAssignmentsVcApp/EproseedCoeAssignmentsVC/classes/*
 adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/classes/*
-
+adf/coe/EproseedCoeEmployeesVcApp/EproseedCoeEmployeesVC/classes/*
 adf/coe/EproseedCoeDepartmentsVcApp/EproseedCoeDepartmentsVC/classes/*
 =======
 cwallet.sso.lck
@@ -24,3 +24,5 @@ cwallet.sso
 classes
 temp
 >>>>>>> origin/master
+
+adf/coe/EproseedCoeEmployeesVcApp/.adf/META-INF/connections.xml

@@ -6,7 +6,6 @@
             <af:listView value="#{bindings.EmployeesList.collectionModel}" var="item"
                          emptyText="#{bindings.EmployeesList.viewable ? 'No data to display.' : 'Access Denied.'}"
                          fetchSize="#{bindings.EmployeesList.rangeSize}" id="lv1">
-              
                 <af:listItem id="li1"
                              styleClass="#{sessionScope.showGrid ? 'CoeDisplayBlock CoeDisplayBlockPadding CoeDisplayBlockCenterUndo' : 'CoeListPadding'}">
                     <af:panelGridLayout id="pgl1" clientComponent="true" shortDesc="List View"
@@ -24,14 +23,11 @@
                             <af:gridCell marginStart="5px" id="gc2" valign="middle" marginEnd="5px" width="82%">
                                 <af:panelGroupLayout id="pgl2" layout="vertical">
                                     <af:link text="#{item.bindings.FirstName.inputValue} #{item.bindings.LastName.inputValue}"
-                                                        id="of1" styleClass="CoeNameText" 
-                                                        action="goEditCreate">
-                                    <af:setPropertyListener from="#{item.bindings.EmployeeId.inputValue}"
-                                                            to="#{requestScope.employeeId}" type="action"/>
-                                    <af:setPropertyListener from="edit" to="#{requestScope.action}" type="action"/>
-                                </af:link>
-                                                        
-                                                    </af:link>    
+                                             id="of1" styleClass="CoeNameText" action="goEditCreate">
+                                        <af:setPropertyListener from="#{item.bindings.EmployeeId.inputValue}"
+                                                                to="#{requestScope.employeeId}" type="action"/>
+                                        <af:setPropertyListener from="edit" to="#{requestScope.action}" type="action"/>
+                                    </af:link>
                                     <af:outputFormatted value="#{item.bindings.JobTitle.inputValue}" id="of4"
                                                         styleClass="CoeJobTitleText"/>
                                     <af:outputFormatted value="#{item.bindings.DepartmentName.inputValue}" id="of5"
