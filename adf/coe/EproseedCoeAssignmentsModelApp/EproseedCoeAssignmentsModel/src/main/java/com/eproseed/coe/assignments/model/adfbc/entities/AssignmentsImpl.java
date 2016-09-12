@@ -264,6 +264,14 @@ public class AssignmentsImpl extends CoeEntityImpl {
         setIsApproved("Y");        
     }
     
+    
+    public boolean validateDuration() {     
+        long startTime = getStarttime().getTime();
+        long fnishTime = getFinishtime().getTime();
+        long hours = (fnishTime - startTime)/ (60*60*1000);
+        return hours<=8;
+    }
+    
 
 }
 

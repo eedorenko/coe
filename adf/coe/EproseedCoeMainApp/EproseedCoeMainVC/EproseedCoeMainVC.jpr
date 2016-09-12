@@ -75,6 +75,17 @@
    <hash n="oracle.adfdtinternal.view.rich.setting.ADFViewSettings">
       <value n="ENABLE_ADF_WEBAPP_LIB_SUPPORT" v="true"/>
    </hash>
+   <hash n="oracle.ide.model.DependencyConfiguration">
+      <list n="dependencyList">
+         <hash>
+            <hash n="dependable">
+               <url n="sourceOwnerURL" path="../EproseedCoeMainApp.jws"/>
+               <url n="sourceURL" path="../EproseedCoeMainModel/EproseedCoeMainModel.jpr"/>
+            </hash>
+            <value n="recognizerId" v="oracle.jdeveloper.library"/>
+         </hash>
+      </list>
+   </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="ADF_FACES"/>
@@ -290,11 +301,11 @@
                <list n="classPath">
                   <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonvc_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoedashboardvcapp_eproseedcoedashboardvc_adflib.jar" jar-entry=""/>
-                  <url path="../../EproseedCoeLibs/eproseedcoemainapp_eproseedcoemainmodel_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoeassignmentsvcapp_eproseedcoeassignmentsvc_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoedepartmentsvcapp_eproseedcoedepartmentsvc_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoeemployeesvcapp_eproseedcoeemployeesvc_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonskin_adflib.jar" jar-entry=""/>
+                  <url path="../../EproseedCoeLibs/eproseedcoemainapp_eproseedcoemainmodel_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonpagetemplates_adflib.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>

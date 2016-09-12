@@ -3,10 +3,40 @@
 package com.eproseed.coe.common.hrmodel.adfbc.entities
 
 import oracle.jbo.script.annotation.TransientValueExpression;
+import oracle.jbo.script.annotation.MessageParameterExpression;
+import oracle.jbo.script.annotation.ValidatorExpression;
 
 @TransientValueExpression(attributeName="HireDate")
 def HireDate_ExpressionScript_Expression()
 {
 adf.currentDate
+}
+
+
+@ValidatorExpression(name="SalaryRuleInRange", attributeName="Salary")
+def Salary_SalaryRuleInRange_ValidationRuleScript_ValidationRule()
+{
+  newValue>=jobs.MinSalary && newValue<=jobs.MaxSalary
+}
+
+
+@MessageParameterExpression(validatorName="SalaryRuleInRange", name="ResExpressions_salary", attributeName="Salary")
+def Salary_SalaryRuleInRange_ResExpressions_salary_MessageParameterValues()
+{
+newValue
+}
+
+
+@MessageParameterExpression(validatorName="SalaryRuleInRange", name="ResExpressions_maxSalary", attributeName="Salary")
+def Salary_SalaryRuleInRange_ResExpressions_maxSalary_MessageParameterValues()
+{
+jobs.MaxSalary
+}
+
+
+@MessageParameterExpression(validatorName="SalaryRuleInRange", name="ResExpressions_minSalary", attributeName="Salary")
+def Salary_SalaryRuleInRange_ResExpressions_minSalary_MessageParameterValues()
+{
+jobs.MinSalary
 }
 

@@ -32,9 +32,11 @@
                 <f:facet name="globalLinks"/>
                 <f:facet name="footer"/>
                 <f:facet name="center">
+
                     <af:region value="#{bindings.dynamicRegion1.regionModel}" 
                                id="r1" partialTriggers=":::bBarFDC:b1 :::bBarFDC:b2 :::bBarFDC:b3 :::bBarFDC:b4"
                                 styleClass="ContentContainerWorkaround"/>
+
                                
                 </f:facet>
                 <f:facet name="start"/>

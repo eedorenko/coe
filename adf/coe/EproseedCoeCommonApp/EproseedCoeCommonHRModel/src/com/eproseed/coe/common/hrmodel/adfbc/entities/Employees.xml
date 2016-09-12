@@ -12,7 +12,8 @@
   BindingStyle="OracleName"
   RowClass="com.eproseed.coe.common.hrmodel.adfbc.entities.EmployeesImpl"
   DefClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityDefImpl"
-  CollClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityCache">
+  CollClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityCache"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -113,7 +114,7 @@
     TableName="EMPLOYEES">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="untrusted"
+      trustMode="trusted"
       CodeSourceName="EmployeesRow"/>
     <Properties>
       <SchemaBasedProperties>
@@ -160,6 +161,34 @@
           ResId="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees.Salary_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:ExpressionValidationBean
+      Name="SalaryRuleInRange"
+      OperandType="EXPR"
+      Inverse="false">
+      <validation:MsgIds>
+        <validation:Item
+          Value="errorId1"/>
+      </validation:MsgIds>
+      <validation:ResExpressions
+        Name="SalaryRuleInRange_ResExprList">
+        <validation:Expression
+          Name="salary"
+          trustMode="trusted"
+          CodeSourceName="EmployeesRow"/>
+        <validation:Expression
+          Name="maxSalary"
+          trustMode="trusted"
+          CodeSourceName="EmployeesRow"/>
+        <validation:Expression
+          Name="minSalary"
+          trustMode="trusted"
+          CodeSourceName="EmployeesRow"/>
+      </validation:ResExpressions>
+      <validation:TransientExpression
+        Name="ValidationRuleScript"
+        trustMode="trusted"
+        CodeSourceName="EmployeesRow"/>
+    </validation:ExpressionValidationBean>
   </Attribute>
   <Attribute
     Name="CommissionPct"

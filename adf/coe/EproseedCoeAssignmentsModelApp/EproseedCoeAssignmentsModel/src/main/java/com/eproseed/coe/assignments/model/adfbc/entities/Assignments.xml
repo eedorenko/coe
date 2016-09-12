@@ -13,7 +13,8 @@
   RowClass="com.eproseed.coe.assignments.model.adfbc.entities.AssignmentsImpl"
   DefClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityDefImpl"
   CollClass="com.eproseed.coe.common.model.adfbc.base.CoeEntityCache"
-  IsLibraryPrivate="true">
+  IsLibraryPrivate="true"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -113,7 +114,6 @@
   </Attribute>
   <Attribute
     Name="IsApproved"
-    IsNotNull="true"
     Precision="1"
     ColumnName="IS_APPROVED"
     SQLType="CHAR"
@@ -121,7 +121,9 @@
     ColumnType="CHAR"
     TableName="ASSIGNMENTS"
     RetrievedOnUpdate="true"
-    RetrievedOnInsert="true">
+    RetrievedOnInsert="true"
+    IsNotNull="true"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -146,6 +148,18 @@
     AssociationOtherEnd="com.eproseed.coe.assignments.model.adfbc.entities.associations.EmployeeHasAssignments.Assignments"
     Type="com.eproseed.coe.common.model.adfbc.base.CoeEntityImpl"
     IsUpdateable="true"/>
+  <Key
+    Name="AssignmentsIsApprovedCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"IS_APPROVED" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ASSIGNMENTS_IS_APPROVED_CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.IsApproved"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="CkAssignmentsTimes">
     <DesignTime>
@@ -209,6 +223,10 @@
       <Item Value="com.eproseed.coe.assignments.model.adfbc.entities.Assignments.EmployeeId"/>
     </AttrArray>
   </Key>
+  <validation:MethodValidationBean
+    Name="AssignmentsRuleDuration"
+    ResId="com.eproseed.coe.assignments.model.adfbc.entities.Assignments_Rule_0"
+    MethodName="validateDuration"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.eproseed.coe.assignments.model.adfbc.EproseedCoeAssignmentsModelBundle"/>

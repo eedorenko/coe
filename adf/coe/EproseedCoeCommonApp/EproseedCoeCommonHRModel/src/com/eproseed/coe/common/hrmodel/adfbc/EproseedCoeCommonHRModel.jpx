@@ -8,7 +8,6 @@
   SeparateXMLFiles="true"
   PackageName="com.eproseed.coe.common.hrmodel.adfbc">
   <DesignTime>
-    <Attr Name="_DTExpressionTypeChecking" Value="true"/>
     <Attr Name="_jprName" Value="../../../../../../../EproseedCoeCommonHRModel.jpr"/>
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_NamedConnection" Value="HRConn"/>

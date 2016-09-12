@@ -6,6 +6,7 @@
     <variableIterator id="variables"/>
     <page path="com.eproseed.coe.common.view.pagetemplates.pages.CoeResponsiveMainPageTemplatePageDef" id="ptb1"
           Refresh="ifNeeded"/>
+
     <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.IndexDynamicRegion.dynamicTaskFlowId}" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
