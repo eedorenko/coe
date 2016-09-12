@@ -1,9 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:Eproseed-Coe-Components="/eproseedCoeCompLib">
     <af:document title="TestPage.jsf" id="d1">
         <af:form id="f1">
+
             <af:region value="#{bindings.EmployeesTaskFlow1.regionModel}" id="r1"/>
         </af:form>
+    
     </af:document>
 </f:view>

@@ -29,5 +29,8 @@
                   InstanceName="bindings.AssignmentsIterator.currentRow" IsLocalObjectReference="true"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
             DataControl="EproseedCoeServiceDataControl"/>
+    <methodAction id="approveAll" RequiresUpdateModel="true" Action="invokeMethod" MethodName="approveAll"
+                  IsViewObjectMethod="true" DataControl="EproseedCoeServiceDataControl"
+                  InstanceName="data.EproseedCoeServiceDataControl.dataProvider.Root.AssignmentsService.Assignments"/>
   </bindings>
 </pageDefinition>
