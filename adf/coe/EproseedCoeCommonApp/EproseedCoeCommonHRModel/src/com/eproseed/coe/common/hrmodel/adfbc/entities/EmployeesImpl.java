@@ -31,6 +31,7 @@ public class EmployeesImpl extends CoeEntityImpl {
         CommissionPct,
         ManagerId,
         DepartmentId,
+        VersionNumber,
         Departments,
         Jobs,
         Employees,
@@ -57,6 +58,11 @@ public class EmployeesImpl extends CoeEntityImpl {
             return vals;
         }
     }
+
+
+    private final static String EMPLOYEES_SEQ = "EMPLOYEES_SEQ";
+
+
     public static final int EMPLOYEEID = AttributesEnum.EmployeeId.index();
     public static final int FIRSTNAME = AttributesEnum.FirstName.index();
     public static final int LASTNAME = AttributesEnum.LastName.index();
@@ -68,20 +74,23 @@ public class EmployeesImpl extends CoeEntityImpl {
     public static final int COMMISSIONPCT = AttributesEnum.CommissionPct.index();
     public static final int MANAGERID = AttributesEnum.ManagerId.index();
     public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
+    public static final int VERSIONNUMBER = AttributesEnum.VersionNumber.index();
     public static final int DEPARTMENTS = AttributesEnum.Departments.index();
     public static final int JOBS = AttributesEnum.Jobs.index();
     public static final int EMPLOYEES = AttributesEnum.Employees.index();
     public static final int MANAGERIDEMPLOYEES = AttributesEnum.ManagerIdEmployees.index();
 
-    
-    
-    private final static String EMPLOYEES_SEQ = "EMPLOYEES_SEQ";
-    
-    
     /**
      * This is the default constructor (do not remove).
      */
     public EmployeesImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.eproseed.coe.common.hrmodel.adfbc.entities.Employees");
     }
 
     /**
@@ -261,6 +270,22 @@ public class EmployeesImpl extends CoeEntityImpl {
     }
 
     /**
+     * Gets the attribute value for VersionNumber, using the alias name VersionNumber.
+     * @return the value of VersionNumber
+     */
+    public Integer getVersionNumber() {
+        return (Integer) getAttributeInternal(VERSIONNUMBER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for VersionNumber.
+     * @param value value to set the VersionNumber
+     */
+    public void setVersionNumber(Integer value) {
+        setAttributeInternal(VERSIONNUMBER, value);
+    }
+
+    /**
      * @return the associated entity com.eproseed.coe.common.model.adfbc.base.CoeEntityImpl.
      */
     public CoeEntityImpl getDepartments() {
@@ -309,6 +334,7 @@ public class EmployeesImpl extends CoeEntityImpl {
         setAttributeInternal(MANAGERIDEMPLOYEES, value);
     }
 
+
     /**
      * @param employeeId key constituent
 
@@ -318,13 +344,6 @@ public class EmployeesImpl extends CoeEntityImpl {
         return new Key(new Object[] { employeeId });
     }
 
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.eproseed.coe.common.hrmodel.adfbc.entities.Employees");
-    }
-    
     @Override
     protected void initializePrimaryKeyValue() {
       setEmployeeId(getNextSequenceValue(EMPLOYEES_SEQ));   

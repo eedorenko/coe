@@ -19,7 +19,11 @@ create table assignments
  constraint ck_assignments_times check (FinishTime > StartTime)
  );
  
- create sequence assignments_seq;
+create sequence assignments_seq;
+
+alter table employees add Version_number Number(5);
+
+update employees set Version_number=1;
  
  
 insert into projects
