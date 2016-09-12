@@ -39,6 +39,14 @@
     </DesignTime>
   </AppContainee>
   <AppContainee
+    Name="EproseedCoeDashboardModel"
+    FullName="com.eproseed.coe.dashboard.model.adfbc.EproseedCoeDashboardModel"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="eproseedcoedashboardmodelapp_eproseedcoedashboardmodel_adflib.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
     Name="EproseedCoeCommonModel"
     FullName="com.eproseed.coe.common.model.adfbc.EproseedCoeCommonModel"
     ObjectType="JboProject">

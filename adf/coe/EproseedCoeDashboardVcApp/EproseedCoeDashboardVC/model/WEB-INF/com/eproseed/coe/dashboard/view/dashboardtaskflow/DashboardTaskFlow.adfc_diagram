@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="x">95.89844</property>
+      <property
+         name="y">266.5</property>
+   </OverallProperties>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">ExceptionHandler</property>
+      <property
+         name="inherited">true</property>
+      <property
+         name="x">95.89844</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExceptionHandler&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">99.36719</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <View
+      id="View3">
+      <property
+         name="activityId">DashboardView</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">259.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>DashboardView&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">222.66797</property>
+      <property
+         name="page">/WEB-INF/com/eproseed/coe/dashboard/view/dashboardtaskflow/fragments/DashboardView.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+</SDM>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="DashboardTaskFlow">
+    <template-reference>
+      <document>/WEB-INF/com/eproseed/coe/common/view/taskflowtemplates/eproceedceobaseflowtemplate/EproceedCeoBaseFlowTemplate.xml</document>
+      <id>EproceedCeoBaseFlowTemplate</id>
+    </template-reference>
+    <default-activity>DashboardView</default-activity>
+    <view id="DashboardView">
+      <page>/WEB-INF/com/eproseed/coe/dashboard/view/dashboardtaskflow/fragments/DashboardView.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

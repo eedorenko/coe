@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DashboardService"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  ComponentClass="com.eproseed.coe.common.model.adfbc.base.CoeApplicationModuleImpl"
+  DefClass="com.eproseed.coe.common.model.adfbc.base.CoeApplicationModuleDefImpl"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="DepartmentsSalaryRO"
+    ViewObjectName="com.eproseed.coe.dashboard.model.adfbc.views.DepartmentsSalaryRO"/>
+  <ViewUsage
+    Name="EmployeesPerLocationRO"
+    ViewObjectName="com.eproseed.coe.dashboard.model.adfbc.views.EmployeesPerLocationRO"/>
+  <ViewUsage
+    Name="AssigmentsStatusRO"
+    ViewObjectName="com.eproseed.coe.dashboard.model.adfbc.views.AssigmentsStatusRO"/>
+  <ViewUsage
+    Name="AssignmentStatusOveralRO"
+    ViewObjectName="com.eproseed.coe.dashboard.model.adfbc.views.AssignmentStatusOveralRO"/>
+</AppModule>

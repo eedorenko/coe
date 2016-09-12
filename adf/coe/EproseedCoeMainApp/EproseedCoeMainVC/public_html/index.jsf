@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="index.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/com/eproseed/coe/common/view/pagetemplates/pages/CoeTabletFirstTemplate.jsf"
+         
+                             value="#{bindings.ptb1}" id="pt1">
+                <f:attribute name="endWidth" value="0"/>
+                <f:attribute name="startWidth" value="0"/>
+                <f:attribute name="showFooter" value="true"/>
+
+                <f:facet name="header"/>
+                <f:facet name="status"/>
+                <f:facet name="appNav">
+                    <af:button text="Dashboard" id="b1" action="#{viewScope.IndexDynamicRegion.dashboard}"
+                               styleClass="AFAppNavbarButton" selected="true" type="radio"
+                               icon="/resources/images/naviBarFaces/navi_dashboard_24_ena.png"
+                               hoverIcon="/resources/images/naviBarFaces/navi_dashboard_24_hov.png"
+                               depressedIcon="/resources/images/naviBarFaces/navi_dashboard_24_act.png"/>
+                    <af:button text="Employees" id="b2" action="#{viewScope.IndexDynamicRegion.employees}"
+                               styleClass="AFAppNavbarButton" type="radio"
+                               icon="/resources/images/naviBarFaces/navi_person_24_ena.png"
+                               hoverIcon="/resources/images/naviBarFaces/navi_person_24_hov.png"
+                               depressedIcon="/resources/images/naviBarFaces/navi_person_24_act.png"/>
+                    <af:button text="Departments" id="b3" styleClass="AFAppNavbarButton"
+                               action="#{viewScope.IndexDynamicRegion.departments}" type="radio"
+                               icon="/resources/images/naviBarFaces/navi_people_24_ena.png"
+                               hoverIcon="/resources/images/naviBarFaces/navi_people_24_hov.png"
+                               depressedIcon="/resources/images/naviBarFaces/navi_people_24_act.png"/>
+                    <af:button text="Assignments" id="b4" styleClass="AFAppNavbarButton"
+                               action="#{viewScope.IndexDynamicRegion.assignments}" type="radio"
+                               icon="/resources/images/naviBarFaces/navi_people_24_ena.png"
+                               hoverIcon="/resources/images/naviBarFaces/navi_people_24_hov.png"
+                               depressedIcon="/resources/images/naviBarFaces/navi_people_24_act.png"/>
+                               
+                </f:facet>
+                <f:facet name="globalLinks"/>
+                <f:facet name="footer"/>
+                <f:facet name="center">
+                    
+                    <af:region value="#{bindings.dynamicRegion1.regionModel}" 
+                               id="r1" partialTriggers="::b1 ::b2 ::b3 ::b4"
+                                styleClass="ContentContainerWorkaround"/>
+                               
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

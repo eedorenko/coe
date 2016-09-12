@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47"
+                id="EmployeesCreateTaskFlow_EmployeesCreateTaskFlow_PrepareInsertPageDef"
+                Package="com.eproseed.coe.employees.view.employeescreatetaskflow" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="EmployeesService.EmployeesCreate" DataControl="EproseedCoeServiceDataControl" RangeSize="25"
+              id="EmployeesCreateIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EmployeesCreateIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

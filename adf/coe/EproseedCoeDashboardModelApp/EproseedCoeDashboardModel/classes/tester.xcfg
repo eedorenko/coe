@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.eproseed.coe.dashboard.model.adfbc.services.DashboardService">
+      <AppModuleConfig name="1570F059B27" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/HRConnDS" ApplicationName="com.eproseed.coe.dashboard.model.adfbc.services.DashboardService" jbo.project="com.eproseed.coe.dashboard.model.adfbc.EproseedCoeDashboardModel" BC4JConfigName="DashboardServiceLocal" JDBCName="HRConn" DeployPlatform="LOCAL" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
+         <Database JDBCDataSource="java:comp/env/jdbc/HRConnDS" jbo.SQLBuilder="Oracle" jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.eproseed.coe.dashboard.model.adfbc.services.DashboardService"/>
+         <Tester FullProxyInterfaceName="com.eproseed.coe.dashboard.model.adfbc.services.common.DashboardService"/>
+         <Custom ns0:LastUsedConfiguration="DashboardServiceLocal" ns0:tester_classloader_enabled="true" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

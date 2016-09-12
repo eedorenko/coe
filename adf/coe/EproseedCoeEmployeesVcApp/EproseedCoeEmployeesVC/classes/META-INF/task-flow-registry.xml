@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="WEB-INF/com/eproseed/coe/employees/view/employeescreatetaskflow/EmployeesCreateTaskFlow.xml" id="EmployeesCreateTaskFlow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="true" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/com/eproseed/coe/employees/view/employeesedittaskflow/EmployeesEditTaskFlow.xml" id="EmployeesEditTaskFlow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets">
+      <input-parameter name="pKeyValue"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/com/eproseed/coe/employees/view/employeestaskflow/EmployeesTaskFlow.xml" id="EmployeesTaskFlow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
+</task-flow-registry>

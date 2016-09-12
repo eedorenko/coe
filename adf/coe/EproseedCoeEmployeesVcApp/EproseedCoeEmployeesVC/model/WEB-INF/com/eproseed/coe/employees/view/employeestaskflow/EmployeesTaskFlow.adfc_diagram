@@ -171,7 +171,7 @@
       <property
          name="fromsrcid">__13</property>
       <property
-         name="sdm:polyPoints">L50,275.05273,667.7657,B50</property>
+         name="sdm:polyPoints">L50,271.55273,667.7657,B44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -285,5 +285,21 @@
          name="fromOutcome">goBrowseView</property>
       <property
          name="sdm:polyPoints">T50,375.5,420.0,R54</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase21"
+      from="TaskFlowCall6"
+      to="View4">
+      <property
+         name="tosrcid">__11</property>
+      <property
+         name="inherited">true</property>
+      <property
+         name="fromOutcome">Commit</property>
+      <property
+         name="fromsrcid">__10</property>
+      <property
+         name="sdm:polyPoints">B50,521.9326,610.4336,278.55273,610.4336,B56</property>
    </ControlFlowCase>
 </SDM>

@@ -28,6 +28,10 @@
     Name="DepartmentsService"
     FullName="com.eproseed.coe.departments.model.adfbc.services.DepartmentsService"
     SharedScope="0"/>
+  <AppModuleUsage
+    Name="DashboardService"
+    FullName="com.eproseed.coe.dashboard.model.adfbc.services.DashboardService"
+    SharedScope="0"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.eproseed.coe.main.model.adfbc.EproseedCoeMainModelBundle"/>
