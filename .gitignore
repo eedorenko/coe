@@ -14,3 +14,5 @@ adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/public_html/WEB-INF/
 adf/coe/EproseedCoeMainApp/EproseedCoeMainVC/classes/*
 adf/coe/EproseedCoeAssignmentsVcApp/EproseedCoeAssignmentsVC/classes/*
 adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/classes/*
+
+adf/coe/EproseedCoeDepartmentsVcApp/EproseedCoeDepartmentsVC/classes/*

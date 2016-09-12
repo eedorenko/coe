@@ -6,8 +6,79 @@
             <af:listView value="#{bindings.DepartmentsRO.collectionModel}" var="item"
                          emptyText="#{bindings.DepartmentsRO.viewable ? 'No data to display.' : 'Access Denied.'}"
                          fetchSize="#{bindings.DepartmentsRO.rangeSize}" id="lv1">
-                <af:listItem id="li1">
-                    <af:panelGroupLayout layout="horizontal" id="pgl1">
+                <af:listItem id="li1" styleClass="#{sessionScope.showOrgGrid ? 'CoeDisplayBlock CoeDisplayBlockPadding CoeDisplayBlockCenterUndo' : 'CoeListPadding'}">
+                            <af:panelGridLayout id="pgl1" clientComponent="true" shortDesc="List View"
+                                                rendered="#{sessionScope.OrgDisplayType == 'list' or sessionScope.OrgDisplayType == null}">
+                                <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr1">
+                                    <af:gridCell marginStart="0px" width="80px" id="gc1" valign="middle"
+                                                 marginEnd="10px">
+                                        <af:image source="/resources/images/organizations/#{item.bindings.DepartmentId.inputValue}.png" id="i1"
+                                                  styleClass="CoeImage CoeImageBorder"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" id="gc2" valign="middle" marginEnd="25px"
+                                                 width="50%">
+                                        <af:panelGroupLayout id="pgl2" layout="vertical">
+                                            <af:outputFormatted value="#{item.bindings.DepartmentName.inputValue}" id="of1"
+                                                                styleClass="CoeNameText"/>
+                                            <af:outputFormatted value="#{item.bindings.City.inputValue}" id="of4"
+                                                                styleClass="CoeJobTitleText"/>
+                                            <af:outputFormatted value="#{'CC'}#{item.bindings.DepartmentId.inputValue}#{'A'}"
+                                                                id="of5" styleClass="CoeDeptText"/>
+                                        </af:panelGroupLayout>
+                                    </af:gridCell>
+                                    <af:gridCell id="gc3" marginStart="5px" marginEnd="5px" valign="middle" width="50%">
+                                        <af:panelGroupLayout id="pgl8" layout="vertical">
+                                            <af:spacer width="10" height="18" id="s1"/>
+                                            <af:outputFormatted value="#{item.bindings.ManagerFirstName.inputValue} #{item.bindings.ManagerLastName.inputValue}"
+                                                                id="of9" styleClass="CoeManagerName"/>
+                                            <af:outputFormatted value="#{item.bindings.ManagerJobTitle.inputValue}"
+                                                                id="ol4" styleClass="CoeManagerTitle"/>
+                                        </af:panelGroupLayout>
+                                    </af:gridCell>
+                                    <af:gridCell id="gc4" width="140px" valign="middle" halign="end">
+                                        <af:panelGroupLayout id="pgl3" layout="vertical" halign="end">
+                                            <af:outputFormatted value="#{item.bindings.SalaryAvg.inputValue}"
+                                                                id="of2" styleClass="CoeMetricMedium CoeMetric1Color">
+                                                <af:convertNumber pattern="'$'#,###"/>
+                                            </af:outputFormatted>
+                                            <af:outputLabel value="Avg Comp" id="ol3" styleClass="CoeMetricLabelMedium"/>
+                                        </af:panelGroupLayout>
+                                    </af:gridCell>
+                                    <!--<af:gridCell id="gc21" width="80px" valign="middle" halign="center"
+                                                 marginStart="15px">
+                                        <af:panelGroupLayout id="pgl9" layout="vertical" halign="center">
+                                            <af:outputFormatted value="#{item.bindings.avgRating.inputValue}" id="of12"
+                                                                styleClass="CoeMetricMedium CoeMetric4Color">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{item.bindings.avgRating.format}"/>
+                                            </af:outputFormatted>
+                                            <af:outputLabel value="Avg Rating" id="ol5"
+                                                            styleClass="CoeMetricLabelMedium"/>
+                                        </af:panelGroupLayout>
+                                    </af:gridCell>-->
+                                    <af:gridCell id="gc5" width="80px" valign="middle" halign="center">
+                                        <af:panelGroupLayout id="pgl4" layout="vertical" halign="center">
+                                            <af:outputFormatted value="#{item.bindings.EmployeesCnt.inputValue}" id="of3"
+                                                                styleClass="CoeMetricMedium CoeMetric4Color">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{item.bindings.EmployeesCnt.format}"/>
+                                            </af:outputFormatted>
+                                            <af:outputLabel value="Employees" id="ol2"
+                                                            styleClass="CoeMetricLabelMedium"/>
+                                        </af:panelGroupLayout>
+                                    </af:gridCell>
+                                </af:gridRow>
+                                <!--
+                                <af:clientListener method="WBClient.clientClickProxy" type="click"/>
+                                <af:serverListener type="clientClickProxyEvent"
+                                                   method="#{backingBeanScope.searchOrg.doViewOrg}"/>
+                                                   -->
+                            </af:panelGridLayout>
+                
+                
+                
+                
+                    <!--<af:panelGroupLayout layout="horizontal" id="pgl1">
                         <f:facet name="separator">
                             <af:spacer width="10" id="s1"/>
                         </f:facet>
@@ -37,7 +108,7 @@
                             <af:convertNumber groupingUsed="false"
                                               pattern="#{bindings.DepartmentsRO.hints.SalaryAvg.format}"/>
                         </af:outputFormatted>
-                    </af:panelGroupLayout>
+                    </af:panelGroupLayout>-->
                 </af:listItem>
             </af:listView>
         </f:facet>

@@ -6,7 +6,7 @@
         
       
       <af:declarativeComponent viewId="/components/dashboard/fragments/DashboardTile.jsff" id="dt1">
-      <f:attribute name="tileName" value="First Tile"/>
+      <f:attribute name="tileName" value="Salary per Department"/>
       <f:facet name="tileContent">
         <dvt:barChart id="barChart1" var="row" value="#{bindings.DepartmentsSalaryRO.collectionModel}"
         inlineStyle="width:200px;height:150px"
@@ -21,11 +21,13 @@
       </af:declarativeComponent>
 
       <af:declarativeComponent viewId="/components/dashboard/fragments/DashboardTile.jsff" id="dt2">
-      <f:attribute name="tileName" value="Second Tile"/>
+      <f:attribute name="tileName" value="Employees per Location"/>
       <f:facet name="tileContent">
         <dvt:map id="map" startingX="0.0" mapServerConfigId="coeMapConfig" baseMapName="ELOCATION.BI_WORLD_MAP"
                  mapZoom="0" inlineStyle="width:200px;height:150px" startingY="0.0"
+                 
                  showInfoArea="false" showScaleBar="false" zoomBarPosition="NONE" copyrightText=""
+                
                  >
           <dvt:mapPointTheme id="mt1" value="#{bindings.EmployeesPerLocationRO1.geoMapModel}"/>
         </dvt:map>
@@ -33,7 +35,7 @@
       </af:declarativeComponent>
 
       <af:declarativeComponent viewId="/components/dashboard/fragments/DashboardTile.jsff" id="dt3">
-      <f:attribute name="tileName" value="Third Tile"/>
+      <f:attribute name="tileName" value="Unapproved Assigments"/>
       <f:facet name="tileContent">
         <dvt:statusMeterGauge orientation="circular" inlineStyle="width:200px;height:150px" id="statusMeterGauge1"
                                value="#{bindings.Amt.inputValue}" >
@@ -46,14 +48,14 @@
       </af:declarativeComponent>
 
       <af:declarativeComponent viewId="/components/dashboard/fragments/DashboardTile.jsff" id="dt4">
-      <f:attribute name="tileName" value="Fourth Tile"/>
+      <f:attribute name="tileName" value="Demo Tile (1)"/>
       <f:facet name="tileContent">
 
       </f:facet>      
       </af:declarativeComponent>
       
       <af:declarativeComponent viewId="/components/dashboard/fragments/DashboardTile.jsff" id="dt5">
-      <f:attribute name="tileName" value="Fifth Tile"/>
+      <f:attribute name="tileName" value="Demo Tile (2)"/>
       <f:facet name="tileContent">
 
       </f:facet>      
