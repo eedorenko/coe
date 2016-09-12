@@ -23,6 +23,14 @@
         ResId="com.eproseed.coe.assignments.model.adfbc.views.lookup.Employees_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="BFirstName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="BLastName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="Employees"
     Entity="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees"
@@ -35,7 +43,14 @@
     PrecisionRule="true"
     EntityAttrName="EmployeeId"
     EntityUsage="Employees"
-    AliasName="EMPLOYEE_ID"/>
+    AliasName="EMPLOYEE_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.assignments.model.adfbc.views.lookup.Employees.EmployeeId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FirstName"
     PrecisionRule="true"
@@ -49,6 +64,50 @@
     EntityAttrName="LastName"
     EntityUsage="Employees"
     AliasName="LAST_NAME"/>
+  <ViewCriteria
+    Name="EmployeesViewCriteria"
+    ViewObjectName="com.eproseed.coe.assignments.model.adfbc.views.lookup.Employees"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="EmployeesCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="FirstName"
+        ViewAttribute="FirstName"
+        Operator="="
+        Conjunction="AND"
+        Value=":BFirstName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="LastName"
+        ViewAttribute="LastName"
+        Operator="="
+        Conjunction="AND"
+        Value=":BLastName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.eproseed.coe.assignments.model.adfbc.EproseedCoeAssignmentsModelBundle"/>

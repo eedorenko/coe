@@ -39,7 +39,7 @@
     ViewObjectName="com.eproseed.coe.common.sharedmodel.adfbc.views.lookup.Jobs"
     AMUsageName="CommonSharedService"
     ViewInstanceName="Jobs"
-    RowLevelBinds="true"/>
+    RowLevelBinds="false"/>
   <ViewAccessor
     Name="EmployeesLookup"
     ViewObjectName="com.eproseed.coe.employees.model.adfbc.views.EmployeesList"
@@ -49,7 +49,8 @@
     ListVOName="DepartmentsLookup"
     ComboRowCountHint="10"
     NullValueFlag="none"
-    MRUCount="0">
+    MRUCount="0"
+    ListRangeSize="10">
     <AttrArray Name="AttrNames">
       <Item Value="DepartmentId"/>
     </AttrArray>
@@ -58,16 +59,22 @@
       <Item Value="DepartmentId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentId"/>
       <Item Value="DepartmentName"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <DisplayCriteria
+      Name="DepartmentsViewCriteria"/>
+    <ViewCriteriaUsage
+      Name="DepartmentsViewCriteria"
+      FullName="com.eproseed.coe.employees.model.adfbc.views.lookup.Departments.DepartmentsViewCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_JobId"
     ListVOName="CommonSharedService_Jobs"
-    NullValueFlag="none"
+    NullValueFlag="none"    
     MRUCount="0"
-    ComboRowCountHint="10">
+    ComboRowCountHint="10"
+    ListRangeSize="10">
     <AttrArray Name="AttrNames">
       <Item Value="JobId"/>
     </AttrArray>
@@ -76,16 +83,22 @@
       <Item Value="JobId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobId"/>
       <Item Value="JobTitle"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <DisplayCriteria
+      Name="JobsViewCriteria"/>
+    <ViewCriteriaUsage
+      Name="JobsViewCriteria"
+      FullName="com.eproseed.coe.common.sharedmodel.adfbc.views.lookup.Jobs.JobsViewCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_ManagerId"
     ListVOName="EmployeesLookup"
-    ComboRowCountHint="10"
+    ComboRowCountHint="10"    
     NullValueFlag="none"
-    MRUCount="0">
+    MRUCount="0"
+    ListRangeSize="10">
     <AttrArray Name="AttrNames">
       <Item Value="ManagerId"/>
     </AttrArray>
@@ -94,10 +107,15 @@
       <Item Value="EmployeeId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EmployeeId"/>
       <Item Value="FirstName"/>
       <Item Value="LastName"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <DisplayCriteria
+      Name="EmployeesListViewCriteria"/>
+    <ViewCriteriaUsage
+      Name="EmployeesListViewCriteria"
+      FullName="com.eproseed.coe.employees.model.adfbc.views.EmployeesList.EmployeesListViewCriteria"/>
   </ListBinding>
   <EntityUsage
     Name="Employees"
