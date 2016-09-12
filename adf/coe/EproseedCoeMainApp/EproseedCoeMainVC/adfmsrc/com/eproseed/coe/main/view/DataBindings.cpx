@@ -8,9 +8,13 @@
   </definitionFactories>
   <pageMap>
     <page path="/index.jsf" usageId="com_eproseed_coe_main_view_indexPageDef"/>
+    <page path="/WEB-INF/com/eproseed/coe/main/view/departmentstaskflowexternal/pages/MainView.jsf"
+          usageId="com_eproseed_coe_main_view_MainViewPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_eproseed_coe_main_view_indexPageDef" path="com.eproseed.coe.main.view.pageDefs.indexPageDef"/>
+    <page id="com_eproseed_coe_main_view_MainViewPageDef"
+          path="com.eproseed.coe.main.view.departmentstaskflowexternal.pages.MainViewPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="EproseedCoeServiceDataControl" Package="com.eproseed.coe.main.model.adfbc.services"

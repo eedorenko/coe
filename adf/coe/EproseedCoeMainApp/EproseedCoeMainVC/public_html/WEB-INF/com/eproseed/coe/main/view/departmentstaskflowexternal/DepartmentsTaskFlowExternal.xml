@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="DepartmentsTaskFlowExternal">
+    <default-activity>MainView</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="MainView">
+      <page>/WEB-INF/com/eproseed/coe/main/view/departmentstaskflowexternal/pages/MainView.jsf</page>
+    </view>
+  </task-flow-definition>
+</adfc-config>

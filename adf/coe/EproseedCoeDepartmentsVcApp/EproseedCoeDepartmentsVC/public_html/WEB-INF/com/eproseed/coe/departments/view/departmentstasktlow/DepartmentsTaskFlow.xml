@@ -10,8 +10,6 @@
       <page>/WEB-INF/com/eproseed/coe/departments/view/departmentstasktlow/fragments/DepartmentsView.jsff</page>
     </view>
     <use-page-fragments/>
-    <visibility>
-      <url-invoke-allowed/>
-    </visibility>
+    <visibility/>
   </task-flow-definition>
 </adfc-config>
