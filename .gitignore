@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 *.jdb
 
@@ -16,3 +17,10 @@ adf/coe/EproseedCoeAssignmentsVcApp/EproseedCoeAssignmentsVC/classes/*
 adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/classes/*
 
 adf/coe/EproseedCoeDepartmentsVcApp/EproseedCoeDepartmentsVC/classes/*
+=======
+cwallet.sso.lck
+cwallet.sso
+.data
+classes
+temp
+>>>>>>> origin/master

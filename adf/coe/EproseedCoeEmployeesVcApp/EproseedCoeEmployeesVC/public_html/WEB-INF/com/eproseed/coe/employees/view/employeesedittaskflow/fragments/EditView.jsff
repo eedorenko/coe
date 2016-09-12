@@ -4,6 +4,7 @@
     <af:pageTemplate viewId="/com/eproseed/coe/common/view/pagetemplates/fragments/SimpleEditTemplate.jsf"
                      value="#{bindings.ptb1}" id="pt1">
         <f:facet name="centerContent">
+            
             <af:panelFormLayout id="pfl1">
                 <af:inputText value="#{bindings.FirstName.inputValue}" label="#{bindings.FirstName.hints.label}"
                               required="#{bindings.FirstName.hints.mandatory}"

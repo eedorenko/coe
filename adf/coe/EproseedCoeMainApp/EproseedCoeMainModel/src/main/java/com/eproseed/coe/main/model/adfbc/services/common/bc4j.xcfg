@@ -5,6 +5,9 @@
     <AppModuleConfig name="EproseedCoeServiceLocal" jbo.project="com.eproseed.coe.main.model.adfbc.EproseedCoeMainModel"
                      ApplicationName="com.eproseed.coe.main.model.adfbc.services.EproseedCoeService"
                      DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.initpoolsize="50" jbo.ampool.maxpoolsize="200" jbo.recyclethreshold="30"
+                  jbo.ampool.minavailablesize="10" jbo.ampool.maxavailablesize="70" jbo.ampool.maxinactiveage="180000"
+                  jbo.ampool.monitorsleepinterval="30000" jbo.ampool.timetolive="-1"/>
       <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/HRConnDS"/>
       <Security AppModuleJndiName="com.eproseed.coe.main.model.adfbc.services.EproseedCoeService"/>
     </AppModuleConfig>

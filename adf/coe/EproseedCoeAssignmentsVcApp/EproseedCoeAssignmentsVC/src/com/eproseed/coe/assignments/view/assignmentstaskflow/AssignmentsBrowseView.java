@@ -5,6 +5,9 @@ import com.eproseed.coe.common.view.utils.ADFUtils;
 
 
 import javax.faces.event.ActionEvent;
+
+import oracle.adf.view.rich.event.DialogEvent;
+
 import oracle.binding.OperationBinding;
 
 public class AssignmentsBrowseView {
@@ -27,5 +30,12 @@ public class AssignmentsBrowseView {
     
     public void approveButtonActionListener(ActionEvent actionEvent) {
         approve();
+    }
+
+    public void dialogListener(DialogEvent dialogEvent) {
+        OperationBinding operationBinding = ADFUtils.findOperation("approveAll");
+        operationBinding.execute();        
+        commit();
+
     }
 }
