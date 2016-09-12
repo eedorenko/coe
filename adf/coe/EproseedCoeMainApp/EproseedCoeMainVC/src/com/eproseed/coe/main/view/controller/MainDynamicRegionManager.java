@@ -18,7 +18,7 @@ public class MainDynamicRegionManager implements Serializable {
     private static final String ASSIGNMENTS_TASKFLOW = "/WEB-INF/com/eproseed/coe/assignments/view/assignmentstaskflow/AssignmentsTaskFlow.xml#AssignmentsTaskFlow";
     
     private String taskFlowId = DASHBOARD_TASKFLOW;
-  
+    private String activeRegion = "dashboard";
 
     public MainDynamicRegionManager() {
     }
@@ -33,22 +33,33 @@ public class MainDynamicRegionManager implements Serializable {
 
     public String dashboard() {
         setDynamicTaskFlowId(DASHBOARD_TASKFLOW);
+        setActiveRegion("dashboard");
         return null;
     }
 
     public String employees() {
         setDynamicTaskFlowId(EMPLOYEES_TASKFLOW);
+        setActiveRegion("employees");
         return null;
     }
 
     public String departments() {
         setDynamicTaskFlowId(DEPARTMENTS_TASKFLOW);
+        setActiveRegion("departments");
         return null;
     }
     public String assignments() {
         setDynamicTaskFlowId(ASSIGNMENTS_TASKFLOW);
+        setActiveRegion("assignments");
         return null;
     }
 
 
+    public void setActiveRegion(String activeRegion) {
+        this.activeRegion = activeRegion;
+    }
+
+    public String getActiveRegion() {
+        return activeRegion;
+    }
 }

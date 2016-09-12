@@ -1,35 +1,98 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
     <af:pageTemplate viewId="/com/eproseed/coe/common/view/pagetemplates/fragments/BrowseListTemplate.jsf" id="pt1">
         <f:facet name="centerContent">
             <af:listView value="#{bindings.EmployeesList.collectionModel}" var="item"
                          emptyText="#{bindings.EmployeesList.viewable ? 'No data to display.' : 'Access Denied.'}"
                          fetchSize="#{bindings.EmployeesList.rangeSize}" id="lv1">
-                <af:listItem id="li1">
-                    <af:panelGroupLayout layout="horizontal" id="pgl1">
-                        <f:facet name="separator">
-                            <af:spacer width="10" id="s1"/>
-                        </f:facet>
-                        <af:outputFormatted value="#{item.bindings.EmployeeId.inputValue}" id="of1">
-                            <af:convertNumber groupingUsed="false"
-                                              pattern="#{bindings.EmployeesList.hints.EmployeeId.format}"/>
-                        </af:outputFormatted>
-                        <af:outputFormatted value="#{item.bindings.FirstName.inputValue}" id="of2"/>
-                        <af:link text="#{item.bindings.LastName.inputValue}" id="of3" action="goEditCreate">
-                            <af:setPropertyListener from="#{item.bindings.EmployeeId.inputValue}"
-                                                    to="#{requestScope.employeeId}" type="action"/>
-                            <af:setPropertyListener from="edit" to="#{requestScope.action}" type="action"/>
-                        </af:link>
-                        <af:outputFormatted value="#{item.bindings.Email.inputValue}" id="of4"/>
-                        <af:outputFormatted value="#{item.bindings.Salary.inputValue}" id="of5">
-                            <af:convertNumber groupingUsed="false"
-                                              pattern="#{bindings.EmployeesList.hints.Salary.format}"/>
-                        </af:outputFormatted>
-                        <af:outputFormatted value="#{item.bindings.PhoneNumber.inputValue}" id="of6"/>
-                        <af:outputFormatted value="#{item.bindings.JobTitle.inputValue}" id="of7"/>
-                        <af:outputFormatted value="#{item.bindings.DepartmentName.inputValue}" id="of8"/>
-                    </af:panelGroupLayout>
+              
+                <af:listItem id="li1"
+                             styleClass="#{sessionScope.showGrid ? 'CoeDisplayBlock CoeDisplayBlockPadding CoeDisplayBlockCenterUndo' : 'CoeListPadding'}">
+                    <af:panelGridLayout id="pgl1" clientComponent="true" shortDesc="List View"
+                                        rendered="#{sessionScope.DisplayType == 'list' or sessionScope.DisplayType == null}">
+                        <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr1">
+                            <af:gridCell marginStart="0px" width="80px" id="gc1" valign="middle" marginEnd="10px">
+                                <af:image source="/resources/images/people/#{item.bindings.EmployeeId.inputValue}.png"
+                                          id="i1"
+                                          rendered="#{item.bindings.EmployeeId.inputValue > 99 and item.bindings.EmployeeId.inputValue &lt; 188}"
+                                          styleClass="CoeImage CoeImageBorder"/>
+                                <af:image source="/resources/images/people/nopic.png" id="i1a"
+                                          rendered="#{item.bindings.EmployeeId.inputValue &lt; 100 or item.bindings.EmployeeId.inputValue > 187}"
+                                          styleClass="CoeImage CoeImageBorder"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" id="gc2" valign="middle" marginEnd="5px" width="82%">
+                                <af:panelGroupLayout id="pgl2" layout="vertical">
+                                    <af:link text="#{item.bindings.FirstName.inputValue} #{item.bindings.LastName.inputValue}"
+                                                        id="of1" styleClass="CoeNameText" 
+                                                        action="goEditCreate">
+                                    <af:setPropertyListener from="#{item.bindings.EmployeeId.inputValue}"
+                                                            to="#{requestScope.employeeId}" type="action"/>
+                                    <af:setPropertyListener from="edit" to="#{requestScope.action}" type="action"/>
+                                </af:link>
+                                                        
+                                                    </af:link>    
+                                    <af:outputFormatted value="#{item.bindings.JobTitle.inputValue}" id="of4"
+                                                        styleClass="CoeJobTitleText"/>
+                                    <af:outputFormatted value="#{item.bindings.DepartmentName.inputValue}" id="of5"
+                                                        styleClass="CoeDeptText"/>
+                                </af:panelGroupLayout>
+                            </af:gridCell>
+                            <af:gridCell id="gc3" marginStart="5px" marginEnd="50px" valign="middle" width="32px">
+                                <af:link id="l2" icon="/resources/images/email_icon_16@2x.png"
+                                         shortDesc="Email #{item.bindings.Email.inputValue}"
+                                         destination="mailto:#{item.bindings.Email.inputValue}"/>
+                            </af:gridCell>
+                            <af:gridCell id="gc40" width="32px" marginEnd="5px" valign="middle">
+                                <af:link id="l1" icon="/resources/images/org_icon_16@2x.png"
+                                         shortDesc="Edit #{item.bindings.FirstName.inputValue}'s Data"
+                                         action="goEditCreate">
+                                    <af:setPropertyListener from="#{item.bindings.EmployeeId.inputValue}"
+                                                            to="#{requestScope.employeeId}" type="action"/>
+                                    <af:setPropertyListener from="edit" to="#{requestScope.action}" type="action"/>
+                                </af:link>
+                            </af:gridCell>
+                            <af:gridCell id="gc41" width="18%"/>
+                            <!--<af:gridCell id="gc4" width="80px" valign="middle" halign="center">
+                                        <af:panelGroupLayout id="pgl3" layout="vertical" halign="center">
+                                            <af:outputFormatted value="#{item.bindings.tenure.inputValue}" id="of3"
+                                                                styleClass="CoeMetricMedium CoeMetric4Color">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{item.bindings.tenure.format}"/>
+                                            </af:outputFormatted>
+                                            <af:outputLabel value="#{item.bindings.tenure.hints.label}" id="ol3"
+                                                            styleClass="CoeMetricLabelMedium"/>
+                                        </af:panelGroupLayout>
+                                    </af:gridCell>-->
+                            <!--<af:gridCell id="gc5" width="80px" valign="middle" halign="center">
+                                        <af:panelGroupLayout id="pgl4" layout="vertical" halign="center">
+                                            <af:outputFormatted value="#{item.bindings.rating.inputValue}" id="of2"
+                                                                styleClass="CoeMetricMedium #{item.bindings.rating.inputValue lt 3 ? 'CoeMetric6Color' : 'CoeMetric4Color'}">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{item.bindings.rating.format}"/>
+                                            </af:outputFormatted>
+                                            <af:outputLabel value="Performance" id="ol2"
+                                                            styleClass="WBMetricLabelMedium"/>
+                                        </af:panelGroupLayout>
+                                    </af:gridCell>-->
+                            <!--<af:gridCell id="gc7" width="80px" valign="middle" halign="center">
+                                        <af:panelGroupLayout id="pgl5" layout="vertical" halign="center">
+                                            <af:outputFormatted value="#{item.bindings.compRatio.inputValue}" id="of6"
+                                                                styleClass="CoeMetricMedium #{item.bindings.compRatio.inputValue lt 90 ? 'CoeMetric6Color' : 'CoeMetric4Color'}">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{item.bindings.compRatio.format}"/>
+                                            </af:outputFormatted>
+                                            <af:outputLabel value="#{item.bindings.compRatio.hints.label}" id="ol1"
+                                                            styleClass="CoeMetricLabelMedium"/>
+                                        </af:panelGroupLayout>
+                                    </af:gridCell>-->
+                        </af:gridRow>
+                        <!--
+                                <af:clientListener method="WBClient.clientClickProxy" type="click"/>
+                                <af:serverListener type="clientClickProxyEvent"
+                                                   method="#{backingBeanScope.searchPeople.doViewPerson}"/>
+                            -->
+                    </af:panelGridLayout>
                 </af:listItem>
             </af:listView>
         </f:facet>

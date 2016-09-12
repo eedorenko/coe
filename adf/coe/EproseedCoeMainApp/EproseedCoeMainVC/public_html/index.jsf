@@ -10,38 +10,30 @@
                 <f:attribute name="endWidth" value="0"/>
                 <f:attribute name="startWidth" value="0"/>
                 <f:attribute name="showFooter" value="true"/>
+                <f:attribute name="logoImagePath" value="resources/images/logo_retouche_eproseed_232x61px.png"/>
 
                 <f:facet name="header"/>
                 <f:facet name="status"/>
                 <f:facet name="appNav">
                     <af:button text="Dashboard" id="b1" action="#{viewScope.IndexDynamicRegion.dashboard}"
-                               styleClass="AFAppNavbarButton" selected="true" type="radio"
-                               icon="/resources/images/naviBarFaces/navi_dashboard_24_ena.png"
-                               hoverIcon="/resources/images/naviBarFaces/navi_dashboard_24_hov.png"
-                               depressedIcon="/resources/images/naviBarFaces/navi_dashboard_24_act.png"/>
+                               styleClass="AFAppNavbarButton" selected="#{viewScope.IndexDynamicRegion.activeRegion='dashboard' or ( viewScope.IndexDynamicRegion.activeRegion==null)}" type="radio"
+                              />
                     <af:button text="Employees" id="b2" action="#{viewScope.IndexDynamicRegion.employees}"
-                               styleClass="AFAppNavbarButton" type="radio"
-                               icon="/resources/images/naviBarFaces/navi_person_24_ena.png"
-                               hoverIcon="/resources/images/naviBarFaces/navi_person_24_hov.png"
-                               depressedIcon="/resources/images/naviBarFaces/navi_person_24_act.png"/>
-                    <af:button text="Departments" id="b3" styleClass="AFAppNavbarButton"
+                               styleClass="AFAppNavbarButton" type="radio" selected="#{viewScope.IndexDynamicRegion.activeRegion='employees'}"
+                               />
+                    <af:button text="Departments" id="b3" styleClass="AFAppNavbarButton" selected="#{viewScope.IndexDynamicRegion.activeRegion='departments'}"
                                action="#{viewScope.IndexDynamicRegion.departments}" type="radio"
-                               icon="/resources/images/naviBarFaces/navi_people_24_ena.png"
-                               hoverIcon="/resources/images/naviBarFaces/navi_people_24_hov.png"
-                               depressedIcon="/resources/images/naviBarFaces/navi_people_24_act.png"/>
-                    <af:button text="Assignments" id="b4" styleClass="AFAppNavbarButton"
+                               />
+                    <af:button text="Assignments" id="b4" styleClass="AFAppNavbarButton" selected="#{viewScope.IndexDynamicRegion.activeRegion='assignments'}"
                                action="#{viewScope.IndexDynamicRegion.assignments}" type="radio"
-                               icon="/resources/images/naviBarFaces/navi_people_24_ena.png"
-                               hoverIcon="/resources/images/naviBarFaces/navi_people_24_hov.png"
-                               depressedIcon="/resources/images/naviBarFaces/navi_people_24_act.png"/>
+                               />
                                
                 </f:facet>
                 <f:facet name="globalLinks"/>
                 <f:facet name="footer"/>
                 <f:facet name="center">
-                    
                     <af:region value="#{bindings.dynamicRegion1.regionModel}" 
-                               id="r1" partialTriggers="::b1 ::b2 ::b3 ::b4"
+                               id="r1" partialTriggers=":::bBarFDC:b1 :::bBarFDC:b2 :::bBarFDC:b3 :::bBarFDC:b4"
                                 styleClass="ContentContainerWorkaround"/>
                                
                 </f:facet>

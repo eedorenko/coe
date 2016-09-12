@@ -174,8 +174,8 @@
    </hash>
    <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration"/>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="EproseedCoeAppMain-EproseedCoeAppMainVC-webapp"/>
-      <value n="j2eeWebContextRoot" v="EproseedCoeAppMain-EproseedCoeAppMainVC-context-root"/>
+      <value n="j2eeWebAppName" v="EproseedCoePrototype"/>
+      <value n="j2eeWebContextRoot" v="EproseedCoePrototype"/>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">

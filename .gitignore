@@ -1,5 +1,26 @@
+<<<<<<< HEAD
+
+*.jdb
+
+*.lck
+
+adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/public_html/WEB-INF/temp/adf/styles/cache/alta-v1-desktop-ln7nv5--macos-webkit-537-d-ltr-d--s-n-c.css
+
+*.class
+
+adf/coe/EproseedCoeCommonApp/EproseedCoeCommonDeclComp/public_html/WEB-INF/temp/adf/styles/cache/alta-v1-desktop-ln7nv5--macos-webkit-537-d-ltr-d--s-n-c.css
+
+adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/public_html/WEB-INF/temp/adf/styles/cache/alta-v1-desktop-ln7nv5--macos-webkit-537-d-ltr-d--s-n-u.css
+
+adf/coe/EproseedCoeMainApp/EproseedCoeMainVC/classes/*
+adf/coe/EproseedCoeAssignmentsVcApp/EproseedCoeAssignmentsVC/classes/*
+adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/classes/*
+
+adf/coe/EproseedCoeDepartmentsVcApp/EproseedCoeDepartmentsVC/classes/*
+=======
 cwallet.sso.lck
 cwallet.sso
 .data
 classes
 temp
+>>>>>>> origin/master
