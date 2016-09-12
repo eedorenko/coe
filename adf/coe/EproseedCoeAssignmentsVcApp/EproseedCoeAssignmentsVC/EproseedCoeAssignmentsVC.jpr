@@ -93,6 +93,45 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
+         <hash n="eproseedcoeassignmentsvcapp_eproseedcoeassignmentsvc_adflib">
+            <value n="adflib-connectionDetails" v="true"/>
+            <hash n="archiveOptions">
+               <value n="hasManifest" v="true"/>
+            </hash>
+            <hash n="fileGroups">
+               <list n="groups">
+                  <hash>
+                     <list n="contributors">
+                        <hash>
+                           <value n="type" v="2"/>
+                        </hash>
+                        <hash>
+                           <value n="type" v="5"/>
+                        </hash>
+                     </list>
+                     <value n="displayName" v="Project Output"/>
+                     <hash n="filters">
+                        <list n="rules">
+                           <hash>
+                              <value n="pattern" v="WEB-INF/classes/**"/>
+                              <value n="type" v="1"/>
+                           </hash>
+                           <hash>
+                              <value n="pattern" v="**"/>
+                              <value n="type" v="0"/>
+                           </hash>
+                        </list>
+                     </hash>
+                     <value n="internalName" v="project-output"/>
+                     <value n="type" v="1"/>
+                  </hash>
+               </list>
+            </hash>
+            <url n="jarURL" path="../../EproseedCoeLibs/eproseedcoeassignmentsvcapp_eproseedcoeassignmentsvc_adflib.jar"/>
+            <hash n="LibraryDependencies"/>
+            <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
+            <value n="profileName" v="eproseedcoeassignmentsvcapp_eproseedcoeassignmentsvc_adflib"/>
+         </hash>
          <hash n="EproseedCoeAssignmentsVcApp_EproseedCoeAssignmentsVC_webapp">
             <hash n="appletArchives"/>
             <hash n="appletFiles">
@@ -170,6 +209,7 @@
       </hash>
       <list n="profileList">
          <string v="EproseedCoeAssignmentsVcApp_EproseedCoeAssignmentsVC_webapp"/>
+         <string v="eproseedcoeassignmentsvcapp_eproseedcoeassignmentsvc_adflib"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration"/>
