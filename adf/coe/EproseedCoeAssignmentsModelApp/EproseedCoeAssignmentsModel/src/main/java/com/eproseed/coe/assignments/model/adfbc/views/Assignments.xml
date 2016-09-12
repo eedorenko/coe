@@ -58,7 +58,8 @@
     ListVOName="EmployeesLookup"
     ComboRowCountHint="10"
     NullValueFlag="none"
-    MRUCount="0">
+    MRUCount="0"
+    ListRangeSize="10">
     <AttrArray Name="AttrNames">
       <Item Value="EmployeeId"/>
     </AttrArray>
@@ -66,7 +67,16 @@
     <AttrArray Name="ListAttrNames">
       <Item Value="EmployeeId"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EmployeeId"/>
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="EmployeesViewCriteria"/>
+    <ViewCriteriaUsage
+      Name="EmployeesViewCriteria"
+      FullName="com.eproseed.coe.assignments.model.adfbc.views.lookup.Employees.EmployeesViewCriteria"/>
   </ListBinding>
   <EntityUsage
     Name="Assignments"
@@ -133,10 +143,10 @@
     LOVName="LOV_EmployeeId">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo_lov"/>
         <LABEL
           ResId="com.eproseed.coe.assignments.model.adfbc.views.Assignments.EmployeeId_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -251,6 +261,14 @@
     <PropertiesBundle
       PropertiesFile="com.eproseed.coe.assignments.model.adfbc.EproseedCoeAssignmentsModelBundle"/>
   </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="AssignmentId"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="AssignmentId"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="AssignmentId"/>

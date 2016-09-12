@@ -22,6 +22,14 @@
         ResId="com.eproseed.coe.employees.model.adfbc.views.EmployeesList_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="BFirstName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="BLastName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="Employees"
     Entity="com.eproseed.coe.common.hrmodel.adfbc.entities.Employees"/>
@@ -69,7 +77,14 @@
     PrecisionRule="true"
     EntityAttrName="EmployeeId"
     EntityUsage="Employees"
-    AliasName="EMPLOYEE_ID"/>
+    AliasName="EMPLOYEE_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.employees.model.adfbc.views.EmployeesList.EmployeeId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FirstName"
     PrecisionRule="true"
@@ -131,6 +146,50 @@
     EntityAttrName="DepartmentId"
     EntityUsage="Departments"
     AliasName="DEPARTMENT_ID"/>
+  <ViewCriteria
+    Name="EmployeesListViewCriteria"
+    ViewObjectName="com.eproseed.coe.employees.model.adfbc.views.EmployeesList"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="EmployeesListCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="FirstName"
+        ViewAttribute="FirstName"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Value=":BFirstName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="LastName"
+        ViewAttribute="LastName"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Value=":BLastName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <AttrArray Name="KeyAttributes">
     <Item Value="EmployeeId"/>
   </AttrArray>

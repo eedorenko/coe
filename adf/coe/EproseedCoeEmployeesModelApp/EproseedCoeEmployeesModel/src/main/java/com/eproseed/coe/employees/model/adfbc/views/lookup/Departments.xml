@@ -22,6 +22,10 @@
         ResId="com.eproseed.coe.employees.model.adfbc.views.lookup.Departments_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="BDepartmentName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="Departments"
     Entity="com.eproseed.coe.common.hrmodel.adfbc.entities.Departments"
@@ -34,14 +38,64 @@
     PrecisionRule="true"
     EntityAttrName="DepartmentId"
     EntityUsage="Departments"
-    AliasName="DEPARTMENT_ID"/>
+    AliasName="DEPARTMENT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.employees.model.adfbc.views.lookup.Departments.DepartmentId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DepartmentName"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="DepartmentName"
     EntityUsage="Departments"
-    AliasName="DEPARTMENT_NAME"/>
+    AliasName="DEPARTMENT_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.eproseed.coe.employees.model.adfbc.views.lookup.Departments.DepartmentName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="DepartmentsViewCriteria"
+    ViewObjectName="com.eproseed.coe.employees.model.adfbc.views.lookup.Departments"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="DepartmentsCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="DepartmentName"
+        ViewAttribute="DepartmentName"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Value=":BDepartmentName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.eproseed.coe.employees.model.adfbc.EproseedCoeEmployeesModelBundle"/>
