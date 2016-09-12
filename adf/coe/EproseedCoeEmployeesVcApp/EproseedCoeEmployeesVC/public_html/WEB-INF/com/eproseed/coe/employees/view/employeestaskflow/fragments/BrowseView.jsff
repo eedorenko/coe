@@ -49,39 +49,7 @@
                                 </af:link>
                             </af:gridCell>
                             <af:gridCell id="gc41" width="18%"/>
-                            <!--<af:gridCell id="gc4" width="80px" valign="middle" halign="center">
-                                        <af:panelGroupLayout id="pgl3" layout="vertical" halign="center">
-                                            <af:outputFormatted value="#{item.bindings.tenure.inputValue}" id="of3"
-                                                                styleClass="CoeMetricMedium CoeMetric4Color">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{item.bindings.tenure.format}"/>
-                                            </af:outputFormatted>
-                                            <af:outputLabel value="#{item.bindings.tenure.hints.label}" id="ol3"
-                                                            styleClass="CoeMetricLabelMedium"/>
-                                        </af:panelGroupLayout>
-                                    </af:gridCell>-->
-                            <!--<af:gridCell id="gc5" width="80px" valign="middle" halign="center">
-                                        <af:panelGroupLayout id="pgl4" layout="vertical" halign="center">
-                                            <af:outputFormatted value="#{item.bindings.rating.inputValue}" id="of2"
-                                                                styleClass="CoeMetricMedium #{item.bindings.rating.inputValue lt 3 ? 'CoeMetric6Color' : 'CoeMetric4Color'}">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{item.bindings.rating.format}"/>
-                                            </af:outputFormatted>
-                                            <af:outputLabel value="Performance" id="ol2"
-                                                            styleClass="WBMetricLabelMedium"/>
-                                        </af:panelGroupLayout>
-                                    </af:gridCell>-->
-                            <!--<af:gridCell id="gc7" width="80px" valign="middle" halign="center">
-                                        <af:panelGroupLayout id="pgl5" layout="vertical" halign="center">
-                                            <af:outputFormatted value="#{item.bindings.compRatio.inputValue}" id="of6"
-                                                                styleClass="CoeMetricMedium #{item.bindings.compRatio.inputValue lt 90 ? 'CoeMetric6Color' : 'CoeMetric4Color'}">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{item.bindings.compRatio.format}"/>
-                                            </af:outputFormatted>
-                                            <af:outputLabel value="#{item.bindings.compRatio.hints.label}" id="ol1"
-                                                            styleClass="CoeMetricLabelMedium"/>
-                                        </af:panelGroupLayout>
-                                    </af:gridCell>-->
+                            
                         </af:gridRow>
                         <!--
                                 <af:clientListener method="WBClient.clientClickProxy" type="click"/>

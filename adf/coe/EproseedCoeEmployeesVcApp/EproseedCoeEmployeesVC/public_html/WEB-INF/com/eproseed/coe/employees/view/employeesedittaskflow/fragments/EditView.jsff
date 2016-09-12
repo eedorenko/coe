@@ -56,7 +56,7 @@
                                     <af:gridRow marginTop="10px" id="gr21">
                                         <af:gridCell width="100%" halign="center" valign="middle" marginStart="5px"
                                                      marginEnd="5px" id="gc71">
-                                            <af:outputText value="#{bindings.ColleaguesIterator.estimatedRowCount}"
+                                            <af:outputText value="#{bindings.ColleaguesIterator.estimatedRowCount - 1}"
                                                            styleClass="CoeMetric CoeMetric4Color" id="ot31"/>
                                         </af:gridCell>
                                     </af:gridRow>
@@ -210,7 +210,7 @@
                                                                             <af:outputFormatted value="#{item.bindings.PhoneNumber.inputValue}"
                                                                                                 id="of4"/>
                                                                         </af:gridCell>
-                                                                        <af:gridCell marginStart="0px" width="160px"
+                                                                        <af:gridCell marginStart="0px" width="200px"
                                                                                      id="gc1c" valign="middle"
                                                                                      halign="start" marginEnd="10px">
                                                                             <af:outputFormatted value="#{item.bindings.JobTitle.inputValue}"
