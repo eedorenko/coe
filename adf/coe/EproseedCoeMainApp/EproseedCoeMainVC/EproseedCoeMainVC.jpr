@@ -303,10 +303,10 @@
                   <url path="../../EproseedCoeLibs/eproseedcoedashboardvcapp_eproseedcoedashboardvc_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoeassignmentsvcapp_eproseedcoeassignmentsvc_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoedepartmentsvcapp_eproseedcoedepartmentsvc_adflib.jar" jar-entry=""/>
-                  <url path="../../EproseedCoeLibs/eproseedcoeemployeesvcapp_eproseedcoeemployeesvc_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonskin_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoemainapp_eproseedcoemainmodel_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonpagetemplates_adflib.jar" jar-entry=""/>
+                  <url path="../../EproseedCoeLibs/eproseedcoeemployeesvcapp_eproseedcoeemployeesvc_adflib.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF Library"/>

@@ -1,92 +1,242 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                xmlns:f="http://java.sun.com/jsf/core" xmlns:Eproseed-Coe-Components="/eproseedCoeCompLib">
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:Eproseed-Coe-Components="/eproseedCoeCompLib"
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
     <af:pageTemplate viewId="/com/eproseed/coe/common/view/pagetemplates/fragments/SimpleEditTemplate.jsf"
                      value="#{bindings.ptb1}" id="pt1">
         <f:facet name="centerContent">
-            
-            <af:panelFormLayout id="pfl1">
-                <af:inputText value="#{bindings.FirstName.inputValue}" label="#{bindings.FirstName.hints.label}"
-                              required="#{bindings.FirstName.hints.mandatory}"
-                              columns="#{bindings.FirstName.hints.displayWidth}"
-                              maximumLength="#{bindings.FirstName.hints.precision}"
-                              shortDesc="#{bindings.FirstName.hints.tooltip}" id="it5">
-                    <f:validator binding="#{bindings.FirstName.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.LastName.inputValue}" label="#{bindings.LastName.hints.label}"
-                              required="#{bindings.LastName.hints.mandatory}"
-                              columns="#{bindings.LastName.hints.displayWidth}"
-                              maximumLength="#{bindings.LastName.hints.precision}"
-                              shortDesc="#{bindings.LastName.hints.tooltip}" id="it7">
-                    <f:validator binding="#{bindings.LastName.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
-                              required="#{bindings.Email.hints.mandatory}"
-                              columns="#{bindings.Email.hints.displayWidth}"
-                              maximumLength="#{bindings.Email.hints.precision}"
-                              shortDesc="#{bindings.Email.hints.tooltip}" id="it3">
-                    <f:validator binding="#{bindings.Email.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.PhoneNumber.inputValue}" label="#{bindings.PhoneNumber.hints.label}"
-                              required="#{bindings.PhoneNumber.hints.mandatory}"
-                              columns="#{bindings.PhoneNumber.hints.displayWidth}"
-                              maximumLength="#{bindings.PhoneNumber.hints.precision}"
-                              shortDesc="#{bindings.PhoneNumber.hints.tooltip}" id="it9">
-                    <f:validator binding="#{bindings.PhoneNumber.validator}"/>
-                </af:inputText>
-                <af:inputDate value="#{bindings.HireDate.inputValue}" label="#{bindings.HireDate.hints.label}"
-                              required="#{bindings.HireDate.hints.mandatory}"
-                              columns="#{bindings.HireDate.hints.displayWidth}"
-                              shortDesc="#{bindings.HireDate.hints.tooltip}" id="id1">
-                    <f:validator binding="#{bindings.HireDate.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.HireDate.format}"/>
-                </af:inputDate>
-                <Eproseed-Coe-Components:CoeLookup id="cl1" popupTitle="Select job" value="#{bindings.JobId.inputValue}"
-                                                   label="#{bindings.JobId.hints.label}"
-                                                   model="#{bindings.JobId.listOfValuesModel}"
-                                                   columns="#{bindings.JobId.hints.displayWidth}"
-                                                   descrValue="#{bindings.JobTitle.inputValue}"
-                                                   valueBinding="#{bindings.JobId}"/>
-                <Eproseed-Coe-Components:CoeLookup id="cl2" popupTitle="Select department"
-                                                   value="#{bindings.DepartmentId.inputValue}"
-                                                   label="#{bindings.DepartmentId.hints.label}"
-                                                   model="#{bindings.DepartmentId.listOfValuesModel}"
-                                                   columns="#{bindings.DepartmentId.hints.displayWidth}"
-                                                   descrValue="#{bindings.DepartmentName.inputValue}"
-                                                   valueBinding="#{bindings.DepartmentId}"/>
-                <Eproseed-Coe-Components:CoeLookup id="cl3" popupTitle="Select manager"
-                                                   value="#{bindings.ManagerId.inputValue}"
-                                                   label="#{bindings.ManagerId.hints.label}"
-                                                   model="#{bindings.ManagerId.listOfValuesModel}"
-                                                   columns="#{bindings.ManagerId.hints.displayWidth}"
-                                                   descrValue="#{bindings.ManagerFirstName.inputValue} #{bindings.ManagerLastName.inputValue}"
-                                                   valueBinding="#{bindings.ManagerId}"/>
-                <af:inputText value="#{bindings.Salary.inputValue}" label="#{bindings.Salary.hints.label}"
-                              required="#{bindings.Salary.hints.mandatory}"
-                              columns="#{bindings.Salary.hints.displayWidth}"
-                              maximumLength="#{bindings.Salary.hints.precision}"
-                              shortDesc="#{bindings.Salary.hints.tooltip}" id="it2" simple="true">
-                    <f:validator binding="#{bindings.Salary.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Salary.format}"/>
-                </af:inputText>
-                <af:listView value="#{bindings.Colleagues.collectionModel}" var="item"
-                             emptyText="#{bindings.Colleagues.viewable ? 'No data to display.' : 'Access Denied.'}"
-                             fetchSize="#{bindings.Colleagues.rangeSize}" id="lv1">
-                    <af:listItem id="li1"
-                                 rendered="#{bindings.EmployeeId.inputValue != item.bindings.EmployeeId.inputValue}">
-                        <af:panelGroupLayout layout="horizontal" id="pgl1">
-                            <f:facet name="separator">
-                                <af:spacer width="10" id="s1"/>
+            <af:panelGroupLayout id="pgltlcon" styleClass="CoeViewPersonContainerMargin" clientComponent="true"
+                                 valign="top" layout="#{orientationManager.infoTileGroupLayout}">
+                <af:clientAttribute name="vpLayoutMode" value="#{orientationManager.orientation}"/>
+                <af:panelGroupLayout id="pgl1" styleClass="CoeViewPersonTileContainer" partialTriggers="">
+                    <!--      Handle the Custom event from the tile selection.  -->
+                    <af:serverListener type="tileSelected"
+                                       method="#{backingBeanScope.editView.infoTileSelectionHandler}"/>
+                    <af:declarativeComponent viewId="/components/infoTile/infoTile.jsff" id="inft0">
+                        <f:attribute name="selected" value="#{pageFlowScope.flowState.selectedTile eq 0}"/>
+                        <f:attribute name="index" value="0"/>
+                        <f:attribute name="layout" value="#{orientationManager.infoTileLayout}"/>
+                        <f:attribute name="tileWidth" value="#{orientationManager.personInfoTileWidth}"/>
+                        <f:attribute name="tileHeight" value="#{orientationManager.personInfoTileHeight}"/>
+                        <!-- Summary InfoTile -->
+                        <f:facet name="tileContent">
+                            <af:panelGroupLayout layout="vertical" id="tcon0">
+                                <af:outputText value="About" id="title0" styleClass="CoeInfoTileTitle"/>
+                                <af:panelGridLayout styleClass="AFStretchWidth" id="pgl15">
+                                    <af:gridRow marginTop="10px" id="gr2">
+                                        <af:gridCell width="100%" halign="center" valign="middle" marginStart="5px"
+                                                     marginEnd="5px" id="gc7">
+                                            <af:outputText value="#{bindings.Salary.inputValue}"
+                                                           styleClass="CoeMetric CoeMetric4Color" id="ot3"/>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow id="gr3">
+                                        <af:gridCell halign="center" valign="middle" marginStart="5px" marginEnd="5px"
+                                                     id="gc10">
+                                            <af:outputText value="Salary" styleClass="CoeDashboardLabel" id="ot11"/>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <!-- Workaround infoTile Issue. Any component with implicit clientComponent="true" will prevent selection-->
+                                    <af:clientListener method="InfoTileComp.raiseSelectionEvent" type="click"/>
+                                </af:panelGridLayout>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:declarativeComponent>
+                    <af:declarativeComponent viewId="/components/infoTile/infoTile.jsff" id="inft1">
+                        <f:attribute name="selected" value="#{pageFlowScope.flowState.selectedTile eq 1}"/>
+                        <f:attribute name="index" value="1"/>
+                        <f:attribute name="layout" value="#{orientationManager.infoTileLayout}"/>
+                        <f:attribute name="tileWidth" value="#{orientationManager.personInfoTileWidth}"/>
+                        <f:attribute name="tileHeight" value="#{orientationManager.personInfoTileHeight}"/>
+                        <!-- Summary InfoTile -->
+                        <f:facet name="tileContent">
+                            <af:panelGroupLayout layout="vertical" id="tcon1">
+                                <af:outputText value="Colleagues" id="title1" styleClass="CoeInfoTileTitle"/>
+                                <af:panelGridLayout styleClass="AFStretchWidth" id="pgl151">
+                                    <af:gridRow marginTop="10px" id="gr21">
+                                        <af:gridCell width="100%" halign="center" valign="middle" marginStart="5px"
+                                                     marginEnd="5px" id="gc71">
+                                            <af:outputText value="#{bindings.ColleaguesIterator.estimatedRowCount - 1}"
+                                                           styleClass="CoeMetric CoeMetric4Color" id="ot31"/>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow id="gr31">
+                                        <af:gridCell halign="center" valign="middle" marginStart="5px" marginEnd="5px"
+                                                     id="gc101">
+                                            <af:outputText value="# Colleagues" styleClass="CoeDashboardLabel"
+                                                           id="ot111"/>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <!-- Workaround infoTile Issue. Any component with implicit clientComponent="true" will prevent selection-->
+                                    <af:clientListener method="InfoTileComp.raiseSelectionEvent" type="click"/>
+                                </af:panelGridLayout>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:declarativeComponent>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+            <af:spacer width="10" id="vphsp" height="1" visible="#{orientationManager.portraitMode}"/>
+            <af:spacer width="1" id="vpvsp" height="10" visible="#{orientationManager.landscapeMode}"/>
+            <!-- Content from InfoTiles -->
+            <af:panelGroupLayout id="pgltlc" layout="vertical" styleClass="AFStretchWidth CoeViewPersonTileContent"
+                                 valign="top">
+                <af:deck id="d1" displayedChild="#{'infd'}#{pageFlowScope.flowState.selectedTile}"
+                         partialTriggers="pgl1">
+                    <af:transition triggerType="backNavigate"
+                                   transition="#{orientationManager.infoTileDeckBackTransition}"/>
+                    <af:transition triggerType="forwardNavigate"
+                                   transition="#{orientationManager.infoTileDeckForwardTransition}"/>
+                    <!-- Summary -->
+                    <af:panelGroupLayout id="infd0" styleClass="AFStretchWidth" layout="vertical">
+                        <af:decorativeBox id="db1">
+                            <f:facet name="center">
+                                <af:panelGridLayout id="pgl3">
+                                    <af:gridRow id="gr4">
+                                        <af:gridCell width="40%" halign="start" id="gc2">
+                                            <af:panelFormLayout id="pfl1">
+                                                <af:inputText value="#{bindings.FirstName.inputValue}"
+                                                              label="#{bindings.FirstName.hints.label}"
+                                                              required="#{bindings.FirstName.hints.mandatory}"
+                                                              columns="#{bindings.FirstName.hints.displayWidth}"
+                                                              maximumLength="#{bindings.FirstName.hints.precision}"
+                                                              shortDesc="#{bindings.FirstName.hints.tooltip}" id="it5">
+                                                    <f:validator binding="#{bindings.FirstName.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.LastName.inputValue}"
+                                                              label="#{bindings.LastName.hints.label}"
+                                                              required="#{bindings.LastName.hints.mandatory}"
+                                                              columns="#{bindings.LastName.hints.displayWidth}"
+                                                              maximumLength="#{bindings.LastName.hints.precision}"
+                                                              shortDesc="#{bindings.LastName.hints.tooltip}" id="it7">
+                                                    <f:validator binding="#{bindings.LastName.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.Email.inputValue}"
+                                                              label="#{bindings.Email.hints.label}"
+                                                              required="#{bindings.Email.hints.mandatory}"
+                                                              columns="#{bindings.Email.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Email.hints.precision}"
+                                                              shortDesc="#{bindings.Email.hints.tooltip}" id="it3">
+                                                    <f:validator binding="#{bindings.Email.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.PhoneNumber.inputValue}"
+                                                              label="#{bindings.PhoneNumber.hints.label}"
+                                                              required="#{bindings.PhoneNumber.hints.mandatory}"
+                                                              columns="#{bindings.PhoneNumber.hints.displayWidth}"
+                                                              maximumLength="#{bindings.PhoneNumber.hints.precision}"
+                                                              shortDesc="#{bindings.PhoneNumber.hints.tooltip}"
+                                                              id="it9">
+                                                    <f:validator binding="#{bindings.PhoneNumber.validator}"/>
+                                                </af:inputText>
+                                                <af:inputDate value="#{bindings.HireDate.inputValue}"
+                                                              label="#{bindings.HireDate.hints.label}"
+                                                              required="#{bindings.HireDate.hints.mandatory}"
+                                                              columns="#{bindings.HireDate.hints.displayWidth}"
+                                                              shortDesc="#{bindings.HireDate.hints.tooltip}" id="id1">
+                                                    <f:validator binding="#{bindings.HireDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.HireDate.format}"/>
+                                                </af:inputDate>
+                                                <Eproseed-Coe-Components:CoeLookup id="cl1" popupTitle="Select job"
+                                                                                   value="#{bindings.JobId.inputValue}"
+                                                                                   label="#{bindings.JobId.hints.label}"
+                                                                                   model="#{bindings.JobId.listOfValuesModel}"
+                                                                                   columns="#{bindings.JobId.hints.displayWidth}"
+                                                                                   descrValue="#{bindings.JobTitle.inputValue}"
+                                                                                   valueBinding="#{bindings.JobId}"/>
+                                                <Eproseed-Coe-Components:CoeLookup id="cl2"
+                                                                                   popupTitle="Select department"
+                                                                                   value="#{bindings.DepartmentId.inputValue}"
+                                                                                   label="#{bindings.DepartmentId.hints.label}"
+                                                                                   model="#{bindings.DepartmentId.listOfValuesModel}"
+                                                                                   columns="#{bindings.DepartmentId.hints.displayWidth}"
+                                                                                   descrValue="#{bindings.DepartmentName.inputValue}"
+                                                                                   valueBinding="#{bindings.DepartmentId}"/>
+                                                <Eproseed-Coe-Components:CoeLookup id="cl3" popupTitle="Select manager"
+                                                                                   value="#{bindings.ManagerId.inputValue}"
+                                                                                   label="#{bindings.ManagerId.hints.label}"
+                                                                                   model="#{bindings.ManagerId.listOfValuesModel}"
+                                                                                   columns="#{bindings.ManagerId.hints.displayWidth}"
+                                                                                   descrValue="#{bindings.ManagerFirstName.inputValue} #{bindings.ManagerLastName.inputValue}"
+                                                                                   valueBinding="#{bindings.ManagerId}"/>
+                                                <af:inputText value="#{bindings.Salary.inputValue}"
+                                                              label="#{bindings.Salary.hints.label}"
+                                                              required="#{bindings.Salary.hints.mandatory}"
+                                                              columns="#{bindings.Salary.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Salary.hints.precision}"
+                                                              shortDesc="#{bindings.Salary.hints.tooltip}" id="it2"
+                                                              simple="true">
+                                                    <f:validator binding="#{bindings.Salary.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Salary.format}"/>
+                                                </af:inputText>
+                                            </af:panelFormLayout>
+                                        </af:gridCell>
+                                        <af:gridCell width="60%" halign="start" id="gc3">
+                                            <af:panelGridLayout id="pgl4">
+                                                <af:gridRow id="gr5">
+                                                    <af:gridCell id="gc11" valign="middle">
+                                                        <af:outputFormatted value="Colleagues"
+                                                                            styleClass="CoePageTitleText" id="of2"/>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow id="gr5a">
+                                                    <af:gridCell id="gc5">
+                                                        <af:listView value="#{bindings.Colleagues.collectionModel}"
+                                                                     var="item"
+                                                                     emptyText="#{bindings.Colleagues.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                     fetchSize="#{bindings.Colleagues.rangeSize}"
+                                                                     id="lv1">
+                                                            <af:listItem id="li1"
+                                                                         rendered="#{bindings.EmployeeId.inputValue != item.bindings.EmployeeId.inputValue}">
+                                                                <af:panelGridLayout id="pgl1a" clientComponent="true"
+                                                                                    shortDesc="List View"
+                                                                                    rendered="#{sessionScope.DisplayType == 'list' or sessionScope.DisplayType == null}">
+                                                                    <af:gridRow marginTop="0px" height="auto"
+                                                                                marginBottom="0px" id="gr1">
+                                                                        <af:gridCell marginStart="0px" width="80px"
+                                                                                     id="gc1" valign="middle"
+                                                                                     halign="start" marginEnd="10px">
+                                                                            <af:outputFormatted value="#{item.bindings.FirstName.inputValue} #{item.bindings.LastName.inputValue}"
+                                                                                                id="of1"/>
+                                                                        </af:gridCell>
+                                                                        <af:gridCell marginStart="0px" width="80px"
+                                                                                     id="gc1a" valign="middle"
+                                                                                     halign="start" marginEnd="10px">
+                                                                            <af:outputFormatted value="#{item.bindings.Email.inputValue}"
+                                                                                                id="of3"/>
+                                                                        </af:gridCell>
+                                                                        <af:gridCell marginStart="0px" width="80px"
+                                                                                     id="gc1b" valign="middle"
+                                                                                     halign="start" marginEnd="10px">
+                                                                            <af:outputFormatted value="#{item.bindings.PhoneNumber.inputValue}"
+                                                                                                id="of4"/>
+                                                                        </af:gridCell>
+                                                                        <af:gridCell marginStart="0px" width="200px"
+                                                                                     id="gc1c" valign="middle"
+                                                                                     halign="start" marginEnd="10px">
+                                                                            <af:outputFormatted value="#{item.bindings.JobTitle.inputValue}"
+                                                                                                id="of5"/>
+                                                                        </af:gridCell>
+                                                                    </af:gridRow>
+                                                                </af:panelGridLayout>
+                                                            </af:listItem>
+                                                        </af:listView>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                            </af:panelGridLayout>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                </af:panelGridLayout>
                             </f:facet>
-                            <af:outputFormatted value="#{item.bindings.FirstName.inputValue}" id="of1"/>
-                            <af:outputFormatted value="#{item.bindings.LastName.inputValue}" id="of2"/>
-                            <af:outputFormatted value="#{item.bindings.Email.inputValue}" id="of3"/>
-                            <af:outputFormatted value="#{item.bindings.PhoneNumber.inputValue}" id="of4"/>
-                            <af:outputFormatted value="#{item.bindings.JobTitle.inputValue}" id="of5"/>
-                        </af:panelGroupLayout>
-                    </af:listItem>
-                </af:listView>
-            </af:panelFormLayout>
+                        </af:decorativeBox>
+                    </af:panelGroupLayout>
+                    <!-- Hierarchy -->
+                    <af:panelGroupLayout id="infd1" styleClass="AFStretchWidth" layout="vertical">
+                        <af:decorativeBox id="db2">
+                            <f:facet name="center"/>
+                        </af:decorativeBox>
+                    </af:panelGroupLayout>
+                </af:deck>
+            </af:panelGroupLayout>
         </f:facet>
     </af:pageTemplate>
 </ui:composition>
