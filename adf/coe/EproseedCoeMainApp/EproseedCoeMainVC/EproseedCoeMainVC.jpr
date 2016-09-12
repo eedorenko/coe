@@ -180,11 +180,11 @@
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
          <hash>
-            <value n="id" v="JSP Runtime"/>
+            <value n="id" v="ADF Library"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF Library"/>
+            <value n="id" v="JSP Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -288,14 +288,14 @@
          <list n="libraryDefinitions">
             <hash>
                <list n="classPath">
-                  <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonpagetemplates_adflib.jar" jar-entry=""/>
-                  <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonskin_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonvc_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoedashboardvcapp_eproseedcoedashboardvc_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoemainapp_eproseedcoemainmodel_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoeassignmentsvcapp_eproseedcoeassignmentsvc_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoedepartmentsvcapp_eproseedcoedepartmentsvc_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoeemployeesvcapp_eproseedcoeemployeesvc_adflib.jar" jar-entry=""/>
+                  <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonskin_adflib.jar" jar-entry=""/>
+                  <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonpagetemplates_adflib.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF Library"/>
@@ -305,11 +305,11 @@
       </hash>
       <list n="libraryReferences">
          <hash>
-            <value n="id" v="JSP Runtime"/>
+            <value n="id" v="ADF Library"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF Library"/>
+            <value n="id" v="JSP Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>

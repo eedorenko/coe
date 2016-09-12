@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <pageTemplateDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/pagetemplate">
+  <pagetemplate-jsp-ui-def>/com/eproseed/coe/common/view/pagetemplates/pages/CoeTabletFirstTemplate.jsf</pagetemplate-jsp-ui-def>
   <pagetemplate-jsp-ui-def>/com/eproseed/coe/common/view/pagetemplates/fragments/DashboardTileTemplate.jsf</pagetemplate-jsp-ui-def>
   <pagetemplate-jsp-ui-def>/com/eproseed/coe/common/view/pagetemplates/pages/CoeResponsiveMainPageTemplate.jsf</pagetemplate-jsp-ui-def>
   <pagetemplate-jsp-ui-def>/com/eproseed/coe/common/view/pagetemplates/fragments/InsertWizardTemplate.jsf</pagetemplate-jsp-ui-def>

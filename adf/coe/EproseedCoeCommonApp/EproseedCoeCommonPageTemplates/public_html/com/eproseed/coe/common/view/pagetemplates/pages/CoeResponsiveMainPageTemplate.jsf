@@ -74,6 +74,11 @@ It is based on Oracle's responsive template.</afc:description>
                 <afc:attribute-name>showFooter</afc:attribute-name>
                 <afc:attribute-class>boolean</afc:attribute-class>
             </afc:attribute>
+            
+            <afc:attribute>
+                <afc:attribute-name>showStatusIndicator</afc:attribute-name>
+                <afc:attribute-class>boolean</afc:attribute-class>
+            </afc:attribute>
         </afc:component>
     </af:xmlContent>
     <af:group id="grp1">

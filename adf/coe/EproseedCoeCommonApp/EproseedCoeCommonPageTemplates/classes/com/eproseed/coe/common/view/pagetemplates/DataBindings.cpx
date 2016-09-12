@@ -8,6 +8,8 @@
           usageId="com_eproseed_coe_common_view_pagetemplates_InsertWizardTemplatePageDef"/>
     <page path="/com/eproseed/coe/common/view/pagetemplates/pages/CoeResponsiveMainPageTemplate.jsf"
           usageId="com_eproseed_coe_common_view_pagetemplates_CoeResponsiveMainPageTemplate"/>
+    <page path="/com/eproseed/coe/common/view/pagetemplates/pages/CoeTabletFirstTemplate.jsf"
+          usageId="com_eproseed_coe_common_view_pagetemplates_CoeTabletFirstTemplatePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_eproseed_coe_common_view_pagetemplates_SimpleEditTemplatePageDef"
@@ -16,6 +18,8 @@
           path="com.eproseed.coe.common.view.pagetemplates.fragments.InsertWizardTemplatePageDef"/>
     <page id="com_eproseed_coe_common_view_pagetemplates_CoeResponsiveMainPageTemplate"
           path="com.eproseed.coe.common.view.pagetemplates.pages.CoeResponsiveMainPageTemplatePageDef"/>
+    <page id="com_eproseed_coe_common_view_pagetemplates_CoeTabletFirstTemplatePageDef"
+          path="com.eproseed.coe.common.view.pagetemplates.pages.CoeTabletFirstTemplatePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="EproseedCoeServiceDataControl" Package="com.eproseed.coe.main.model.adfbc.services"

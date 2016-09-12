@@ -8,3 +8,9 @@ adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/public_html/WEB-INF/
 *.class
 
 adf/coe/EproseedCoeCommonApp/EproseedCoeCommonDeclComp/public_html/WEB-INF/temp/adf/styles/cache/alta-v1-desktop-ln7nv5--macos-webkit-537-d-ltr-d--s-n-c.css
+
+adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/public_html/WEB-INF/temp/adf/styles/cache/alta-v1-desktop-ln7nv5--macos-webkit-537-d-ltr-d--s-n-u.css
+
+adf/coe/EproseedCoeMainApp/EproseedCoeMainVC/classes/*
+adf/coe/EproseedCoeAssignmentsVcApp/EproseedCoeAssignmentsVC/classes/*
+adf/coe/EproseedCoeCommonApp/EproseedCoeCommonPageTemplates/classes/*

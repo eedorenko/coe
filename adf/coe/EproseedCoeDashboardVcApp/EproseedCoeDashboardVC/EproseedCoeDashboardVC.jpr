@@ -332,9 +332,9 @@
                <list n="classPath">
                   <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonpagetemplates_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommontaskflowtemplates_adflib.jar" jar-entry=""/>
-                  <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonskin_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommondeclcomp_adflib.jar" jar-entry=""/>
                   <url path="../../EproseedCoeLibs/eproseedcoedashboardmodelapp_eproseedcoedashboardmodel_adflib.jar" jar-entry=""/>
+                  <url path="../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommonskin_adflib.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF Library"/>

@@ -17,7 +17,7 @@
     <af:panelGridLayout id="pgl6">
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
             <af:gridCell id="gc11" valign="middle">
-                <af:outputFormatted value="#{attrs.title}" id="ol7" styleClass="WBPageTitleText"/>
+                <af:outputFormatted value="#{attrs.title}" id="ol7" styleClass="CoePageTitleText"/>
             </af:gridCell>
             <af:gridCell marginStart="5px" width="30%" id="gc6" halign="stretch" valign="middle"/>
             <af:gridCell marginStart="5px" width="auto" id="gc10" valign="middle" halign="end">

@@ -12,9 +12,11 @@ import oracle.adf.controller.TaskFlowId;
 public class MainDynamicRegionManager implements Serializable {
     @SuppressWarnings("compatibility:-5329817642937831563")
     private static final long serialVersionUID = -4633485426455218156L;
-    private static final String DASHBOARD_TASKFLOW = "/WEB-INF/com/eproseed/coe/dashboard/view/dashboardtaskflow/DashboardTaskFlow.xml#DashboardTaskFlow";
-    private static final String EMPLOYEES_TASKFLOW = "/WEB-INF/view/organizations/organizations.xml#organizations";
-    private static final String DEPARTMENTS_TASKFLOW = "/WEB-INF/view/people/people.xml#people";
+    private static final String DASHBOARD_TASKFLOW   = "/WEB-INF/com/eproseed/coe/dashboard/view/dashboardtaskflow/DashboardTaskFlow.xml#DashboardTaskFlow";
+    private static final String EMPLOYEES_TASKFLOW   = "/WEB-INF/com/eproseed/coe/employees/view/employeestaskflow/EmployeesTaskFlow.xml#EmployeesTaskFlow";
+    private static final String DEPARTMENTS_TASKFLOW = "/WEB-INF/com/eproseed/coe/departments/view/departmentstasktlow/DepartmentsTaskFlow.xml#DepartmentsTaskFlow";
+    private static final String ASSIGNMENTS_TASKFLOW = "/WEB-INF/com/eproseed/coe/assignments/view/assignmentstaskflow/AssignmentsTaskFlow.xml#AssignmentsTaskFlow";
+    
     private String taskFlowId = DASHBOARD_TASKFLOW;
   
 
@@ -43,6 +45,10 @@ public class MainDynamicRegionManager implements Serializable {
         setDynamicTaskFlowId(DEPARTMENTS_TASKFLOW);
         return null;
     }
+    public String assignments() {
+        setDynamicTaskFlowId(ASSIGNMENTS_TASKFLOW);
+        return null;
+    }
 
- 
+
 }
