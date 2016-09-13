@@ -8,9 +8,20 @@
             <afc:facet>
                 <afc:facet-name>centerContent</afc:facet-name>
             </afc:facet>
+            <afc:facet>
+                <afc:facet-name>searchContent</afc:facet-name>
+            </afc:facet>
+            <afc:facet>
+                <afc:facet-name>searchButton</afc:facet-name>
+            </afc:facet>
             <afc:attribute>
                 <afc:attribute-name>title</afc:attribute-name>
                 <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>readonly</afc:attribute-name>
+                <afc:attribute-class>java.lang.Boolean</afc:attribute-class>
+                <afc:default-value>false</afc:default-value>
             </afc:attribute>
         </afc:component>
     </af:xmlContent>
@@ -19,11 +30,15 @@
             <af:gridCell id="gc11" valign="middle">
                 <af:outputFormatted value="#{attrs.title}" id="ol7" styleClass="CoePageTitleText"/>
             </af:gridCell>
-            <af:gridCell marginStart="5px" width="30%" id="gc6" halign="stretch" valign="middle"/>
-            <af:gridCell marginStart="5px" width="auto" id="gc8" valign="middle" marginEnd="20px"/>
+            <af:gridCell marginStart="5px" width="30%" id="gc6" halign="stretch" valign="middle">
+                <af:facetRef facetName="searchContent"/>
+            </af:gridCell>
+            <af:gridCell marginStart="5px" width="auto" id="gc8" valign="middle" marginEnd="20px">
+                            <af:facetRef facetName="searchButton"/>
+            </af:gridCell>
             <af:gridCell marginStart="5px" width="auto" id="gc10" valign="middle" halign="end">
                 <af:toolbar id="pt_t1">
-                    <af:button text="Create" id="pt_b2" action="goEditCreate">
+                    <af:button text="Create" id="pt_b2" action="goEditCreate" rendered="#{!attrs.readonly}">
                         <af:setPropertyListener from="create" to="#{requestScope.action}" type="action"/>
                     </af:button>
                 </af:toolbar>

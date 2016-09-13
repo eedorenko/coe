@@ -171,7 +171,7 @@
       <property
          name="fromsrcid">__13</property>
       <property
-         name="sdm:polyPoints">L50,271.55273,667.7657,B44</property>
+         name="sdm:polyPoints">L50,270.61847,667.7657,B43</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -187,7 +187,7 @@
       <property
          name="fromsrcid">__8</property>
       <property
-         name="sdm:polyPoints">B44,725.15625,556.4336,R50</property>
+         name="sdm:polyPoints">B43,724.222,556.4336,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -203,7 +203,7 @@
       <property
          name="fromsrcid">__2</property>
       <property
-         name="sdm:polyPoints">R46,401.07617,413.0,401.07617,422.91602,L50</property>
+         name="sdm:polyPoints">R45,401.07617,412.06573,401.07617,422.91602,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -235,7 +235,7 @@
       <property
          name="fromsrcid">__8</property>
       <property
-         name="sdm:polyPoints">B56,732.15625,667.7657,R50</property>
+         name="sdm:polyPoints">B57,733.0905,667.7657,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -284,7 +284,7 @@
       <property
          name="fromOutcome">goBrowseView</property>
       <property
-         name="sdm:polyPoints">T50,375.5,420.0,R54</property>
+         name="sdm:polyPoints">T50,375.5,420.93427,R55</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -300,6 +300,6 @@
       <property
          name="fromsrcid">__10</property>
       <property
-         name="sdm:polyPoints">B50,521.9326,610.4336,278.55273,610.4336,B56</property>
+         name="sdm:polyPoints">B50,521.9326,611.36786,279.487,611.36786,B57</property>
    </ControlFlowCase>
 </SDM>
