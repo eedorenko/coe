@@ -3,9 +3,6 @@
                 Package="com.eproseed.coe.departments.view.departmentstasktlow.fragments">
   <parameters/>
   <executables>
-    <variableIterator id="variables">
-      <variable Type="java.lang.String" Name="searchDepartments_departmentName" IsQueriable="false"/>
-    </variableIterator>
     <iterator Binds="DepartmentsService.DepartmentsRO" DataControl="EproseedCoeServiceDataControl" RangeSize="25"
               id="DepartmentsROIterator"/>
   </executables>
@@ -27,16 +24,5 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <methodAction id="searchDepartments" RequiresUpdateModel="true" Action="invokeMethod" MethodName="searchDepartments"
-                  IsViewObjectMethod="true" DataControl="EproseedCoeServiceDataControl"
-                  InstanceName="data.EproseedCoeServiceDataControl.dataProvider.Root.DepartmentsService.DepartmentsRO">
-      <NamedData NDName="departmentName" NDType="java.lang.String"
-                 NDValue="${bindings.searchDepartments_departmentName}"/>
-    </methodAction>
-    <attributeValues IterBinding="variables" id="departmentName">
-      <AttrNames>
-        <Item Value="searchDepartments_departmentName"/>
-      </AttrNames>
-    </attributeValues>
   </bindings>
 </pageDefinition>

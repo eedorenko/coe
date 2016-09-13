@@ -43,18 +43,7 @@
                                     <af:outputLabel value="Avg Comp" id="ol3" styleClass="CoeMetricLabelMedium"/>
                                 </af:panelGroupLayout>
                             </af:gridCell>
-                            <!--<af:gridCell id="gc21" width="80px" valign="middle" halign="center"
-                                                 marginStart="15px">
-                                        <af:panelGroupLayout id="pgl9" layout="vertical" halign="center">
-                                            <af:outputFormatted value="#{item.bindings.avgRating.inputValue}" id="of12"
-                                                                styleClass="CoeMetricMedium CoeMetric4Color">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{item.bindings.avgRating.format}"/>
-                                            </af:outputFormatted>
-                                            <af:outputLabel value="Avg Rating" id="ol5"
-                                                            styleClass="CoeMetricLabelMedium"/>
-                                        </af:panelGroupLayout>
-                                    </af:gridCell>-->
+
                             <af:gridCell id="gc5" width="80px" valign="middle" halign="center">
                                 <af:panelGroupLayout id="pgl4" layout="vertical" halign="center">
                                     <af:outputFormatted value="#{item.bindings.EmployeesCnt.inputValue}" id="of3"
@@ -66,64 +55,10 @@
                                 </af:panelGroupLayout>
                             </af:gridCell>
                         </af:gridRow>
-                        <!--
-                                <af:clientListener method="WBClient.clientClickProxy" type="click"/>
-                                <af:serverListener type="clientClickProxyEvent"
-                                                   method="#{backingBeanScope.searchOrg.doViewOrg}"/>
-                                                   -->
                     </af:panelGridLayout>
-                    <!--<af:panelGroupLayout layout="horizontal" id="pgl1">
-                        <f:facet name="separator">
-                            <af:spacer width="10" id="s1"/>
-                        </f:facet>
-                        <af:outputFormatted value="#{item.bindings.DepartmentId.inputValue}" id="of1">
-                            <af:convertNumber groupingUsed="false"
-                                              pattern="#{bindings.DepartmentsRO.hints.DepartmentId.format}"/>
-                        </af:outputFormatted>
-                        <af:outputFormatted value="#{item.bindings.DepartmentName.inputValue}" id="of2"/>
-                        <af:outputFormatted value="#{item.bindings.ManagerId.inputValue}" id="of3">
-                            <af:convertNumber groupingUsed="false"
-                                              pattern="#{bindings.DepartmentsRO.hints.ManagerId.format}"/>
-                        </af:outputFormatted>
-                        <af:outputFormatted value="#{item.bindings.LocationId.inputValue}" id="of4">
-                            <af:convertNumber groupingUsed="false"
-                                              pattern="#{bindings.DepartmentsRO.hints.LocationId.format}"/>
-                        </af:outputFormatted>
-                        <af:outputFormatted value="#{item.bindings.ManagerJobTitle.inputValue}" id="of5"/>
-                        <af:outputFormatted value="#{item.bindings.ManagerFirstName.inputValue}" id="of6"/>
-                        <af:outputFormatted value="#{item.bindings.ManagerLastName.inputValue}" id="of7"/>
-                        <af:outputFormatted value="#{item.bindings.PostalCode.inputValue}" id="of8"/>
-                        <af:outputFormatted value="#{item.bindings.City.inputValue}" id="of9"/>
-                        <af:outputFormatted value="#{item.bindings.EmployeesCnt.inputValue}" id="of10">
-                            <af:convertNumber groupingUsed="false"
-                                              pattern="#{bindings.DepartmentsRO.hints.EmployeesCnt.format}"/>
-                        </af:outputFormatted>
-                        <af:outputFormatted value="#{item.bindings.SalaryAvg.inputValue}" id="of11">
-                            <af:convertNumber groupingUsed="false"
-                                              pattern="#{bindings.DepartmentsRO.hints.SalaryAvg.format}"/>
-                        </af:outputFormatted>
-                    </af:panelGroupLayout>-->
+
                 </af:listItem>
             </af:listView>
-        </f:facet>
-        <f:facet name="searchContent">
-            <!--
-            <af:panelFormLayout id="pfl1">-->
-            <af:inputText value="#{bindings.departmentName.inputValue}" label="#{bindings.departmentName.hints.label}"
-                          required="#{bindings.departmentName.hints.mandatory}"
-                          maximumLength="#{bindings.departmentName.hints.precision}"
-                          shortDesc="#{bindings.departmentName.hints.tooltip}" id="it1" simple="true">
-                <f:validator binding="#{bindings.departmentName.validator}"/>
-            </af:inputText>
-            <!--
-                <af:button actionListener="#{bindings.searchDepartments.execute}" text="searchDepartments"
-                           disabled="#{!bindings.searchDepartments.enabled}" id="b1"/>
-            </af:panelFormLayout>-->
-        </f:facet>
-        <f:facet name="searchButton">
-                <af:button actionListener="#{bindings.searchDepartments.execute}" text="searchDepartments"
-                           disabled="#{!bindings.searchDepartments.enabled}" id="bSearch"/>
-
         </f:facet>
         <f:attribute name="readonly" value="true"/>
         <f:attribute name="title" value="Departments"/>
