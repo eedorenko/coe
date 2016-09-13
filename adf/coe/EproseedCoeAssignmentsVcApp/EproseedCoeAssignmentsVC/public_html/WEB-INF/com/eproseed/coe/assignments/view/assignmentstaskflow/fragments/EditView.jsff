@@ -4,32 +4,46 @@
     <af:pageTemplate viewId="/com/eproseed/coe/common/view/pagetemplates/fragments/SimpleEditTemplate.jsf"
                      value="#{bindings.ptb1}" id="pt1">
         <f:facet name="centerContent">
-            <af:panelFormLayout id="pfl1">
-                <af:inputDate value="#{bindings.BusinessDate.inputValue}" label="#{bindings.BusinessDate.hints.label}"
-                              required="#{bindings.BusinessDate.hints.mandatory}"
-                              columns="#{bindings.BusinessDate.hints.displayWidth}"
-                              shortDesc="#{bindings.BusinessDate.hints.tooltip}" id="id1">
-                    <f:validator binding="#{bindings.BusinessDate.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.BusinessDate.format}"/>
-                </af:inputDate>
-                <Eproseed-Coe-Components:CoeLookup id="cl1" popupTitle="Select employee"
-                                                   value="#{bindings.EmployeeId.inputValue}"
-                                                   label="#{bindings.EmployeeId.hints.label}"
-                                                   model="#{bindings.EmployeeId.listOfValuesModel}"
-                                                   columns="#{bindings.EmployeeId.hints.displayWidth}"
-                                                   valueBinding="#{bindings.EmployeeId}"
-                                                   descrValue="#{bindings.FirstName.inputValue} #{bindings.LastName.inputValue}"/>
-                <af:selectOneChoice value="#{bindings.ProjectId.inputValue}" label="#{bindings.ProjectId.label}"
-                                    required="#{bindings.ProjectId.hints.mandatory}"
-                                    shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1">
-                    <f:selectItems value="#{bindings.ProjectId.items}" id="si1"/>
-                    <f:validator binding="#{bindings.ProjectId.validator}"/>
-                </af:selectOneChoice>
-                <Eproseed-Coe-Components:CoeTimePicker id="ctp1" label="#{bindings.Starttime.hints.label}"
-                                                       valueBinding="#{bindings.Starttime}"/>
-                <Eproseed-Coe-Components:CoeTimePicker id="ctp2" label="#{bindings.Finishtime.hints.label}"
-                                                       valueBinding="#{bindings.Finishtime}"/>
-            </af:panelFormLayout>
+     
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                    <af:gridCell marginStart="5px" width="50%" id="gc2" valign="top">
+                        <af:panelFormLayout id="pfl1" maxColumns="2" rows="2">
+                            <af:inputDate value="#{bindings.BusinessDate.inputValue}"
+                                          label="#{bindings.BusinessDate.hints.label}"
+                                          required="#{bindings.BusinessDate.hints.mandatory}"
+                                          columns="#{bindings.BusinessDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.BusinessDate.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.BusinessDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.BusinessDate.format}"/>
+                            </af:inputDate>
+                            <Eproseed-Coe-Components:CoeLookup id="cl1" popupTitle="Select employee"
+                                                               label="#{bindings.EmployeeId.label}"
+                                                               value="#{bindings.EmployeeId.inputValue}"
+                                                               model="#{bindings.EmployeeId.listOfValuesModel}"
+                                                               columns="#{bindings.EmployeeId.hints.displayWidth}"
+                                                               valueBinding="#{bindings.EmployeeId}"
+                                                               descrValue="#{bindings.FirstName.inputValue} #{bindings.LastName.inputValue}"/>
+                        </af:panelFormLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="50%" id="gc1" valign="top">
+                        <af:panelFormLayout id="pfl2">
+                            <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
+                                                label="#{bindings.ProjectId.label}"
+                                                required="#{bindings.ProjectId.hints.mandatory}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1">
+                                <f:selectItems value="#{bindings.ProjectId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
+                            <Eproseed-Coe-Components:CoeTimePicker id="ctp1" label="#{bindings.Starttime.hints.label}"
+                                                                   valueBinding="#{bindings.Starttime}"/>
+                            <Eproseed-Coe-Components:CoeTimePicker id="ctp2" label="#{bindings.Finishtime.hints.label}"
+                                                                   valueBinding="#{bindings.Finishtime}"/>
+                        </af:panelFormLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
         </f:facet>
+        <f:attribute name="title" value="Assignment"/>
     </af:pageTemplate>
 </ui:composition>

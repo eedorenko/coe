@@ -549,6 +549,16 @@
             <value n="URI" v="http://xmlns.oracle.com/dss/adf/faces"/>
             <value n="version" v="1.1"/>
          </hash>
+         <hash>
+            <value n="libraries" v="ADF Faces Components"/>
+            <value n="name" v="Eproseed Coe Components"/>
+            <value n="prefix" v="Eproseed-Coe-Components"/>
+            <value n="runInEditor" v="true"/>
+            <value n="showInPalette" v="true"/>
+            <value n="taglibURL" v="@project@../../EproseedCoeLibs/eproseedcoecommonapp_eproseedcoecommondeclcomp_adflib.jar!/META-INF/eproseed coe components.taglib.xml"/>
+            <value n="URI" v="/eproseedCoeCompLib"/>
+            <value n="version" v="2.0"/>
+         </hash>
       </list>
    </hash>
    <hash n="oracle.jdevimpl.webapp.jsp.libraries.model.ProjectTagLibraries">

@@ -24,4 +24,50 @@
       </StringRefAddr>
     </RefAddresses>
   </Reference>
+  <Reference name="GeoCoderUrl" className="oracle.adf.model.connection.url.HttpURLConnection" partial="false"
+             manageInOracleEnterpriseManager="true" deployable="true" xmlns="">
+    <Factory className="oracle.adf.model.connection.url.URLConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="GeoCoderUrl">
+        <Contents>
+          <urlconnection name="GeoCoderUrl" url="http://elocation.oracle.com/geocoder/gcserver"/>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="MapViewerUrl" className="oracle.adf.model.connection.url.HttpURLConnection" partial="false"
+             manageInOracleEnterpriseManager="true" deployable="true" xmlns="">
+    <Factory className="oracle.adf.model.connection.url.URLConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="MapViewerUrl">
+        <Contents>
+          <urlconnection name="MapViewerUrl" url="http://elocation.oracle.com/mapviewer"/>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="HR" className="oracle.jdeveloper.db.adapter.DatabaseProvider" partial="true"
+             manageInOracleEnterpriseManager="true" deployable="true" xmlns="">
+    <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+    <RefAddresses>
+      <StringRefAddr addrType="oraDriverType">
+        <Contents>thin</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="hostname">
+        <Contents>192.168.44.130</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="subtype">
+        <Contents>oraJDBC</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="port">
+        <Contents>1521</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="user">
+        <Contents>hr</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="sid">
+        <Contents>orcl</Contents>
+      </StringRefAddr>
+    </RefAddresses>
+  </Reference>
 </References>

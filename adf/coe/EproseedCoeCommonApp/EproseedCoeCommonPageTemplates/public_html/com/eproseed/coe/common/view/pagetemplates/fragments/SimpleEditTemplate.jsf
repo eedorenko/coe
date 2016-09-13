@@ -15,32 +15,42 @@
         </afc:component>
     </af:xmlContent>
     <af:panelGridLayout id="pgl6">
+<!--
             <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr5">
             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc5" valign="bottom" halign="end">
-                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                <af:panelGroupLayout id="pgl2" layout="horizontal" halign="end">
                     <af:button text="Submit" id="pt_b1" action="submit" actionListener="#{bindings.Commit.execute}"/>
                     <af:spacer width="7" height="10" id="s2"/>
                     <af:button text="Cancel" id="pt_b4" action="cancel" immediate="true"/>
                 </af:panelGroupLayout>
             </af:gridCell>
         </af:gridRow>
+-->
 
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
             <af:gridCell id="gc11" valign="middle">
                 <af:outputFormatted value="#{attrs.title}" id="ol7" styleClass="CoePageTitleText"/>
             </af:gridCell>
             <af:gridCell marginStart="5px" width="30%" id="gc6" halign="stretch" valign="middle"></af:gridCell>
-            <af:gridCell marginStart="5px" width="auto" id="gc10" valign="middle" halign="end">
+            <af:gridCell marginStart="5px" width="auto" id="gc10" valign="middle" halign="end">            </af:gridCell>
+            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc5"  halign="end">
+                <af:panelGroupLayout id="pgl2" layout="horizontal" halign="end">
+                    <af:button text="Submit" id="pt_b1" action="submit" actionListener="#{bindings.Commit.execute}"/>
+                    <af:spacer width="7" height="10" id="s2"/>
+                    <af:button text="Cancel" id="pt_b4" action="cancel" immediate="true"/>
+                </af:panelGroupLayout>
+            </af:gridCell>
+
                 <!--
                 <af:toolbar id="pt_t1">
                     <af:button text="Submit" id="pt_b2" action="submit" actionListener="#{bindings.Commit.execute}" />
                     <af:button text="Cancel" id="pt_b3" action="cancel" immediate="true"/>
                 </af:toolbar>
                 -->
-            </af:gridCell>
+
         </af:gridRow>
         <af:gridRow id="gr3">
-            <af:gridCell id="gc12" columnSpan="3" halign="stretch">
+            <af:gridCell id="gc12" columnSpan="4" halign="stretch">
                 <af:facetRef facetName="centerContent"/>
             </af:gridCell>
         </af:gridRow>

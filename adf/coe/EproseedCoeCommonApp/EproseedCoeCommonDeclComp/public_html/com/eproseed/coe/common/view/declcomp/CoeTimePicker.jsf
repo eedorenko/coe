@@ -13,7 +13,7 @@
                 <afc:attribute-name>label</afc:attribute-name>
                 <afc:attribute-class>java.lang.String</afc:attribute-class>
             </afc:attribute>
-
+ 
             <afc:component-extension>
                 <afc:component-tag-namespace>com.eproseed.coe.common.view.declcomp</afc:component-tag-namespace>
                 <afc:component-taglib-uri>/eproseedCoeCompLib</afc:component-taglib-uri>
@@ -27,10 +27,9 @@
             <af:spacer width="10" height="10" id="dc_s1"/>
             <af:inputNumberSpinbox simple="true" id="dc_ins2" value="#{backingBeanScope.coeTimePicker.minutes}"
                                    minimum="0" maximum="59">
-             <af:convertNumber groupingUsed="false" minIntegerDigits="2" maxIntegerDigits="2"/>                      
-            </af:inputNumberSpinbox>                       
-
+                <af:convertNumber groupingUsed="false" minIntegerDigits="2" maxIntegerDigits="2"/>
+            </af:inputNumberSpinbox>
         </af:panelGroupLayout>
     </af:panelLabelAndMessage>
-    
+
 </af:componentDef>

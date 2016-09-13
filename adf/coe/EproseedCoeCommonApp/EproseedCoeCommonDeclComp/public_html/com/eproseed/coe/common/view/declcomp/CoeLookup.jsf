@@ -43,7 +43,6 @@
                 <afc:attribute-name>valueBinding</afc:attribute-name>
                 <afc:attribute-class>oracle.jbo.uicli.binding.JUCtrlAttrsBinding</afc:attribute-class>
             </afc:attribute>
-
             <afc:component-extension>
                 <afc:component-tag-namespace>com.eproseed.coe.common.view.declcomp</afc:component-tag-namespace>
                 <afc:component-taglib-uri>/eproseedCoeCompLib</afc:component-taglib-uri>
@@ -54,17 +53,13 @@
         <af:panelGroupLayout id="dc_pgl1" layout="horizontal">
             <af:inputComboboxListOfValues label="#{attrs.label}" popupTitle="#{attrs.popupTitle}" id="dc_iclov1"
                                           model="#{attrs.model}" value="#{attrs.value}" columns="#{attrs.columns}"
-                                          autoSubmit="#{attrs.autoSubmit}" immediate="#{attrs.immediate}"
-                                          simple="true">
-              <af:autoSuggestBehavior suggestItems="#{attrs.valueBinding.suggestItems}"/>                            
-            </af:inputComboboxListOfValues>                              
+                                          autoSubmit="#{attrs.autoSubmit}" immediate="#{attrs.immediate}" simple="true">
+                <af:autoSuggestBehavior suggestItems="#{attrs.valueBinding.suggestItems}"/>
+            </af:inputComboboxListOfValues>
             <af:spacer width="10" height="10" id="dc_s1"/>
-            <af:outputText value="#{attrs.descrValue}" partialTriggers="dc_iclov1"
-              inlineStyle="font-weight:bold;" id="dc_ot1"/>
-            
-            <!--
-            <af:outputText value="#{attrs.descrValue}" partialTriggers="dc_iclov1"
-                           inlineStyle="font-weight:bold;" id="dc_ot1"/>-->
+            <af:outputText value="#{attrs.descrValue}" partialTriggers="dc_iclov1" inlineStyle="font-weight:bold;"
+                           id="dc_ot1"/>
         </af:panelGroupLayout>
     </af:panelLabelAndMessage>
+  
 </af:componentDef>

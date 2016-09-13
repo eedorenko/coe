@@ -684,3 +684,7 @@ width: 100%;
     width: 10px;
     height: 25px;
 }
+
+.CoeLabel {
+ font-weight: bold;
+}

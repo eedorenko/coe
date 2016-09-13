@@ -12,9 +12,11 @@
                       fetchSize="#{bindings.Assignments.rangeSize}"
                       filterModel="#{bindings.AssignmentsQuery.queryDescriptor}" filterVisible="true"
                       queryListener="#{bindings.AssignmentsQuery.processQuery}" varStatus="vs" id="t1"
-                      columnStretching="last" >
+                      
+columnStretching="last">
                 <af:column sortProperty="#{bindings.Assignments.hints.AssignmentId.name}" filterable="true"
-                           sortable="true" headerText="#{bindings.Assignments.hints.AssignmentId.label}" id="c1">
+                           sortable="true" headerText="#{bindings.Assignments.hints.AssignmentId.label}" id="c1"
+                           width="60">
                     <af:outputText value="#{row.AssignmentId}"
                                    shortDesc="#{bindings.Assignments.hints.AssignmentId.tooltip}" id="ot1">
                         <af:convertNumber groupingUsed="false"
@@ -22,7 +24,8 @@
                     </af:outputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.Assignments.hints.BusinessDate.name}" filterable="true"
-                           sortable="true" headerText="#{bindings.Assignments.hints.BusinessDate.label}" id="c2">
+                           sortable="true" headerText="#{bindings.Assignments.hints.BusinessDate.label}" id="c2"
+>
                     <f:facet name="filter">
                         <af:inputDate value="#{bindings.AssignmentsQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.BusinessDate.value}"
                                       id="id1">
@@ -76,31 +79,28 @@
                                    shortDesc="#{bindings.Assignments.hints.ProjectName.tooltip}" id="ot7"/>
                 </af:column>
                 <af:column sortProperty="#{bindings.Assignments.hints.IsApproved.name}" filterable="true"
-                           sortable="true" headerText="#{bindings.Assignments.hints.IsApproved.label}" id="c8">
+                           sortable="true" headerText="#{bindings.Assignments.hints.IsApproved.label}" id="c8" width="70">
                     <af:outputText value="#{row.IsApproved}"
                                    shortDesc="#{bindings.Assignments.hints.IsApproved.tooltip}" id="ot8"/>
                 </af:column>
             </af:table>
         </f:facet>
         <f:facet name="operationsContent">
-            <af:button text="Operations" actionDelivery="none">
+            <af:button  actionDelivery="none" icon="#{resource['images:settings.png']}">
                 <f:facet name="popup">
                     <af:menu text="Add Menu" id="m1">
                         <af:commandMenuItem text="#{eproseedcoeassignmentsvcBundle.APPROVE}" id="cmi1"
                                             actionListener="#{assignmentsBrowseView.approveButtonActionListener}"></af:commandMenuItem>
-                                                <af:commandMenuItem text="#{eproseedcoeassignmentsvcBundle.APPROVE_ALL}"
-                                                                    id="cmi2">
-                                                       <af:showPopupBehavior popupId="pApproveAll"
-                                                                             triggerType="action"/>               
-                                             </af:commandMenuItem>
-                    
+                        <af:commandMenuItem text="#{eproseedcoeassignmentsvcBundle.APPROVE_ALL}" id="cmi2">
+                            <af:showPopupBehavior popupId="pApproveAll" triggerType="action"/>
+                        </af:commandMenuItem>
                     </af:menu>
                 </f:facet>
             </af:button>
             <af:popup id="pApproveAll" contentDelivery="lazyUncached">
                 <af:dialog id="d2" title="#{eproseedcoeassignmentsvcBundle.APPROVE}"
                            dialogListener="#{assignmentsBrowseView.dialogListener}">
-                  <af:outputText value="#{eproseedcoeassignmentsvcBundle.DO_YOU_WANT_TO_APPROVE_ALL_ASSIGNMENTS_}" />
+                    <af:outputText value="#{eproseedcoeassignmentsvcBundle.DO_YOU_WANT_TO_APPROVE_ALL_ASSIGNMENTS_}"/>
                 </af:dialog>
             </af:popup>
         </f:facet>
